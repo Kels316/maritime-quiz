@@ -192,7 +192,7 @@
     return {
       q: 'Your chart track is ' + b3(T) + 'T. Variation is ' + ew(V) + ' and the deviation card gives ' + ew(D) + ' on this heading. What do you steer by the steering compass?',
       correct: ok, wrongs: uniq(ok, cand.map(b3), 3),
-      why: 'True → Magnetic → Compass: subtract easterly errors, add westerly ones. ' + b3(T) + ' ' + (V > 0 ? '−' : '+') + ' ' + Math.abs(V) + '° = ' + b3(T - V) + 'M; then ' + (D > 0 ? '−' : '+') + ' ' + Math.abs(D) + '° = ' + ok + 'C. Check the other way: compass + deviation + variation must give back ' + b3(T) + 'T.',
+      why: 'True → Magnetic → Compass (variation, then deviation): subtract easterly errors, add westerly ones. ' + b3(T) + ' ' + (V > 0 ? '−' : '+') + ' ' + Math.abs(V) + '° = ' + b3(T - V) + 'M; then ' + (D > 0 ? '−' : '+') + ' ' + Math.abs(D) + '° = ' + ok + 'C. Check the other way: compass + deviation + variation must give back ' + b3(T) + 'T.',
       src: 'Passage Planning Guide – Compass errors'
     };
   });
@@ -204,7 +204,7 @@
     return {
       q: 'You take a bearing of a charted tower using the azimuth ring on the steering compass: ' + b3(C) + 'C, with the ship\'s head on a heading where deviation is ' + ew(D) + '. Variation is ' + ew(V) + '. What true bearing do you plot?',
       correct: ok, wrongs: uniq(ok, cand.map(b3), 3),
-      why: 'Compass → True: add easterly errors, subtract westerly. ' + b3(C) + ' ' + (D > 0 ? '+' : '−') + ' ' + Math.abs(D) + '° = ' + b3(C + D) + 'M; ' + (V > 0 ? '+' : '−') + ' ' + Math.abs(V) + '° = ' + ok + 'T. (With a hand-bearing compass held clear of ironwork you would apply variation only.)',
+      why: 'Compass → Magnetic → True (deviation, then variation): add easterly errors, subtract westerly. ' + b3(C) + ' ' + (D > 0 ? '+' : '−') + ' ' + Math.abs(D) + '° = ' + b3(C + D) + 'M; ' + (V > 0 ? '+' : '−') + ' ' + Math.abs(V) + '° = ' + ok + 'T. (With a hand-bearing compass held clear of ironwork you would apply variation only.)',
       src: 'Passage Planning Guide – Compass errors'
     };
   });

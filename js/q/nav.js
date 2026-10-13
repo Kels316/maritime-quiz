@@ -283,7 +283,7 @@ MQ.add("nav", [
       "Add all errors",
       "Subtract all errors"
     ],
-    why: "From compass towards true (correcting) it is the reverse: add east, subtract west. Mnemonic: “Can Dead Men Vote Twice, At Elections” – Compass, Deviation, Magnetic, Variation, True; Add East. Always run the reverse check.",
+    why: "From compass towards true (correcting) it is the reverse: add east, subtract west. Picture it as True ⇄ Magnetic ⇄ Compass: true → compass subtracts East and adds West; compass → true adds East and subtracts West. Check the answer with “Compass least, error east; compass best, error west”. Always run the reverse check.",
     src: "Passage Planning Guide – Converting between true, magnetic and compass"
   },
   {
