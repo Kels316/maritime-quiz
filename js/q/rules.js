@@ -463,14 +463,14 @@ MQ.add("rules", [
     src: "COLREGS Rule 19 · MARI003"
   },
   {
-    q: "You detect another vessel by radar alone in fog and a close-quarters situation is developing. If you alter course, you should avoid…",
-    a: "Turning to port for a vessel forward of the beam, or towards one abeam or abaft",
+    q: "In fog you detect another vessel by radar alone and a close-quarters situation is developing. If you alter course, which is the action to avoid for a vessel that is ahead of your beam?",
+    a: "Turning to port",
     w: [
-      "An alteration to starboard for any vessel, since that is always the safe direction",
-      "Any alteration of speed, because speed changes are hard to see on another radar",
-      "An alteration of more than 10 degrees, because a larger turn confuses the other vessel"
+      "Turning to starboard",
+      "Reducing speed",
+      "Holding your course"
     ],
-    why: "Rule 19(d): avoid turning to port for a vessel forward of the beam (other than one being overtaken) and avoid turning towards a vessel abeam or abaft the beam.",
+    why: "Rule 19(d): for a vessel forward of the beam (other than one you are overtaking), avoid altering to port. Also avoid turning towards a vessel that is abeam or abaft your beam. Turning to starboard or slowing down are the preferred actions.",
     src: "COLREGS Rule 19 · MARI003"
   },
   {
