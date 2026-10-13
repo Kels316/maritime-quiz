@@ -1,0 +1,16 @@
+{
+  "name": "Maritime Daily Quiz",
+  "short_name": "Maritime Quiz",
+  "description": "Daily 10-question refresher for GPH, Coxswain 1 and Coxswain 2 knowledge.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0a1626",
+  "theme_color": "#0a1626",
+  "categories": ["education"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
