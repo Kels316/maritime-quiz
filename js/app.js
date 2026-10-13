@@ -72,7 +72,8 @@
     return header() +
       '<div class="card hero fade"><div class="muted small">' + esc(niceDate(dt)) + '</div>' +
       '<div class="big">Today\'s quiz</div><p class="muted">' + esc(status) + '</p>' +
-      '<button class="btn block" data-act="daily">' + esc(label) + '</button></div>' +
+      '<button class="btn block" data-act="daily">' + esc(label) + '</button>' +
+      (rec && rec.done ? '<button class="btn sec block" data-act="retake">↻ Retake today\'s quiz</button>' : '') + '</div>' +
       '<div class="card"><div class="stats3">' +
       '<div class="stat"><b>' + st.current + '</b><span>day streak</span></div>' +
       '<div class="stat"><b>' + st.best + '</b><span>best streak</span></div>' +
@@ -87,6 +88,7 @@
 
   function startQuiz(mode) {
     const dt = today();
+    if (mode === 'retake') { quiz = { mode: 'retake', date: dt, qs: MQ.dailySet(dt), idx: 0, answers: [], title: 'Today\'s quiz (retake)', fresh: true }; go('quiz'); return; }
     if (mode === 'daily') {
       const rec = days()[dt];
       if (rec && rec.done) { quiz = { mode: 'daily', date: dt, qs: MQ.dailySet(dt), idx: 0, answers: rec.choices || [], done: true, title: 'Today\'s quiz' }; go('results'); return; }
@@ -162,7 +164,7 @@
       });
       h += '</div>';
     }
-    h += '<div class="btns"><button class="btn" data-act="practice">Keep practising</button><button class="btn ghost" data-act="home">Home</button></div>';
+    h += '<div class="btns">' + (quiz.mode === 'daily' || quiz.mode === 'retake' ? '<button class="btn sec" data-act="retake">↻ Retake today\'s quiz</button>' : '') + '<button class="btn" data-act="practice">Keep practising</button><button class="btn ghost" data-act="home">Home</button></div>';
     return h;
   }
 
@@ -238,6 +240,7 @@
     if (el.dataset.count) { pCount = Number(el.dataset.count); return render(); }
     switch (el.dataset.act) {
       case 'daily': return startQuiz('daily');
+      case 'retake': return startQuiz('retake');
       case 'practice': return go('practice');
       case 'stats': return go('stats');
       case 'home': return go('home');
