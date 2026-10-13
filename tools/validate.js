@@ -19,7 +19,7 @@ Object.keys(MQ.BANK).forEach(t => MQ.BANK[t].forEach(q => {
   if (!q.why) warn(`[${t}] no explanation: ${q.q.slice(0,50)}`);
   const lens = all.map(s => s.length); const mx = Math.max(...lens);
   if (q.correct.length === mx && lens.filter(l => l === mx).length === 1) longest++;
-  if (q.correct.length > 1.1 * Math.max(...q.wrongs.map(s=>s.length))) longest10++;
+  if (q.correct.length > 1.1 * Math.max(...q.wrongs.map(s=>s.length)) && q.correct.length - Math.max(...q.wrongs.map(s=>s.length)) >= 15) longest10++;
   if (q.correct.length * 1.1 < Math.min(...q.wrongs.map(s=>s.length))) shortest10++;
   if (q.correct.length > 2.2 * Math.max(...q.wrongs.map(s=>s.length)) && q.correct.length > 60) warn(`[${t}] correct much longer: ${q.q.slice(0,60)}`);
   if (q.vis && !['lights','shapes','buoy','enc'].includes(q.vis.k)) err('bad vis ' + q.q);

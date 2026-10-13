@@ -2,55 +2,55 @@
 MQ.add("sar", [
   {
     q: "JRCC Australia is…",
-    a: "AMSA's Joint Rescue Coordination Centre in Canberra, which coordinates offshore incidents (1800 641 792)",
+    a: "AMSA's Joint Rescue Coordination Centre in Canberra, which coordinates offshore incidents",
     w: [
-      "A state police unit based in each capital city that coordinates inshore incidents and assets",
+      "A state police unit based in each capital, which coordinates inshore incidents",
       "A volunteer marine rescue radio base that relays distress calls to the coast",
-      "The Bureau of Meteorology's warning centre that issues the cyclone advices"
+      "The Bureau of Meteorology's centre that issues cyclone warnings"
     ],
-    why: "State and territory police are the primary authority for coastal and inshore incidents. JRCC must still be advised even when police keep coordination: it can provide drift modelling, satellite pass schedules and extra assets.",
+    why: "JRCC Australia (AMSA, Canberra, 1800 641 792) is the primary coordinator for offshore maritime incidents. State and territory police are the primary authority for coastal and inshore incidents. JRCC must still be advised even when police keep coordination: it can provide drift modelling, satellite pass schedules and extra assets.",
     src: "Marine SAR Guide – SAR coordination structure"
   },
   {
     q: "The SAR Mission Coordinator (SMC) and the On-Scene Coordinator (OSC) differ in that…",
     a: "The SMC plans and coordinates the operation; the OSC directs the assets at the scene",
     w: [
-      "The OSC declares the emergency phase, and the SMC simply carries out the orders given on scene",
-      "The SMC is always the first vessel that arrives on the scene of the search",
-      "They are the same person, who is named by the first asset that arrives"
+      "The OSC declares the emergency phase and the SMC follows the orders given",
+      "The SMC is always the first vessel to arrive on the scene of the search",
+      "They are the same person, named by the first asset to arrive"
     ],
     why: "The OSC (often the first skipper on scene) establishes an on-scene communications net on a secondary VHF working channel to keep Ch16 free, directs patterns, gives SITREPs and manages crew safety and fuel.",
     src: "Marine SAR Guide – SAR coordination structure"
   },
   {
     q: "An incident is reported to an AVCGA flotilla and Police have not yet arrived. The senior duty officer should…",
-    a: "Take the SMC role in the interim, declare the phase, notify JRCC and Police, task assets, hand over later",
+    a: "Take the SMC role in the interim, declare the phase, notify JRCC and Police, and hand over when they arrive",
     w: [
-      "Wait for Police to arrive before taking any action to launch the vessels",
-      "Send every available vessel to sea at once without telling anyone else",
-      "Pass the call to the publicity officer and wait for her to give directions on what to do"
+      "Wait for Police to arrive before taking any action to launch vessels",
+      "Send every available vessel to sea without telling anyone else",
+      "Pass the call to the publicity officer and wait for her directions"
     ],
     why: "No action that commits assets or escalates the emergency phase should be taken without notifying JRCC.",
     src: "Marine SAR Guide – SAR coordination structure"
   },
   {
     q: "The Uncertainty Phase (INCERFA) is declared when…",
-    a: "There is doubt about the safety of a vessel or person, e.g. an overdue report or lost communication",
+    a: "There is doubt about the safety of a vessel or person, such as an overdue report",
     w: [
-      "A Mayday has been received and the position of the vessel is known",
-      "A vessel is known to be sinking and her crew are in the water now",
-      "All SAR resources have been mobilised and are on their way to the scene of the search"
+      "A Mayday has been received and the vessel's position is known",
+      "A vessel is known to be sinking and her crew are in the water",
+      "All SAR resources have been mobilised and are on their way"
     ],
     why: "ALERFA (alert): apprehension, vessel known to be in difficulty, assets alerted. DETRESFA (distress): immediate assistance required, all available resources mobilised.",
     src: "Marine SAR Guide – SAR phases"
   },
   {
     q: "What are the first actions when notified of a potential SAR incident?",
-    a: "Set up the coordination centre, declare the phase and time it, notify JRCC, start the log",
+    a: "Set up the coordination centre, declare and time the phase, notify JRCC, and start the log",
     w: [
-      "Send all vessels to sea straight away, then work out where to search later on the way",
-      "Post a request for sightings on social media and wait for the replies",
-      "Wait an hour for more information in case the vessel arrives on its own"
+      "Send all vessels to sea straight away, then work out where to search",
+      "Post a request for sightings on social media and await replies",
+      "Wait an hour for more information in case the vessel arrives"
     ],
     why: "Every piece of information received is evidence – log source, time and content.",
     src: "Marine SAR Guide – Setting up the coordination centre"
@@ -59,18 +59,18 @@ MQ.add("sar", [
     q: "Which piece of target information most drives the urgency of the response?",
     a: "The number of persons on board (POB)",
     w: [
-      "The vessel colour",
-      "The registration number of the vessel and her home port",
+      "The vessel's colour",
+      "The registration number",
       "The home port"
     ],
     why: "Also gather vessel description and engines, voyage plan and ETA, fuel endurance, emergency equipment (EPIRB registration, raft, flares), LKP and last contact, and weather at LKP.",
     src: "Marine SAR Guide – Gathering target information"
   },
   {
-    q: "Before committing a search you should exhaust communications options. Which is one?",
-    a: "Check marinas, fuel docks and ramps, call family, call on Ch16, and ask JRCC for a beacon check",
+    q: "Before committing a search, which is one communication check you should make?",
+    a: "Call marinas, fuel docks and ramps, family and friends, and ask JRCC for a beacon check",
     w: [
-      "Wait for the target to call in, as most overdue vessels turn up by themselves before long",
+      "Wait for the target to call in, as most overdue vessels turn up",
       "Start with a search of the coast, as that is where most are found",
       "Contact the media and ask the public to look out for the vessel"
     ],
@@ -79,33 +79,33 @@ MQ.add("sar", [
   },
   {
     q: "You sight a red parachute rocket flare at night. Your immediate actions are to…",
-    a: "Record bearing, range, time and type, go at best safe speed, notify authorities, set extra lookouts",
+    a: "Record the bearing, range, time and type, head there at best safe speed, notify authorities, and set lookouts",
     w: [
-      "Wait for a second flare before moving, since one flare could be a mistake or a test",
-      "Assume it is part of a training exercise and carry on with the passage",
-      "Fire a white flare in return, so that the other vessel knows you saw it"
+      "Wait for a second flare before moving, as one could be a mistake",
+      "Assume it is part of a training exercise and carry on",
+      "Fire a white flare in return so the other vessel knows you saw it"
     ],
     why: "SOLAS Ch V Reg 33 obliges the master to proceed with all speed to assist unless doing so places the rescuer at unreasonable risk. A flare sighting is a single line of position. A parachute flare is visible at greater range than a hand-held flare, which burns at a fixed point and indicates close proximity.",
     src: "Marine SAR Guide – Responding to pyrotechnic distress signals"
   },
   {
     q: "Which pyrotechnic is NOT a distress signal?",
-    a: "A white flare (a warning only)",
+    a: "A white flare",
     w: [
-      "Red hand flare",
+      "A red hand flare",
       "Orange smoke",
-      "A red parachute rocket flare at night"
+      "A red parachute rocket"
     ],
     why: "Orange smoke marks position by day.",
     src: "Marine SAR Guide – Pyrotechnic signal types"
   },
   {
     q: "Which position fix is the most reliable for SAR, in normal conditions?",
-    a: "A GPS fix (about ±5 m) cross-checked visually",
+    a: "A GPS fix (about ±5 m), cross-checked visually",
     w: [
-      "A dead reckoning position from the last fix",
-      "A radar bearing alone",
-      "A fix from memory"
+      "A dead reckoning position worked up from the last fix",
+      "A single radar bearing of a headland or a charted object",
+      "A position estimated from memory by the skipper of the vessel"
     ],
     why: "In order: GPS, radar (range and bearing), visual (cross bearings), DR. The method used to establish the LKP sets the initial position error (x).",
     src: "Marine SAR Guide – Position fixing"
@@ -136,7 +136,7 @@ MQ.add("sar", [
     q: "What is leeway?",
     a: "Movement of the target caused by wind acting on its exposed surface above the waterline",
     w: [
-      "Movement of the target caused by the tidal stream running past the hull of the vessel",
+      "Movement of the target caused by the tidal stream running past the hull",
       "The width of the search area on each side of the datum point",
       "The error in the GPS fix of the target at the last known position"
     ],
@@ -148,37 +148,37 @@ MQ.add("sar", [
     a: "The target drifts at an angle to the downwind direction, so left and right datums are plotted",
     w: [
       "The search legs spread apart as the vessel moves away from the datum",
-      "The wind changes direction by more than 30° during the period of the search at sea",
-      "The datum marker sinks below the surface after a short time in the water"
+      "The wind changes direction by more than 30° during the search",
+      "The datum marker sinks below the surface after a time in the water"
     ],
     why: "The datum is the midpoint between the left and right leeway end points, and the drift error circle surrounds it.",
     src: "Marine SAR Guide – Divergence"
   },
   {
     q: "For an initial response, when must you start allowing for water movement (the “four-hour rule”)?",
-    a: "Only if over four hours have passed since the LKP (in high-drift areas allow for it from the start)",
+    a: "Only if more than four hours have passed since the LKP (earlier in high-drift areas)",
     w: [
       "Immediately, in all cases, from the time of the first call to the base",
-      "After twelve hours, when the first search has been completed and has failed to find the target",
-      "Never – water movement is only ever used for a person in the water"
+      "After twelve hours, once the first search has failed to find the target",
+      "Never, as water movement only matters for a person in the water"
     ],
     why: "Within 4 hours the target is assumed close to the LKP. After that, drift must be calculated first and the search radius applied to the drifted datum.",
     src: "Marine SAR Guide – Three-stage search response · Coastal search model"
   },
   {
     q: "The coastal search model for a distress within 25 nm of the coast, reported within 6 hours, gives…",
-    a: "A 6 nm radius circle squared off to a 12 × 12 nm area of 144 square nautical miles",
+    a: "A 6 nm radius circle squared off to 12 × 12 nm, an area of 144 nm²",
     w: [
-      "A 1 nm radius circle around the datum, an area of about 3 square miles in total",
+      "A 1 nm radius circle around the datum, an area of about 3 nm²",
       "A 25 nm radius circle around the last known position of the target",
-      "A 3 nm circle squared off to an area of 36 square nautical miles"
+      "A 3 nm radius circle squared off to 6 × 6 nm, an area of 36 nm²"
     ],
     why: "x = 5 nm (unknown navigation method), y = 1 nm (GPS search asset): E = √26 = 5.1 nm × 1.1 safety factor = 5.6, rounded to 6 nm.",
     src: "Marine SAR Guide – The coastal search model"
   },
   {
     q: "The safety factor applied to the initial search radius is…",
-    a: "1.1, rising to 1.6, 2.0, 2.3 and 2.5 with successive expansions",
+    a: "1.1, rising to 1.6, 2.0, 2.3 and 2.5 with each expansion",
     w: [
       "2.5 for the initial search, falling to 1.1 with each expansion",
       "1.0 throughout, the same for every search that is carried out",
@@ -189,33 +189,33 @@ MQ.add("sar", [
   },
   {
     q: "Datum should be recomputed…",
-    a: "Every 2–4 hours on a coastal search, and at once if wind shifts over 10 knots or 30°",
+    a: "Every 2–4 hours on a coastal search, and at once if wind changes by over 10 knots or 30°",
     w: [
-      "Once at the start of the search only, when the LKP has been confirmed by the base",
+      "Once at the start of the search, when the LKP has been confirmed",
       "Every 24 hours, at the same time of day as the first calculation",
-      "Only when the target is found, so that the position can be reported"
+      "Only when the target is found, so that its position can be reported"
     ],
     why: "Drift error always increases with time, so the search area grows as the search progresses.",
     src: "Marine SAR Guide – Measuring set and drift"
   },
   {
     q: "Sweep width is…",
-    a: "A calculated measure of detection capability: the width of a “perfect” sensor that finds as many as the real one",
+    a: "A calculated measure of detection capability, not how far you can see",
     w: [
-      "How far you can see on a clear day from the height of eye of the observer on the bridge",
-      "The width of the search area on either side of the track of the vessel",
-      "The distance between successive search legs, set by the SMC for the area"
+      "How far you can see on a clear day from the bridge of the vessel",
+      "The width of the search area on each side of the vessel's track",
+      "The distance between successive search legs, set by the SMC"
     ],
     why: "Beam sighting distance (BSD) = W ÷ 2, applied to each side. Sea state is the largest single variable for vessel searches.",
     src: "Marine SAR Guide – Sweep width"
   },
   {
     q: "Sweep width for a vessel is calculated as…",
-    a: "W = Wu × Fw × Ff (uncorrected width × weather factor × fatigue factor 0.9 if fatigued)",
+    a: "W = Wu × Fw × Ff (uncorrected width × weather factor × fatigue factor)",
     w: [
-      "W = BSD ÷ 2, where BSD is the beam sighting distance on each side of the track",
+      "W = BSD ÷ 2, where BSD is the beam sighting distance on each side",
       "W = S × C, the track spacing multiplied by the coverage factor",
-      "W = speed × time, the distance covered in the time of the search"
+      "W = speed × time, the distance covered during the search"
     ],
     why: "Rotate observers every 20–30 minutes. At night, base sweep width on the range at which survivors would see the vessel's navigation lights.",
     src: "Marine SAR Guide – Sweep width formulas"
@@ -235,18 +235,18 @@ MQ.add("sar", [
     q: "Which statement about POD is correct?",
     a: "Five searches at C = 0.5 give almost as much cumulative POD as five at C = 1.0",
     w: [
-      "POD is directly proportional to the coverage factor in all conditions and for all targets",
-      "More searches never increase the POD, once the area has been covered",
-      "POD is independent of the weather, the sea state and the target type"
+      "POD is directly proportional to the coverage factor in all conditions",
+      "More searches never raise the POD once the area has been covered",
+      "POD is independent of the weather, sea state and target type"
     ],
     why: "Single search POD: 78% at C = 1.0; 47% at C = 0.5. Five searches: 99.9% versus 95.8%. In resource-limited situations a larger area at C = 0.5 can be the better choice – provided the target is in the area.",
     src: "Marine SAR Guide – Probability of detection"
   },
   {
     q: "Standard coastal track spacing in good conditions (wind <15 kn, visibility >3 nm) is up to…",
-    a: "3 nm (and 0.25 nm for a person in water)",
+    a: "3 nm (0.25 nm for a person in water)",
     w: [
-      "0.25 nm for every target, whatever the conditions",
+      "0.25 nm for every target",
       "10 nm",
       "1 nm for every target"
     ],
@@ -257,7 +257,7 @@ MQ.add("sar", [
     q: "The drift rate problem occurs when…",
     a: "The target drifts through the area faster than the search can creep across it",
     w: [
-      "The search vessel drifts off the datum when its engine is stopped",
+      "The search vessel drifts off the datum while her engine is stopped",
       "The datum buoy is lost and no tidal information can be measured",
       "The sweep width falls to zero as the light fades near the end of the day"
     ],
@@ -290,8 +290,8 @@ MQ.add("sar", [
     q: "When running a search pattern for a floating target you steer legs by…",
     a: "Compass for direction and time at set speed for length, not GPS course over ground",
     w: [
-      "GPS course and speed over the ground, to keep the legs exact on the chart plotter display",
-      "The chart plotter autopilot track, set to follow the pattern lines",
+      "GPS course and speed over the ground, to keep the legs exact on the chart",
+      "The plotter's autopilot track, set to follow the pattern lines",
       "Radar range rings alone, set at the track spacing for the search"
     ],
     why: "Tide and current distort the pattern relative to the water; legs can cross or track spacing stretch to twice the intended distance. Use speed through the water and constant revs.",
@@ -302,7 +302,7 @@ MQ.add("sar", [
     a: "The floating datum marker you deployed, not the GPS waypoint",
     w: [
       "The GPS waypoint you saved when you left the pattern",
-      "The original LKP, as plotted on the chart at the start",
+      "The original LKP, as plotted on the chart at the start of the search",
       "The nearest buoy or beacon marked on the chart in that area"
     ],
     why: "The water moves: with a 0.5 kn current about 200 m in 10 minutes. The marker also gives a real measurement of the tide/current.",
@@ -310,22 +310,22 @@ MQ.add("sar", [
   },
   {
     q: "A report of a possible sighting arrives from an untrained observer. What do you do?",
-    a: "Log it, assess it against drift and the area, tell the SMC, send an extra asset if plausible",
+    a: "Log it, assess it against drift and the search area, tell the SMC, and send an extra asset if plausible",
     w: [
       "Divert all of the assets to the sighting, as every report must be checked at once",
-      "Ignore it completely, since untrained observers are rarely reliable",
-      "Tell the media, who may be able to find a witness to confirm the report"
+      "Ignore it, since reports from untrained observers are rarely reliable",
+      "Tell the media, who may be able to find a witness to confirm it"
     ],
     why: "Modify the search for confirmed intelligence, material drift changes (wind shift >30°, speed >10 kn), or an exhausted area – not for a “feeling” or a lack of results.",
     src: "Marine SAR Guide – On-scene intelligence"
   },
   {
     q: "A search can be suspended only when…",
-    a: "No reasonable chance of finding survivors alive remains, and the SAR Authority concurs after review",
+    a: "There is no reasonable chance of finding survivors alive and the SAR Authority agrees",
     w: [
       "The SMC alone decides, once the first day's search has been completed",
-      "The weather turns bad, or the light fades so that the search is hard",
-      "The first day ends without a sighting, whatever the state of the target or the survivors"
+      "The weather turns bad, or the light fades so the search is hard to continue",
+      "The first day ends without a sighting, whatever state the target is in"
     ],
     why: "NATSAR 2026 s.6.3. Reopening requires careful evaluation of new information (s.6.4).",
     src: "Marine SAR Guide – Managing a search suspension"
@@ -336,7 +336,7 @@ MQ.add("sar", [
     w: [
       "Give the details so that the family are told what is being done",
       "Post a note on social media to ask the public to help in the search",
-      "Say that the target is probably lost, so the reporter will not wait"
+      "Say the target is probably lost, so the reporter will not wait"
     ],
     why: "Do not reveal identities, search areas, assets or likely outcome. Within AVCGA the Flotilla Captain or duty officer refers all media enquiries upward.",
     src: "Marine SAR Guide – Media and public information"
@@ -354,11 +354,11 @@ MQ.add("sar", [
   },
   {
     q: "Why does beacon registration matter?",
-    a: "A registered beacon gives JRCC the vessel, owner and contacts, often resolving an alert by phone",
+    a: "A registered beacon tells JRCC the vessel, owner and contacts, often resolving the alert by phone",
     w: [
-      "It makes the beacon louder and the signal stronger for the satellites that are overhead",
+      "It makes the beacon louder and the signal stronger for the satellites overhead",
       "It extends the battery life of the beacon by several years in storage",
-      "It is only needed for insurance and has no effect on the response"
+      "It only matters for insurance and has no effect on the response"
     ],
     why: "Beacon chain: beacon → COSPAS-SARSAT satellites (MEOSAR/GEOSAR/LEOSAR) → Local User Terminal → AMSA Mission Control Centre (AUMCC) → JRCC Australia → check register and phone owner → declare phase → dispatch. Many activations are accidental.",
     src: "Marine SAR Guide – From EPIRB activation to asset dispatch"
@@ -368,8 +368,8 @@ MQ.add("sar", [
     a: "VHF Channel 70 (digital only); follow-up voice traffic is on Channel 16",
     w: [
       "Channel 16 by voice, followed by a digital alert on Channel 70",
-      "Channel 22A, which is the Coast Guard's working channel in Australia",
-      "Channel 80, which is reserved for the marina and port operations"
+      "Channel 22A, which is the Coast Guard working channel in Australia",
+      "Channel 80, which is reserved for marina and port operations"
     ],
     why: "MF: 2187.5 kHz DSC with voice on 2182 kHz. HF DSC is monitored by AMSA in the 4–16 MHz bands. Ch16 = 156.8 MHz.",
     src: "Marine SAR Guide – GMDSS and distress frequencies"
@@ -387,11 +387,11 @@ MQ.add("sar", [
   },
   {
     q: "In a night aural search for a person in the water you should…",
-    a: "Stop engines, sound the horn once, listen up to 60 seconds, with lights on and occasional sweeps",
+    a: "Stop engines, sound the horn once, listen for up to 60 seconds, with lights on and occasional searchlight sweeps",
     w: [
-      "Run engines flat out to cover the area faster while the light holds, with the horn sounding",
-      "Sound the horn continuously so that the person can find the vessel",
-      "Switch all lights off to preserve your night vision while listening"
+      "Run engines flat out to cover the area faster while the light holds, sounding the horn",
+      "Sound the horn continuously so that the person in the water can find the vessel",
+      "Switch all lights off to keep your night vision while you listen"
     ],
     why: "Only at the OSC's direction after consulting the SMC. The horizon from a person floating in the water is only about 0.85 nm.",
     src: "Marine SAR Guide – Aural search"
@@ -402,18 +402,18 @@ MQ.add("sar", [
     w: [
       "Orange smoke only, which lasts for several hours and is easily seen",
       "Sea marker dye only, which stays on the surface in a rough sea",
-      "Nothing – just stay in sight of the survivors until help arrives"
+      "Nothing at all: just stay in sight of the survivors until help arrives"
     ],
     why: "Smoke and dye are short-term and dissipate quickly. Long-term options include EPIRBs packed in rafts, SLDMBs and See-Blitz strobes (4–5 hours).",
     src: "Marine SAR Guide – Marking targets when rescue is delayed"
   },
   {
-    q: "Minimum fuel reserve for a SAR vessel is…",
-    a: "One third of the total fuel (and at least 30 minutes), for return and contingency",
+    q: "The minimum fuel reserve for a SAR vessel is…",
+    a: "One third of the total fuel (and at least 30 minutes)",
     w: [
-      "5% of the tank, as the gauges show the usable fuel quite accurately",
+      "5% of the tank, as gauges show usable fuel quite accurately",
       "None, if the tide is favourable for the whole of the trip home",
-      "Half of the fuel, kept for the passage home and for the engine-room use on arrival"
+      "Half of the fuel, kept for the passage home and for use on arrival"
     ],
     why: "Available search endurance = (total fuel − reserve) ÷ consumption. A vessel that runs out of fuel becomes a second incident.",
     src: "Marine SAR Guide – Calculating search time · Vessel operational limits"
@@ -422,9 +422,9 @@ MQ.add("sar", [
     q: "A SAR vessel log entry…",
     a: "Must be made for every operation, whatever the outcome, and is a legal document",
     w: [
-      "Is optional for short jobs that take less than an hour on the water, if the base agrees",
-      "Is only needed when a rescue is made and a person is brought aboard",
-      "Can be written up some weeks later, when the debrief has been held"
+      "Is optional for short jobs that take less than an hour on the water",
+      "Is only needed when a rescue is made and someone is brought aboard",
+      "Can be written up some weeks later, once the debrief has been held"
     ],
     why: "Record time and nature of the alert, positions, phase declared, actions, communications, resources, weather, arrival, outcome, stand-down and authority, and the officer's name and signature.",
     src: "Marine SAR Guide – Vessel log and regulatory documentation"
@@ -434,9 +434,9 @@ MQ.add("sar", [
 MQ.add("towing", [
   {
     q: "The AVCGA liability waiver before a tow is delivered…",
-    a: "Verbally and verbatim, with the DV master's acceptance noted in the Ship's Log first",
+    a: "Verbally, word for word, with the DV master's acceptance recorded in the Ship's Log first",
     w: [
-      "In writing the next day, when the DV master has signed the form ashore at the base",
+      "In writing the next day, once the DV master has signed the form ashore",
       "Only for large vessels, where the risk of damage to the tow is higher",
       "By radio after the tow is under way, once the line has been secured"
     ],
@@ -447,8 +447,8 @@ MQ.add("towing", [
     q: "A skipper may refuse or defer a request for assistance when…",
     a: "Proceeding would place the rescue vessel, crew or others at unacceptable risk",
     w: [
-      "The DV owner is rude or unwilling to follow the instructions given on the radio",
-      "The task is dull or the tow would be a long one back to the base",
+      "The DV owner is rude or unwilling to follow instructions on the radio",
+      "The tow would be a long one, back to the base at the end of the day",
       "It is raining, and the crew would get wet on the afterdeck"
     ],
     why: "Examples: unsafe sea/bar conditions, inadequate vessel or crew, DV too unseaworthy, night/reduced visibility/fatigue, or the DV cannot be reached safely. Communicate the decision clearly to the radio room.",
@@ -460,17 +460,17 @@ MQ.add("towing", [
     w: [
       "Planes over the water and runs easily, with less strain on the towline",
       "Needs less force from the tug, as the wave helps to push it along",
-      "Reduces the strain on the towline since the bow lifts clear of the water as speed rises"
+      "Puts less strain on the towline, as the bow lifts clear of the water"
     ],
     why: "Hull speed ≈ 1.34 × √LWL (feet). Planing hulls are different – the MRQ guide says stay below hull speed unless the tow has a planing hull.",
     src: "NATRAC002 Towing Guide §1.2"
   },
   {
-    q: "Yawing of a tow can be reduced by…",
+    q: "Yawing in a tow can be reduced by…",
     a: "A drogue, a longer line, lower speed, a bridle, motor down, or active steering in the wake",
     w: [
-      "A shorter towline, kept tight so that the DV cannot swing from side to side in the wake",
-      "Higher speed, so that the DV is pulled straight by the force of the water",
+      "A shorter, tighter towline, so the DV cannot swing from side to side",
+      "Higher speed, so the DV is pulled straight by the force of the water",
       "Moving all the crew forward onto the bow of the DV to hold it down"
     ],
     why: "Jet-powered craft have no prop or rudder drag, so a drogue is considered essential for them.",
@@ -489,21 +489,21 @@ MQ.add("towing", [
   },
   {
     q: "As a general guide the length of towline run out places the DV…",
-    a: "One to two wave lengths astern of the rescue vessel (two for rough seas or a large DV)",
+    a: "One to two wave lengths astern of the rescue vessel (two if rough or large)",
     w: [
-      "As close as possible, with the DV just clear of the rescue vessel's wash and propellers",
+      "As close as possible, just clear of the rescue vessel's wash and propellers",
       "Exactly 10 m astern, whatever the sea state and the size of the DV",
-      "Beside the rescue vessel, rafted up in a position to be steered easily"
+      "Alongside the rescue vessel, rafted up so it can be steered easily"
     ],
     why: "The DV then sits on the same part of the wave cycle, reducing slack-then-snatch loading. A longer line also gives more catenary and absorbs shock.",
     src: "NATRAC002 Towing Guide §1.3"
   },
   {
     q: "Before crossing a bar with a vessel under tow you should…",
-    a: "Transfer excess people; seat the rest in lifejackets, helm centred; brief the DV master; ready a drogue",
+    a: "Transfer excess people, seat the rest in lifejackets with the helm centred, brief the DV master and ready a drogue",
     w: [
-      "Leave everyone on the DV standing, so they can react to the waves quickly and balance it",
-      "Take off the lifejackets so that the crew can swim free if it capsizes",
+      "Leave everyone on the DV standing, so they can react to the waves and keep it balanced",
+      "Take off the lifejackets so that the crew can swim free if the DV capsizes on the bar",
       "Tow at hull speed plus 2 knots to get through the bar before it breaks"
     ],
     why: "Slack water or a flooding tide is generally preferred. If the DV is unlikely to survive the bar, don't cross. Show the restricted-manoeuvrability signals before approaching.",
@@ -524,20 +524,20 @@ MQ.add("towing", [
     q: "Which pump is the usual choice for portable dewatering on Coast Guard jobs?",
     a: "A portable vacuum/diaphragm pump, which is self-priming and tolerates debris",
     w: [
-      "A centrifugal pump, which is self-priming and is easy to carry aboard",
-      "A bucket and a bilge sponge, which are the quickest and cheapest option",
-      "The fire main pump alone, which has the capacity for any flooding"
+      "A centrifugal pump, which is self-priming and easy to carry aboard",
+      "A bucket and bilge sponge, which are the quickest and cheapest option",
+      "The fire main pump alone, which has capacity for any flooding"
     ],
     why: "Centrifugal pumps move large volumes but are not generally self-priming and can be blocked by debris – more common as fixed installations.",
     src: "NATRAC002 Towing Guide §1.7"
   },
   {
     q: "Why would you transfer a crew member to the distressed vessel?",
-    a: "To run a pump, take the helm, help an injured person, fight a fire or rig the tow, by the skipper's choice",
+    a: "To run a pump, take the helm, help an injured person, fight a fire or help rig the tow, at the skipper's decision",
     w: [
-      "To save fuel by reducing the weight carried on the rescue vessel",
-      "To reduce the DV's weight and so raise her bow clear of the water",
-      "Because the DV master has asked for one of your crew to be sent across to help them"
+      "To save fuel by reducing the weight carried on the rescue vessel and lighten her",
+      "To lighten the DV's bow and so raise it clear of the water ahead",
+      "Because the DV master has asked for one of the crew to be sent across"
     ],
     why: "Weigh the risk of placing a crew member on a potentially unsafe vessel against the benefit; maintain communication.",
     src: "NATRAC002 Towing Guide §1.8"
@@ -546,9 +546,9 @@ MQ.add("towing", [
     q: "When attaching the towline to a towing tyre, the recommended knot is…",
     a: "A double sheet bend – not a bowline, which can chafe and snap",
     w: [
-      "A bowline",
-      "A reef knot",
-      "A single half hitch, with a stopper in the tail"
+      "A bowline, which holds well and is quick to tie",
+      "A reef knot, which is easy to untie when the tow ends",
+      "A single half hitch, finished with a stopper in the tail"
     ],
     why: "Never secure the towline with a half hitch – it jams under load and cannot be released in an emergency.",
     src: "NATRAC002 Towing Guide · SOP-111"
@@ -557,9 +557,9 @@ MQ.add("towing", [
     q: "On the NS 11 samson post the towline is made fast with…",
     a: "Two or three figure-of-eights, then two or three loose round turns above the standing part",
     w: [
-      "A single half hitch, finished with a stopper knot in the tail of the line for security",
-      "A reef knot made with the tail and the standing part of the line",
-      "Four tight half hitches, one after another, around the post of the vessel"
+      "A single half hitch, finished with a stopper knot in the tail of the line",
+      "A reef knot made from the tail and the standing part of the line",
+      "Four tight half hitches, one after another, around the post"
     ],
     why: "Keep hands well clear of the samson post. The alternate method for large vessels is the lighterman's hitch, which can be released under load.",
     src: "NATRAC002 Towing Guide · SOP-111"
@@ -577,11 +577,11 @@ MQ.add("towing", [
   },
   {
     q: "After passing the towline, the lead deckhand reports…",
-    a: "“TOW LINE PASSED”, later “YOU HAVE THE TOW” when the line is secured and takes up",
+    a: "“TOW LINE PASSED”, then “YOU HAVE THE TOW” once the line is secured and takes up",
     w: [
-      "“LINE ON”, and then “TOWING” when the vessel starts to move ahead with the tow line",
-      "“MAKE FAST”, and then “ALL FAST” when the DV master has the line",
-      "“STAND BY”, and then “LET GO” when the line has been taken aboard"
+      "“LINE ON”, then “TOWING” when the vessel starts to move ahead",
+      "“MAKE FAST”, then “ALL FAST” when the DV master has the line",
+      "“STAND BY”, then “LET GO” when the line has been taken aboard"
     ],
     why: "The skipper orders “MAKE FAST THE LINE” at the correct length. Rigging must be done quickly to prevent fouling the jets or propeller of the towed vessel.",
     src: "NATRAC002 Towing Guide · SOP-111"
@@ -590,9 +590,9 @@ MQ.add("towing", [
     q: "How should the towline be stowed after recovery?",
     a: "Loosely in the bin, not coiled (“higgledy-piggledy”), so it runs freely next time",
     w: [
-      "Tightly coiled in a neat flake, so that it does not take up any space in the bin",
+      "Tightly coiled in a neat flake, so it does not take up space in the bin",
       "Tied in a figure-of-eight and hung from the rail on the afterdeck",
-      "Left on the deck in a heap, ready to be used on the next tasking"
+      "Left in a heap on the deck, ready to use on the next tasking"
     ],
     why: "Recovering: skipper orders “RECOVER THE TOW”; lead deckhand orders “STOP ENGINES”, signals the DV to cast off, and calls “TOW RECOVERED”. If a drogue was used, recover it too.",
     src: "NATRAC002 Towing Guide · SOP-120"
@@ -603,7 +603,7 @@ MQ.add("towing", [
     w: [
       "The skipper alone, who watches the DV from the helm at all times",
       "The DV master, who keeps a record of the tow and reports by radio",
-      "An automatic alarm that sounds when the towline tension is too high for the line"
+      "An automatic alarm that sounds when the towline tension is too high"
     ],
     why: "The skipper regularly checks that tow length remains satisfactory.",
     src: "NATRAC002 Towing Guide · SOP-111"
@@ -612,19 +612,19 @@ MQ.add("towing", [
     q: "Instructions you give to the DV master once the waiver is accepted include…",
     a: "Motor down (if outboard), helm centred, lifejackets on, crew seated, steer in the wake, excess crew across",
     w: [
-      "Pull the kill cord and drift while the rescue vessel secures the line to the post on deck",
-      "Set the motor to full throttle to help the rescue vessel to pull",
-      "Stand on the bow to watch the towline and be ready to cast off"
+      "Pull the kill cord and drift while the rescue vessel secures the line to the post",
+      "Set the motor to full throttle to help the rescue vessel to pull the tow",
+      "Stand on the bow to watch the towline and be ready to cast it off"
     ],
     why: "Consider a drogue, which is vital for jet craft.",
     src: "NATRAC002 Towing Guide · Ops"
   },
   {
     q: "MRQ requires that a tow goes to…",
-    a: "The nearest reasonable place of safety, and only when needed for the safety of people or environment",
+    a: "The nearest reasonable place of safety, and only when needed for safety",
     w: [
       "The tower's home berth, whichever is closest to the base on the day",
-      "Wherever the DV master asks, since the DV master is responsible for the vessel and crew",
+      "Wherever the DV master asks, since they are responsible for their vessel",
       "The nearest boat ramp, regardless of safety or the state of the bar"
     ],
     why: "The towed vessel must not exceed the MRQ vessel's rated towing capacity, and a risk assessment must find the risk acceptable. For tows over 50 m overall in a pilotage area, notify VTS first.",
@@ -634,7 +634,7 @@ MQ.add("towing", [
     q: "When towing, a vessel that qualifies as restricted in ability to manoeuvre still has…",
     a: "A duty under Rule 2 to do whatever it can to avoid a collision",
     w: [
-      "No duty at all to avoid a collision, since other vessels must keep clear",
+      "No duty to avoid a collision, since other vessels must keep clear",
       "A duty to give way to all other vessels in the vicinity at all times",
       "Right of way over every other vessel, whatever the circumstances"
     ],
@@ -647,7 +647,7 @@ MQ.add("towing", [
     w: [
       "A cylinder hoisted on the halyard to show the draught of the tow",
       "A white flag hoisted from the mast to show the tow is under way",
-      "A single black ball hoisted forward to show the vessel is at anchor in the bar area"
+      "A single black ball hoisted forward to show the vessel is at anchor"
     ],
     why: "At night, activate towing lights; RAM lights may also be shown.",
     src: "NATRAC002 Towing Guide · Ops (SOP-111 s.4.20)"
@@ -664,10 +664,10 @@ MQ.add("towing", [
     src: "NATRAC002 Towing Guide · SOP-120"
   },
   {
-    q: "The towing guide says a safe working load should apply what safety factor to a fibre rope's MBS?",
-    a: "Usually at least 6, with a further 50% cut for knotted, damaged or unknown-condition line",
+    q: "What safety factor does the towing guide apply to a fibre rope's MBS to find its safe working load?",
+    a: "At least 6, and a further 50% off for knotted or damaged line",
     w: [
-      "1, because the MBS figure already includes a factor of safety for the line in service",
+      "1, because the MBS figure already includes a safety factor for the line",
       "2, as for most other items of lifting and rigging gear on board",
       "60, as the MBS figure is given in tonnes and not in kilonewtons"
     ],
@@ -678,9 +678,9 @@ MQ.add("towing", [
     q: "Why is the stern line tow the standard configuration in open water?",
     a: "It gives the rescue vessel maximum manoeuvrability and a long line to absorb snatch loads",
     w: [
-      "It is the shortest tow, using the least line, so it saves time on deck during the transit",
-      "It needs no towline at all, because the DV is held by the wake",
-      "It reduces fuel use to zero, as the DV is pulled in the tug's wake"
+      "It is the shortest tow, using the least line, so it saves time on deck",
+      "It needs no towline at all, because the DV is held in the wake",
+      "It reduces fuel use to almost zero, as the DV is pulled along behind"
     ],
     why: "The trade-off in confined water is less control, hence rafting alongside.",
     src: "NATRAC002 Towing Guide §1.3"

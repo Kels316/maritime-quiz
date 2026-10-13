@@ -31,7 +31,7 @@ else if (arg === '--patch') {
     const m = /^(\w+)#(\d+)$/.exec(k); const q = m && MQ.BANK[m[1]] && MQ.BANK[m[1]][Number(m[2]) - 1];
     if (!q) { console.log('no such question', k); return; }
     const p = patch[k];
-    if (Array.isArray(p)) q.wrongs = p; else { if (p.a) q.correct = p.a; if (p.w) q.wrongs = p.w; if (p.why) q.why = p.why; if (p.s) Object.keys(p.s).forEach(i => { q.wrongs[Number(i)] = p.s[i]; }); }
+    if (Array.isArray(p)) q.wrongs = p; else { if (p.q) q.q = p.q; if (p.a) q.correct = p.a; if (p.w) q.wrongs = p.w; if (p.why) q.why = p.why; if (p.s) Object.keys(p.s).forEach(i => { q.wrongs[Number(i)] = p.s[i]; }); }
     n++;
   });
   writeAll(); console.log('patched', n);

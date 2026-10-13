@@ -1,23 +1,23 @@
 /* Question data – marks. Fields: q, a (correct), w (3 wrong options), why, src, vis (optional). */
 MQ.add("marks", [
   {
-    q: "Which buoyage region applies in Australian waters, and what does it mean for lateral marks?",
-    a: "IALA Region A: red marks to port, green to starboard, going with the buoyage",
+    q: "Which buoyage region does Australia use, and which way round are its lateral marks?",
+    a: "Region A: red to port, green to starboard",
     w: [
-      "IALA Region B: red marks to starboard, green to port, going with the buoyage",
-      "IALA Region A: green marks to port, red to starboard, going with the buoyage",
-      "Region B: “red right returning”, as used in the Americas and Japan"
+      "Region B: red to starboard, green to port",
+      "Region A: green to port, red to starboard",
+      "Region B: “red right returning”"
     ],
-    why: "Region B (Americas, Japan, Korea, Philippines) reverses the lateral colours – “red right returning”. Never apply Region B habits in Australian waters.",
+    why: "Region A applies in Australia: red marks to port and green to starboard when proceeding in the conventional direction of buoyage. Region B (Americas, Japan, Korea, Philippines) reverses the colours – “red right returning”. Never apply Region B habits here.",
     src: "Passage Planning Guide – The IALA System · GPH Part 1"
   },
   {
     q: "What does this mark show?",
-    a: "A port-hand lateral mark: leave it to port in the conventional direction",
+    a: "A port-hand lateral mark: leave it to port",
     w: [
-      "A starboard-hand lateral mark: leave it to starboard in the conventional direction",
-      "A cardinal mark showing that the safe water lies to the north of the mark",
-      "A special mark that has no navigational significance for passing vessels"
+      "A starboard-hand lateral mark: leave it to starboard",
+      "A cardinal mark: safe water is to the north",
+      "An isolated danger mark"
     ],
     why: "Red, can-shaped (cylindrical) with a can topmark, and a red light of any rhythm at night.",
     src: "Passage Planning Guide – Lateral marks",
@@ -25,11 +25,11 @@ MQ.add("marks", [
   },
   {
     q: "What does this mark show?",
-    a: "A starboard-hand lateral mark: leave it to starboard in the conventional direction",
+    a: "A starboard-hand lateral mark: leave it to starboard",
     w: [
-      "A port-hand lateral mark: leave it to port when proceeding in the conventional direction",
-      "An isolated danger mark with navigable water on every side of it",
-      "A safe-water mark that may be passed on either side by vessels"
+      "A port-hand lateral mark: leave it to port",
+      "An isolated danger mark",
+      "A safe-water mark"
     ],
     why: "Green, conical, with a cone point-up topmark; a green light of any rhythm at night.",
     src: "Passage Planning Guide – Lateral marks",
@@ -107,11 +107,11 @@ MQ.add("marks", [
   },
   {
     q: "What does this mark show?",
-    a: "An isolated danger: a hazard of limited extent with navigable water all round it",
+    a: "An isolated danger: a small hazard with navigable water all round it",
     w: [
-      "A safe-water mark: navigable water all round it, so it may be passed either side",
-      "A port-hand lateral mark: a hazard to be left to port going with the buoyage",
-      "A special mark that shows a cable area or an anchorage that is prohibited"
+      "A safe-water mark: navigable water all round, so pass on either side",
+      "A port-hand mark: a hazard to be left to port going with the buoyage",
+      "A special mark: a prohibited anchorage or cable area ahead"
     ],
     why: "Black with one or more red bands; two black spheres as topmark; white light Fl(2). Do not pass close.",
     src: "Passage Planning Guide – Isolated danger",
@@ -119,11 +119,11 @@ MQ.add("marks", [
   },
   {
     q: "What does this mark show?",
-    a: "Safe water all round it: pass either side (often a mid-channel or landfall mark)",
+    a: "Safe water all round: it may be passed on either side",
     w: [
-      "An isolated danger of limited extent: pass well clear on whichever side suits you",
-      "A starboard-hand lateral mark: leave it to starboard in the conventional direction",
-      "An emergency wreck marking buoy: a new, uncharted wreck close to the mark"
+      "An isolated danger: keep well clear",
+      "A starboard-hand mark: leave it to starboard",
+      "An emergency wreck marking buoy"
     ],
     why: "Red and white vertical stripes with a single red sphere topmark. Light: white Iso, Oc, one long flash every 10 s, or Morse “A”.",
     src: "Passage Planning Guide – Safe water mark",
@@ -131,11 +131,11 @@ MQ.add("marks", [
   },
   {
     q: "What does this mark show?",
-    a: "A special mark: a feature in the publications (cable, spoil ground, outfall, exercise area)",
+    a: "A special mark: a feature described in the chart or publications",
     w: [
-      "An isolated danger: a hazard of limited extent with navigable water all round it",
-      "A cardinal mark: safe water lies in the quadrant named by the position of the cones",
-      "A safe-water mark: mid-channel or landfall, which may be passed on either side"
+      "An isolated danger: a hazard with navigable water all round it",
+      "A cardinal mark: safe water lies in the quadrant it names",
+      "A safe-water mark: pass either side, often a mid-channel or landfall mark"
     ],
     why: "Yellow with a yellow X topmark and a yellow light. It is not primarily a navigational danger mark – read the chart notes.",
     src: "Passage Planning Guide – Special mark",
@@ -145,9 +145,9 @@ MQ.add("marks", [
     q: "A buoy with blue and yellow vertical stripes and a yellow cross topmark marks…",
     a: "A new, uncharted wreck – do not pass close",
     w: [
-      "A swimming area",
-      "A seaplane landing area or a prohibited zone",
-      "A preferred channel"
+      "A swimming area in which boats must not enter",
+      "A seaplane landing area that boats must keep clear of",
+      "A preferred channel to be left to one side"
     ],
     why: "The emergency wreck marking buoy has alternating blue and yellow vertical stripes, a yellow cross and an alternating blue/yellow light. If you see one that is not on your chart, slow down, keep clear and report it.",
     src: "Passage Planning Guide – Emergency wreck marking",
@@ -155,11 +155,11 @@ MQ.add("marks", [
   },
   {
     q: "What does this mark show?",
-    a: "Preferred channel to starboard: the main channel is on the starboard hand, so leave it to port",
+    a: "Preferred channel to starboard: leave this mark to port",
     w: [
-      "Preferred channel to port: the main channel is on the port hand, so leave it to starboard",
-      "An isolated danger mark with navigable water all round it and no preferred side",
-      "A cardinal mark showing that the safe water lies on the side of the black cones"
+      "Preferred channel to port: leave this mark to starboard",
+      "An isolated danger mark",
+      "A cardinal mark"
     ],
     why: "Red with a single broad green band and a can topmark (a modified port-hand mark), usually with a red Fl(2+1) light. It marks a junction where the channel divides.",
     src: "Passage Planning Guide – Lateral marks",
@@ -167,11 +167,11 @@ MQ.add("marks", [
   },
   {
     q: "What does this mark show?",
-    a: "Preferred channel to port: the main channel is on the port hand, so leave it to starboard",
+    a: "Preferred channel to port: leave this mark to starboard",
     w: [
-      "Preferred channel to starboard: the main channel is on the starboard hand, so leave it to port",
-      "A safe-water mark showing the middle of the channel, with navigable water on both sides",
-      "An emergency wreck marking buoy showing a new wreck that is not yet on the chart"
+      "Preferred channel to starboard: leave this mark to port",
+      "A safe-water mark",
+      "An emergency wreck marking buoy"
     ],
     why: "Green with a single broad red band and a cone topmark (a modified starboard-hand mark), usually with a green Fl(2+1) light.",
     src: "Passage Planning Guide – Lateral marks",
@@ -179,11 +179,11 @@ MQ.add("marks", [
   },
   {
     q: "The “conventional direction of buoyage” is…",
-    a: "The direction when approaching a harbour from seaward, or the general direction set by the buoyage authority",
+    a: "The direction taken when approaching a harbour from seaward, or set by the buoyage authority",
     w: [
-      "Always north to south along the coast, whichever direction the vessel is travelling",
-      "The direction of the flood stream as it enters the harbour or river mouth at the time of the tide",
-      "The direction in which the prevailing wind blows across the entrance on most days"
+      "Always north to south along the coast, whichever way the vessel is heading",
+      "The direction of the flood stream as it enters the harbour or estuary",
+      "The direction in which the prevailing wind blows across the entrance"
     ],
     why: "Where it is not obvious it is shown on the chart with a large open arrow.",
     src: "Passage Planning Guide – IALA System"
@@ -192,8 +192,8 @@ MQ.add("marks", [
     q: "What is the difference between a buoy and a beacon?",
     a: "A buoy floats on a mooring; a beacon is fixed to the seabed or land",
     w: [
-      "A beacon always shows a light at night; a buoy never shows a light",
-      "A buoy is fixed to the seabed; a beacon floats on a mooring chain",
+      "A beacon always shows a light; a buoy never does",
+      "A buoy is fixed; a beacon floats",
       "A beacon is a lateral mark only; a buoy is a cardinal mark only"
     ],
     why: "Beacons cannot drag or shift, so they are more reliable fixing marks than buoys. A buoy may be off station, unlit or missing.",
@@ -245,11 +245,11 @@ MQ.add("marks", [
   },
   {
     q: "The “nominal range” of a light is…",
-    a: "The distance at which it would be seen in a meteorological visibility of 10 nm",
+    a: "The distance it can be seen in a meteorological visibility of 10 nm",
     w: [
       "The distance to the horizon from the light, for an observer at deck level",
-      "The greatest distance at which the light can ever be seen on a clear night",
-      "The distance at which the colour of the light can first be identified at sea"
+      "The greatest distance at which the light can ever be seen at night",
+      "The distance at which the colour of the light can first be identified"
     ],
     why: "It measures the intensity of the light, not a guarantee of detection. You will see it at the lesser of its nominal range and its geographic range (height of light and height of eye), reduced further by haze or rain.",
     src: "Passage Planning Guide – Light characteristics"
@@ -269,9 +269,9 @@ MQ.add("marks", [
     q: "What is a safe-water mark's light characteristic?",
     a: "White: isophase, occulting, one long flash every 10 s, or Morse “A”",
     w: [
-      "Red group flashing (2), the same as for a preferred-channel mark to starboard",
-      "Yellow flashing at any rate, which is used for special marks and exercise areas",
-      "Green quick flashing, as for starboard-hand marks in a busy channel entrance"
+      "Red group flashing (2), as for a preferred-channel mark",
+      "Yellow flashing at any rate, as for a special mark",
+      "Green quick flashing, as for starboard-hand marks at an entrance"
     ],
     why: "Isolated danger shows white Fl(2); special marks show yellow; lateral marks red or green; cardinals white quick/very quick.",
     src: "Passage Planning Guide – Buoyage"
@@ -280,7 +280,7 @@ MQ.add("marks", [
     q: "Which colour of light is shown by a special mark?",
     a: "Yellow",
     w: [
-      "White or blue",
+      "White",
       "Blue",
       "Red"
     ],
@@ -289,33 +289,33 @@ MQ.add("marks", [
   },
   {
     q: "You are on a leading line. The front (lower) mark appears to the RIGHT of the rear mark. You are…",
-    a: "To starboard of the line: alter to starboard to bring the marks into line",
+    a: "To starboard of the line: alter to starboard",
     w: [
-      "To port of the line, so you should alter to port to bring the marks into line",
-      "Exactly on the line, so you hold your course and speed as you were steering",
-      "To starboard of the line, so you should alter to port to bring the marks back"
+      "To port of the line: alter to port",
+      "On the line: hold your course",
+      "To starboard of the line: alter to port"
     ],
     why: "Alter in the direction the front mark has moved. The front mark is nearer and moves faster for a given displacement, so the correction is usually small.",
     src: "Passage Planning Guide – Leading lights and marks"
   },
   {
     q: "While following a sectored light you see it change from white to red. This means…",
-    a: "You have strayed to one side of the white sector: alter back until white returns",
+    a: "You have strayed from the safe sector: alter back until white returns",
     w: [
-      "You are in the deepest part of the channel, so you hold your present course",
-      "The light has been extinguished and a standby light has been switched on instead",
-      "You must alter away from the white sector to stay clear of the red or green"
+      "You are in the deepest water, so you hold your course",
+      "The light has failed and a standby light has come on",
+      "You must alter away from the white sector to stay clear"
     ],
     why: "The white sector covers the safe approach; red and green sectors cover the dangers either side. Sector bearings are read from seaward off the chart during planning.",
     src: "Passage Planning Guide – Light colours and sectors"
   },
   {
-    q: "The light you expected does not appear when it should. Which is NOT a plausible explanation?",
-    a: "The light is always visible at its full nominal range whatever the weather",
+    q: "Which is NOT a plausible reason for a charted light failing to appear when expected?",
+    a: "Lights are visible at their nominal range in all weather",
     w: [
-      "Visibility is worse than you assessed, haze or rain having cut the range",
-      "You are not where you think you are, so the light has not yet come up",
-      "The light is not working and a defect notice will need to be raised"
+      "Visibility is worse than you assessed at the time",
+      "You are not where you think you are on the chart",
+      "The light is not working and has not yet been reported"
     ],
     why: "Non-appearance is information: poor visibility, wrong position or a failed light. Each needs action – slow down and resolve it, and report a faulty light at the end of the passage.",
     src: "Passage Planning Guide – Light ranges"
@@ -324,31 +324,31 @@ MQ.add("marks", [
     q: "Why is it unwise to plot a fix from a charted buoy symbol on a small-scale chart?",
     a: "The symbol may be displaced from the true position, and the buoy swings on its mooring",
     w: [
-      "Buoys are always positioned exactly under the symbol on a small-scale chart, so there is no problem",
-      "Charts never show buoys, only the beacons and lighthouses along the coast",
-      "Buoys do not have a unique position, so the chart leaves them out altogether"
+      "Buoys are always positioned exactly under the symbol on the chart",
+      "Charts never show buoys, only beacons and lighthouses",
+      "Buoys have no fixed position, so the chart leaves them out entirely"
     ],
     why: "On a small-scale chart the buoy symbol may be offset from the danger it marks. Fix from fixed marks (beacons, lighthouses, charted landmarks) in preference.",
     src: "Passage Planning Guide – Light ranges"
   },
   {
     q: "What is the best way to avoid mis-identifying a mark in pilotage?",
-    a: "State its identity aloud (shape, colour, number, light) and check it against the chart",
+    a: "Say its identity aloud (shape, colour, number, light) and check it against the chart",
     w: [
-      "Assume it is the next mark on the chart, since the marks are in order along the track",
-      "Identify it by its colour alone, as the colour is the first thing seen at a distance",
-      "Rely on the chart plotter symbol and not look out of the window for the mark"
+      "Assume it is the next mark shown on the chart along your track",
+      "Identify it by its colour alone, as that is the first thing you see",
+      "Trust the chart plotter symbol and don't look out of the window"
     ],
     why: "A substantial proportion of pilotage errors are misidentification – one beacon taken for another, or a mooring buoy for a channel mark. Saying it aloud lets the crew challenge it.",
     src: "Passage Planning Guide – Basic pilotage techniques"
   },
   {
     q: "What should you do if a mark is missing, off station, or does not match its charted description?",
-    a: "Slow down and resolve it (chart uncorrected? position wrong?), then report it",
+    a: "Slow down, work out why (uncorrected chart? wrong position?), then report it",
     w: [
-      "Ignore it, since marks are often moved and the chart is generally right",
-      "Assume the chart is correct and the mark is wrong, and carry on as planned",
-      "Increase speed to clear the area before the visibility or the light gets worse"
+      "Ignore it, as marks are often moved and the chart is usually right",
+      "Assume the chart is right and the mark is wrong, and carry on",
+      "Speed up to clear the area before the light or visibility fails"
     ],
     why: "Reports go (normally via the flotilla) to the Australian Hydrographic Office and the state or port authority; this is how Notices to Mariners come to exist.",
     src: "Passage Planning Guide – Identifying and complying with navigational marks"

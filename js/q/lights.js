@@ -4,20 +4,20 @@ MQ.add("lights", [
     q: "Over what arc does a masthead light show?",
     a: "225°, from right ahead to 22.5° abaft the beam on each side",
     w: [
-      "360°, all round the horizon, as an all-round white light does",
-      "112.5° on each side of the bow, out to the beam",
-      "135°, centred on astern and 67.5° either side of it"
+      "360°, all round the horizon, as for an anchor light",
+      "112.5° on each side, from right ahead to 22.5° abaft the beam",
+      "135°, centred on astern, as for a sternlight"
     ],
     why: "Masthead 225° (white); each sidelight 112.5° (red port, green starboard); sternlight 135° (white); all-round light 360°.",
     src: "COLREGS Rule 21 · MARI003"
   },
   {
     q: "Over what arc does a sternlight show?",
-    a: "135°, centred on astern (67.5° each side of dead astern)",
+    a: "135°, centred on astern",
     w: [
-      "225°, centred on astern and reaching forward of the beam on each side",
-      "112.5°, centred on astern and 56° either side of the keel line",
-      "360°, all round the horizon as the anchor light does"
+      "225°, centred on astern, reaching forward of the beam",
+      "112.5°, centred on astern, as for a sidelight",
+      "360°, all round the horizon, as for an anchor light"
     ],
     why: "The sternlight shows white over 135°, so that together with the 225° masthead light and the two 112.5° sidelights the horizon is covered with no gaps or overlap.",
     src: "COLREGS Rule 21 · GPH Part 1"
@@ -37,9 +37,9 @@ MQ.add("lights", [
     q: "The navigation lights must be shown…",
     a: "From sunset to sunrise, and in restricted visibility by day",
     w: [
-      "Only when underway at night, but not when at anchor or alongside",
+      "Only when underway at night, and not when at anchor",
       "Only between 2000 and 0500, which is the usual period of darkness",
-      "Only when other vessels are within 5 nm and have been seen on radar"
+      "Only when other vessels are within 5 nm of your own vessel"
     ],
     why: "Rule 20: lights from sunset to sunrise (and by day in restricted visibility if carried); shapes by day. No other lights that could be mistaken for the prescribed ones may be shown.",
     src: "COLREGS Rule 20 · MARI003"
@@ -50,7 +50,7 @@ MQ.add("lights", [
     w: [
       "A single masthead light only",
       "A flashing yellow light",
-      "Red over white all-round lights near the masthead"
+      "Red over white all-round lights"
     ],
     why: "Rule 23(d)(i). A vessel under 7 m whose maximum speed does not exceed 7 knots may show just an all-round white light (and sidelights if practicable).",
     src: "COLREGS Rule 23 · MARI003"
@@ -61,7 +61,7 @@ MQ.add("lights", [
     w: [
       "One all-round green lantern",
       "The masthead lantern",
-      "A lantern fitted on the port side of the wheelhouse"
+      "A lantern on the port side only"
     ],
     why: "Rule 21(b). A sailing vessel under 20 m may combine sidelights and sternlight in one tricolour lantern at the masthead.",
     src: "COLREGS Rules 21 and 25 · MARI003"
@@ -71,7 +71,7 @@ MQ.add("lights", [
     a: "Two masthead lights (the after one higher), sidelights and a sternlight",
     w: [
       "One masthead light, sidelights and a sternlight, as for a smaller vessel",
-      "Two all-round white lights, one above the other, with sidelights only",
+      "Two all-round white lights, one above the other, and sidelights",
       "Three masthead lights in a vertical line, sidelights and a sternlight"
     ],
     why: "Rule 23(a): a vessel under 50 m need not show the second masthead light but may.",
@@ -112,11 +112,11 @@ MQ.add("lights", [
   },
   {
     q: "A power-driven vessel towing, with the length of tow not exceeding 200 m, shows…",
-    a: "Two masthead lights in a vertical line, sidelights, sternlight and a yellow towing light",
+    a: "Two masthead lights in a vertical line, sidelights, a sternlight and a yellow towing light",
     w: [
       "One masthead light, sidelights and a sternlight only, as for any power-driven vessel",
-      "Three masthead lights in a vertical line, sidelights, a sternlight and a diamond shape",
-      "Two all-round red lights in a vertical line over the sidelights and sternlight"
+      "Three masthead lights in a vertical line, sidelights, a sternlight and a diamond",
+      "Two all-round red lights in a vertical line above the usual sidelights"
     ],
     why: "Rule 24(a). Over 200 m the tug shows three masthead lights and, by day, a diamond shape where best seen. The yellow towing light has the same characteristics as a sternlight.",
     src: "COLREGS Rule 24 · NATRAC002 Towing"
@@ -147,20 +147,20 @@ MQ.add("lights", [
     q: "You are towing a distressed vessel and cannot practicably display the Rule 24 lights. What must you do?",
     a: "Take all possible measures to show the link between the vessels, e.g. light the towline",
     w: [
-      "Switch off all lights so that no other vessel can be confused by the combination",
-      "Show five short flashes continuously from the stern until the tow is secured",
-      "Fly code flag “D” by day and show flashing amber lights at night instead"
+      "Switch off all lights so that other vessels are not confused by them",
+      "Show five short flashes continuously from the stern until the tow ends",
+      "Show the lights of a vessel at anchor until the tow is made fast"
     ],
     why: "Rule 24(g) lets a vessel not normally engaged in towing omit the prescribed lights when assisting a vessel in distress, but she must use Rule 36 measures – such as lighting the towline – to indicate the relationship.",
     src: "COLREGS Rule 24 · MARI003"
   },
   {
     q: "Seen from astern at night, this is…",
-    a: "A vessel towing (towing light above the sternlight)",
+    a: "A vessel towing, with the towing light above her sternlight",
     w: [
-      "A vessel at anchor",
-      "A vessel aground",
-      "A vessel not under command and making no way"
+      "A vessel at anchor, with two white lights one above the other",
+      "A vessel aground, with two red lights above her sternlight",
+      "A vessel not under command, with a yellow light over her stern"
     ],
     why: "A yellow light above a white sternlight is the tug's towing light above her sternlight.",
     src: "COLREGS Rule 24 · MARI003",
@@ -170,9 +170,9 @@ MQ.add("lights", [
     q: "Seen from ahead at night, a tug with a long tow shows…",
     a: "Three white masthead lights in a vertical line over red and green sidelights",
     w: [
-      "Two red all-round lights over one white light, with a green sidelight beside them",
-      "A single white all-round light and no sidelights, as for a vessel at anchor",
-      "Green over white over green, all-round, with a white masthead light beneath"
+      "Two red all-round lights over a white light and two sidelights",
+      "A single white all-round light and no sidelights, as for an anchored vessel",
+      "Green over white over green, all-round, with a masthead light beneath"
     ],
     why: "For a tow of more than 200 m the tug shows three masthead lights in a vertical line (two if the tow is 200 m or less), plus sidelights, a sternlight and the yellow towing light.",
     src: "COLREGS Rule 24 · MARI003",
@@ -194,9 +194,9 @@ MQ.add("lights", [
     q: "What are these lights?",
     a: "A vessel restricted in her ability to manoeuvre",
     w: [
-      "A vessel not under command",
-      "A vessel engaged in trawling with her nets down",
-      "A pilot vessel on duty"
+      "A vessel not under command and making no way",
+      "A vessel engaged in trawling with her gear down",
+      "A pilot vessel on pilotage duty"
     ],
     why: "Red–white–red, all-round, in a vertical line. Day shape: ball–diamond–ball. If making way she adds masthead light(s), sidelights and a sternlight; at anchor she adds anchor light(s).",
     src: "COLREGS Rule 27 · MARI003",
@@ -231,8 +231,8 @@ MQ.add("lights", [
     a: "A vessel engaged in fishing other than trawling",
     w: [
       "A vessel engaged in trawling with her nets down",
-      "A vessel not under command",
-      "A pilot vessel"
+      "A vessel not under command and making no way",
+      "A pilot vessel on pilotage duty"
     ],
     why: "Red over white all-round = fishing other than trawling. If outlying gear extends more than 150 m, an additional all-round white light (or a cone apex up) shows in the direction of the gear.",
     src: "COLREGS Rule 26 · MARI003",
@@ -266,9 +266,9 @@ MQ.add("lights", [
     q: "What is a single white all-round light seen at night most likely to be?",
     a: "A vessel at anchor (under 50 m), or a small power-driven vessel",
     w: [
-      "A vessel not under command that is making no way through the water",
-      "A trawler working her nets, seen from a position well off her bow",
-      "A vessel aground, which would show two additional red lights below the white"
+      "A vessel not under command and making no way through the water",
+      "A trawler working her nets, seen from well off her bow",
+      "A vessel aground, which would show two red lights below it"
     ],
     why: "Under 50 m an anchored vessel may show one all-round white light; larger vessels show two. A very small vessel underway may show an all-round white light plus sidelights. Check the bearing and movement before assuming.",
     src: "COLREGS Rules 23 and 30 · GPH Part 1",
@@ -276,22 +276,22 @@ MQ.add("lights", [
   },
   {
     q: "A vessel at anchor of 50 m or more shows…",
-    a: "An all-round white light forward and a lower all-round white light at or near the stern",
+    a: "An all-round white light forward and a lower one at or near the stern",
     w: [
-      "Red over white all-round lights near the masthead, with sidelights and a sternlight",
-      "One masthead light and sidelights, as for a power-driven vessel underway",
-      "Two all-round red lights in a vertical line, with an anchor light above them"
+      "Red over white all-round lights, with sidelights and a sternlight",
+      "One masthead light and sidelights, as for a vessel underway",
+      "Two all-round red lights in a vertical line above an anchor light"
     ],
     why: "Rule 30(a). The forward light is higher than the after light. By day she shows one black ball in the fore part.",
     src: "COLREGS Rule 30 · MARI003"
   },
   {
-    q: "The signal for a vessel engaged in mine clearance is…",
-    a: "Three all-round green lights (or balls): dangerous to approach within 1000 m",
+    q: "A vessel engaged in mine clearance shows…",
+    a: "Three all-round green lights (or balls): keep 1000 m clear",
     w: [
-      "Three all-round red lights in a vertical line, warning of shoal water ahead",
-      "Green over white over green, with a masthead light and the sidelights",
-      "Two green lights over one red light: keep clear on the red side"
+      "Three all-round red lights in a vertical line",
+      "Green over white over green",
+      "Two green lights over one red light"
     ],
     why: "Rule 27(f): in addition to normal lights, three green all-round lights or three balls – one near the masthead and one at each end of the fore yard.",
     src: "COLREGS Rule 27 · MARI003"
@@ -308,23 +308,23 @@ MQ.add("lights", [
     src: "COLREGS Rule 27 · MARI003"
   },
   {
-    q: "A sailing vessel underway shows…",
-    a: "Sidelights and a sternlight (under 20 m these may be one masthead lantern)",
+    q: "At night a sailing vessel underway shows…",
+    a: "Sidelights and a sternlight",
     w: [
-      "A masthead light, sidelights and a sternlight, the same as a power-driven vessel",
-      "Two all-round red lights in a vertical line, as when not under command",
-      "One all-round white light only, which she may carry whatever her length"
+      "A masthead light, sidelights and a sternlight",
+      "Two all-round red lights in a vertical line",
+      "One all-round white light only"
     ],
     why: "Rule 25. In addition she may show red over green all-round lights at the top of the mast (not with the combined lantern). A sailing vessel does not show a masthead light unless she is also using her engine.",
     src: "COLREGS Rule 25 · MARI003"
   },
   {
     q: "A sailing vessel is also using her engine. By day she must show…",
-    a: "A cone, apex downwards, forward where it can best be seen",
+    a: "A cone, apex downwards, forward where it is best seen",
     w: [
-      "A black ball shown forward where it can best be seen by other vessels",
-      "A cylinder shown at the masthead and visible from all around",
-      "A diamond shape hoisted from the yard on the mast to show she is under power"
+      "A black ball, shown forward where it is best seen",
+      "A cylinder, shown at the masthead where it is best seen",
+      "A diamond, shown from the yard where it is best seen"
     ],
     why: "Rule 25(e): she is then a power-driven vessel and must follow the rules for one, including the power-driven lights at night.",
     src: "COLREGS Rule 25 · MARI003"
@@ -333,9 +333,9 @@ MQ.add("lights", [
     q: "A vessel under oars that does not show the sailing vessel lights must…",
     a: "Have ready a torch or lantern showing white, to be shown in time to prevent collision",
     w: [
-      "Show a single all-round red light at the stern throughout every hour of darkness",
-      "Show an all-round green light on the bow and a white light at the stern",
-      "Display a small orange flag at the bow and keep it hoisted day and night"
+      "Show a single all-round red light on the stern throughout the night",
+      "Show an all-round green light on the bow and a white light on the stern",
+      "Display a small orange flag from the stern, day and night"
     ],
     why: "Rule 25(d).",
     src: "COLREGS Rule 25 · MARI003"
@@ -392,8 +392,8 @@ MQ.add("lights", [
     q: "What is the vessel showing this day shape?",
     a: "A sailing vessel under sail and power (motor-sailing)",
     w: [
-      "A vessel engaged in fishing",
-      "A pilot vessel",
+      "A vessel engaged in fishing with her gear out",
+      "A pilot vessel waiting for a ship",
       "A vessel constrained by her draught in a channel"
     ],
     why: "A single cone, apex downwards, forward where best seen: she is a power-driven vessel.",
@@ -426,11 +426,11 @@ MQ.add("lights", [
   },
   {
     q: "A diamond shape shown by a tug and her tow by day indicates…",
-    a: "A tow of more than 200 m (stern of tug to after end of tow)",
+    a: "A tow of more than 200 m, from tug's stern to the end of the tow",
     w: [
-      "That the tow is a vessel in distress and the tug is assisting under the code",
-      "That the tow is aground and that the tug is trying to refloat her at the moment",
-      "That the tug is a pilot vessel and that the tow is the ship she is escorting"
+      "That the tow is a vessel in distress being helped by the tug",
+      "That the tow is aground and the tug is trying to refloat her",
+      "That the tug is a pilot vessel and the tow is a ship under pilotage"
     ],
     why: "Rules 24(a)(iv) and 24(e)(iii).",
     src: "COLREGS Rule 24 · MARI003",
@@ -508,7 +508,7 @@ MQ.add("lights", [
     w: [
       "Five short blasts",
       "Two short blasts",
-      "One prolonged blast followed by two short blasts"
+      "One prolonged blast and two short blasts"
     ],
     why: "Rule 34(c)(ii). If she does not agree she sounds the doubt signal of at least five short and rapid blasts.",
     src: "COLREGS Rule 34 · MARI003"
@@ -528,20 +528,20 @@ MQ.add("lights", [
     q: "In or near restricted visibility, a power-driven vessel MAKING WAY sounds…",
     a: "One prolonged blast at intervals of not more than 2 minutes",
     w: [
-      "Two prolonged blasts at intervals of not more than 2 minutes in succession",
-      "One prolonged and two short blasts at intervals of not more than a minute",
-      "Five short blasts at intervals of not more than 30 seconds, repeated"
+      "Two prolonged blasts every 2 minutes",
+      "One prolonged and two short blasts every minute",
+      "Five short blasts every 30 seconds"
     ],
     why: "Rule 35(a). Underway but stopped and making no way: two prolonged blasts about 2 seconds apart, every 2 minutes.",
     src: "COLREGS Rule 35 · MARI003"
   },
   {
     q: "A power-driven vessel underway but stopped and making no way in fog sounds…",
-    a: "Two prolonged blasts in succession, about 2 seconds apart, every 2 minutes at most",
+    a: "Two prolonged blasts about 2 seconds apart, at least every 2 minutes",
     w: [
-      "One prolonged blast at intervals of not more than 2 minutes, as when making way",
+      "One prolonged blast, repeated at intervals of not more than 2 minutes",
       "One prolonged and two short blasts at intervals of not more than 2 minutes",
-      "A continuous sounding of the horn until the vessel is under way once again"
+      "A continuous sounding of the horn until she is under way again"
     ],
     why: "Rule 35(b).",
     src: "COLREGS Rule 35 · MARI003"
@@ -559,11 +559,11 @@ MQ.add("lights", [
   },
   {
     q: "In fog, the last vessel in a tow (if manned) sounds…",
-    a: "One prolonged and three short blasts, straight after the tug's signal if practicable",
+    a: "One prolonged and three short blasts, just after the tug's signal",
     w: [
-      "One prolonged and two short blasts, sounded straight before the tug's own signal",
-      "Two prolonged blasts followed by one short, at intervals of not more than a minute",
-      "Three short blasts at intervals of not more than two minutes, whatever the tug does"
+      "One prolonged and two short blasts, just before the tug's signal",
+      "Two prolonged blasts and one short",
+      "Three short blasts"
     ],
     why: "Rule 35(e). Only the last vessel of the tow makes the signal.",
     src: "COLREGS Rule 35 · MARI003"
@@ -572,9 +572,9 @@ MQ.add("lights", [
     q: "In fog, a vessel at anchor signals by…",
     a: "Ringing the bell rapidly for about 5 seconds every minute",
     w: [
-      "One prolonged blast on the whistle at intervals of not more than 2 minutes",
-      "Three prolonged blasts on the whistle at intervals of not more than a minute",
-      "A continuous sounding of the foghorn until visibility improves, then stopping"
+      "One prolonged blast on the whistle every 2 minutes",
+      "Three prolonged blasts on the whistle every minute",
+      "A continuous sounding of the foghorn until visibility improves"
     ],
     why: "Rule 35(g). She may add one short, one prolonged and one short blast to warn an approaching vessel. Vessels under 20 m need not ring a bell but must make some other efficient sound signal at intervals of not more than 2 minutes.",
     src: "COLREGS Rule 35 · MARI003"
@@ -583,9 +583,9 @@ MQ.add("lights", [
     q: "A vessel under 12 m that does not carry a whistle must provide…",
     a: "Some other means of making an efficient sound signal",
     w: [
-      "A bell and a gong",
+      "A bell and a gong, as for a vessel over 100 m",
       "Nothing at all, as small vessels are exempt from sound signals",
-      "A siren with a 5 nm range"
+      "A siren with a range of at least 5 nm"
     ],
     why: "Rule 33: ≥12 m must carry a whistle; ≥20 m a bell as well; ≥100 m a gong too. Under 12 m, some other efficient means is required.",
     src: "COLREGS Rule 33 · MARI003"
@@ -595,7 +595,7 @@ MQ.add("lights", [
     a: "A red parachute rocket flare",
     w: [
       "A white hand flare",
-      "A single short blast sounded on the whistle",
+      "A single short blast",
       "A green hand flare"
     ],
     why: "Rule 37/Annex IV includes red hand or parachute flares, orange smoke, a continuous fog-signal sounding, SOS, “Mayday”, rockets or shells throwing red stars, flames on the vessel, N over C flags, a square flag with a ball, slow raising and lowering of outstretched arms, EPIRB signals and gun/explosive signals at about 1-minute intervals. A white flare is a warning, not distress.",
@@ -605,9 +605,9 @@ MQ.add("lights", [
     q: "You sight a red hand flare during a training exercise. You should…",
     a: "Treat it as genuine distress unless a supervising authority clearly confirms it is training",
     w: [
-      "Ignore it, because during a training exercise it is almost certainly a drill flare, not distress",
-      "Wait for a second flare before acting, since a single flare may be an accident",
-      "Report it to the Bureau of Meteorology as a possible lightning flash on the coast"
+      "Ignore it, as during a training exercise it is almost certainly a drill flare",
+      "Wait for a second flare before acting, as one could be accidental",
+      "Log it and carry on, unless another flare is seen during the next hour"
     ],
     why: "A red flare is an internationally recognised distress signal. Record bearing, range, time and type, proceed at best safe speed, and notify the coordinator.",
     src: "Marine SAR Guide – Responding to pyrotechnic distress signals"
@@ -646,23 +646,23 @@ MQ.add("lights", [
     src: "COLREGS Rule 37 · MARI003"
   },
   {
-    q: "Which flag signals mean “keep clear, I am manoeuvring with difficulty” and “pass at slow speed, no wash” respectively (MRQ Crew Guide)?",
-    a: "Flag D; flags R over Y",
+    q: "In the MRQ Vessel Crew Guide, what does flag D mean?",
+    a: "Keep clear: I am manoeuvring with difficulty",
     w: [
-      "Flag B; flag A",
-      "Flag A; flags N over C",
-      "Flags R over Y; flag D"
+      "Pass at slow speed and make no wash when passing",
+      "I am carrying dangerous goods and need others to keep clear",
+      "I require a pilot, and ask for one to be sent to me"
     ],
-    why: "Per the MRQ Vessel Crew Guide v0.1: D = keep clear, manoeuvring with difficulty; R over Y = pass at slow speed, no wash.",
+    why: "Per the MRQ Vessel Crew Guide v0.1: flag D = keep clear, I am manoeuvring with difficulty; flags R over Y = pass at slow speed, no wash.",
     src: "MRQ Vessel Crew Guide v0.1 – Towing"
   },
   {
     q: "While refuelling, a vessel flies code flag “B”. What does it mean?",
-    a: "The vessel is taking on or carrying dangerous goods: keep clear of ignition sources",
+    a: "She is taking on or carrying dangerous goods: keep clear",
     w: [
-      "The vessel is in distress and requires immediate assistance from vessels nearby",
-      "A diver is down in the water close by and vessels must pass at slow speed",
-      "The vessel is at anchor and her crew are ashore for the night at the wharf"
+      "She is in distress and needs immediate assistance",
+      "A diver is down in the water close to her",
+      "She is at anchor and her crew are ashore for the night"
     ],
     why: "The B flag is flown while refuelling. It is a red swallow-tailed flag in the International Code.",
     src: "GPH Part 2 – Refuelling operations"

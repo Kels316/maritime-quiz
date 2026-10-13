@@ -4,7 +4,7 @@ MQ.add("seamanship", [
     q: "The right-hand side of a vessel when facing forward is…",
     a: "Starboard",
     w: [
-      "Port side",
+      "Port",
       "Aft",
       "Beam"
     ],
@@ -15,9 +15,9 @@ MQ.add("seamanship", [
     q: "What does the order “Belay” mean?",
     a: "Stop; also cancel the last order",
     w: [
-      "Haul in",
-      "Let go",
-      "Make fast the line to the cleat"
+      "Haul in the line steadily until told to stop",
+      "Let go the line at once and stand clear",
+      "Make fast the line to the nearest cleat"
     ],
     why: "Let go = release now; stand by to let go = prepare to release; make fast = secure to a cleat or bollard; ease away = let out gradually under control; cast off = release all lines.",
     src: "GPH Part 1 – Common operational phrases"
@@ -46,11 +46,11 @@ MQ.add("seamanship", [
   },
   {
     q: "When you receive an instruction on deck you should…",
-    a: "Acknowledge it explicitly, and ask at once if you are unsure",
+    a: "Acknowledge it clearly, and ask at once if you are unsure",
     w: [
-      "Nod and carry on with the task, as the skipper will correct you",
-      "Wait for it to be repeated a second time by the senior hand",
-      "Act only when the skipper looks across at you from the helm"
+      "Nod and carry on, as the skipper will correct you",
+      "Wait for the order to be repeated by the senior hand",
+      "Act only when the skipper looks across at you"
     ],
     why: "Closing the communication loop (“Making fast the bow line now”) confirms the instruction was heard and understood. The time to clarify is before you act.",
     src: "GPH Part 1 – Effective communication practices"
@@ -59,7 +59,7 @@ MQ.add("seamanship", [
     q: "Which rope material has significant stretch, making it well suited to absorbing shock loads in mooring and towing?",
     a: "Nylon (polyamide)",
     w: [
-      "Polypropylene (floating line)",
+      "Polypropylene",
       "Manila",
       "Steel wire"
     ],
@@ -68,22 +68,22 @@ MQ.add("seamanship", [
   },
   {
     q: "Which is NOT good rope care?",
-    a: "Storing a wet rope in direct sunlight to dry it permanently",
+    a: "Drying a wet rope in direct sunlight",
     w: [
-      "Keeping rope clean and away from oil, solvents and other chemicals at all times",
-      "Avoiding heat from friction running over a surface",
-      "Inspecting for chafe at fairleads and edges"
+      "Keeping it clear of oil and chemicals",
+      "Avoiding friction heat",
+      "Inspecting for chafe at fairleads"
     ],
     why: "UV light degrades synthetics, so stow in a dry place out of direct sun. Kinks and tight knots create weak points. A shock-loaded line may be badly weakened with no visible sign – report it.",
     src: "GPH Part 2 – The care of ropes"
   },
   {
-    q: "A key difference when caring for wire rope compared with fibre rope is that wire rope…",
-    a: "It is lubricated with wire-rope dressing; fibre rope is never oiled or greased",
+    q: "How does caring for wire rope differ from caring for fibre rope?",
+    a: "Wire rope is lubricated with dressing; fibre rope is never oiled",
     w: [
-      "It must be kept soaked in seawater, whereas fibre rope is kept dry",
-      "It is stored tightly coiled, whereas fibre rope is stored in long loose bights",
-      "It needs no inspection, whereas fibre rope needs regular checking for chafe"
+      "Wire rope is kept soaked in seawater, while fibre rope is kept dry",
+      "Wire rope is stored tightly coiled, while fibre rope is stored loose",
+      "Wire rope needs no inspection, while fibre rope is checked for chafe"
     ],
     why: "Also: avoid kinks and crushing, inspect for broken wires (“fish-hooks”), corrosion and flattening, and run only over adequately sized sheaves. Wear leather gloves – and never run a bare hand along it.",
     src: "GPH Part 2 – The care of wire rope"
@@ -103,20 +103,20 @@ MQ.add("seamanship", [
     q: "A figure-of-eight knot is used…",
     a: "As a stopper in the end of a line; it does not jam under load",
     w: [
-      "To join two lines of different diameter into one longer length of line",
-      "To form a fixed loop in the end of a line that will not slip",
-      "To secure a fender to a rail and keep it from sliding on the line"
+      "To join two lines of different diameter into one longer line",
+      "To form a fixed loop in the end of a line",
+      "To secure a fender to a rail without it sliding"
     ],
     why: "Bulkier than an overhand and always unties after loading.",
     src: "GPH Part 2 – Required knots"
   },
   {
     q: "The bowline is valued because it…",
-    a: "It forms a fixed loop that won't slip or tighten and can be untied after loading",
+    a: "It forms a fixed loop that won't slip or tighten, and can be untied after loading",
     w: [
-      "It joins two lines of different diameter and will not slip when loaded in either direction",
-      "It releases under load in one pull and so is used for the towline",
-      "It is the strongest way to make a line fast to a cleat when under load"
+      "It joins two lines of different diameter and will not slip when loaded",
+      "It releases under load in one pull, so it is used for towlines",
+      "It is the strongest way to make a line fast to a cleat"
     ],
     why: "Used to put a loop over a bollard, attach to a ring, or secure a line around a person in a rescue. You should be able to tie it behind your back and in the dark.",
     src: "GPH Part 2 – Required knots"
@@ -134,33 +134,33 @@ MQ.add("seamanship", [
   },
   {
     q: "A round turn and two half hitches is used…",
-    a: "To make a mooring line fast to a bollard, ring or rail; it holds and can be untied after loading",
+    a: "To secure a mooring line to a bollard, ring or rail",
     w: [
-      "To join two ropes of the same diameter into a single longer rope",
-      "As a stopper knot in the end of a line that must run through a block",
-      "To form an eye in the end of a wire that is to be shackled to a fitting on the deck"
+      "To join two ropes of equal diameter into one longer rope",
+      "As a stopper in the end of a line that runs through a block",
+      "To form an eye in the end of a wire rope for a shackle"
     ],
     why: "The clove hitch is quick to tie and adjust but can work loose on a rotating object or unsteady load, so it is often backed up with a half hitch.",
     src: "GPH Part 2 – Required knots"
   },
   {
     q: "A rolling hitch is used…",
-    a: "To bring a smaller line onto a larger line or spar, gripping under a lengthways pull",
+    a: "To attach a smaller line to a larger line or spar so it grips under a lengthways pull",
     w: [
-      "To make a stopper in the end of a rope so that it will not run back through a block",
-      "To join two equal lines together into a single longer line safely",
-      "To whip the end of a rope so that it does not fray when it is cut"
+      "To make a stopper in the end of a rope so it won't run through",
+      "To join two equal lines together into one longer line",
+      "To whip the end of a rope so that it does not fray"
     ],
     why: "A common application is relieving a riding turn on a winch.",
     src: "GPH Part 2 – Required knots"
   },
   {
     q: "The lighterman's (bargee) hitch is useful because…",
-    a: "It secures a heavy load to a bollard but can be released while loaded – useful in towing",
+    a: "It secures a heavy load to a bollard but can be released while loaded",
     w: [
       "It can never be released once it has taken the load, so is permanent",
-      "It is a type of splice that is made in the strands of the towline",
-      "It joins two ropes together as a bend, without any need for a bollard or a post"
+      "It is a type of splice made in the strands of the towline",
+      "It joins two ropes as a bend, without needing a bollard at all"
     ],
     why: "On the NS11 towing rig it is the alternate method for securing a tow to the samson post on large vessels.",
     src: "GPH Part 2 – Required knots · NATRAC002 Towing"
@@ -170,7 +170,7 @@ MQ.add("seamanship", [
     a: "To stop the cut end fraying and unravelling",
     w: [
       "To make it float",
-      "To increase its breaking strength by locking the strands",
+      "To increase its breaking strength",
       "To make it fit a smaller block"
     ],
     why: "Common whipping binds the end with small-gauge twine. A back splice is an alternative but increases the diameter of the end.",
@@ -181,7 +181,7 @@ MQ.add("seamanship", [
     a: "Retains much more of the rope's strength",
     w: [
       "Has the same strength",
-      "Is weaker, but is easier to undo after loading",
+      "Is weaker but easier to undo",
       "Is only used in wire rope"
     ],
     why: "A knot may reduce a rope's strength by up to half. The three required splices are the eye, back and short splice.",
@@ -204,7 +204,7 @@ MQ.add("seamanship", [
     w: [
       "The line will be wet, because a wet splice may slip when loaded",
       "The line is made of nylon, as nylon cannot be spliced successfully",
-      "The line is under load, because a splice should only ever be made when the line is slack"
+      "The line will be under load, because splices must be made slack"
     ],
     why: "Same limitation as the back splice. A short splice permanently joins two lines into one longer line and retains most of the rope's strength.",
     src: "GPH Part 2 – Back and short splice"
@@ -213,9 +213,9 @@ MQ.add("seamanship", [
     q: "A minimum breaking strength (MBS) of 20 kN with a factor of safety of 5 gives a working load limit of…",
     a: "4 kN (about 400 kg for a static load)",
     w: [
-      "100 kN (about 10 tonnes)",
-      "15 kN",
-      "2 kN"
+      "100 kN (about 10 tonnes for a static load)",
+      "15 kN (about 1500 kg for a static load)",
+      "2 kN (about 200 kg for a static load)"
     ],
     why: "WLL = MBS ÷ FOS. 1 kN is roughly 100 kg. Never load equipment beyond its marked WLL or use equipment whose WLL you don't know.",
     src: "GPH Part 1 – Snap-back zones and line handling safety"
@@ -225,19 +225,19 @@ MQ.add("seamanship", [
     a: "The area through which a line or wire will travel if it parts under tension",
     w: [
       "The part of the deck forward of the mast where the anchor is kept",
-      "The area covered by a drogue as it streams behind a towed vessel",
-      "The space inside a coil of line when it has been neatly flaked down on the deck"
+      "The area astern of a towed vessel covered by its drogue",
+      "The space inside a coiled line when it has been flaked down"
     ],
     why: "Never stand in line with a tensioned line or in the bight; stand to the side, not behind. During towing the zone extends across the stern of the tug behind the tow point. This is why the towing procedure closes half the cabin door to shield crew.",
     src: "GPH Part 1 – Snap-back zones"
   },
   {
     q: "The bight of a line is…",
-    a: "The loop or slack part between its two ends: standing in it is extremely dangerous",
+    a: "The loop or slack part between its ends; standing in it is extremely dangerous",
     w: [
-      "The very end of a line, which may be whipped or finished with a splice",
-      "The splice at the end of a line, where the eye is formed around a thimble or fitting",
-      "The breaking strength of a line when it is new and has not been loaded"
+      "The very end of a line, which may be whipped or back-spliced",
+      "The splice at the end of a line where an eye is formed",
+      "The breaking strength of a line when it is new and unloaded"
     ],
     why: "A bight can tighten around a foot or leg in an instant when the line comes under load.",
     src: "GPH Part 1 – Snap-back zones"
@@ -246,9 +246,9 @@ MQ.add("seamanship", [
     q: "A riding turn on a winch is…",
     a: "A turn trapped over another turn under load, jamming the line: dangerous to clear",
     w: [
-      "The first turn on a capstan, which starts the line moving as the drum turns",
-      "A turn taken on a cleat to hold a line while the other turns are made",
-      "A turn around a samson post that is used to secure the towline"
+      "The first turn on a capstan, which starts the line moving as it turns",
+      "A turn taken on a cleat to hold a line while others are made",
+      "A turn around a samson post, used to secure the towline"
     ],
     why: "Never try to clear a riding turn or fouled line on a powered drum under load without stopping the machinery first. Know where the emergency stop is.",
     src: "GPH Part 2 – Deck machinery and emergency stops"
@@ -257,9 +257,9 @@ MQ.add("seamanship", [
     q: "When working near deck machinery handling lines under load, keep hands, fingers and loose clothing…",
     a: "Well clear of drums, fairleads and the line, knowing where the emergency stop is",
     w: [
-      "Close to the drum, so that you can feel the tension in the line as it runs",
-      "Gloved but touching the line, so you can ease it if it begins to ride up",
-      "Wrapped in the bight of the line so that it cannot run out too fast"
+      "Close to the drum so that you can feel the tension in the line",
+      "Gloved but touching the line, so that you can ease it if it rides up",
+      "Wrapped in the bight so that the line cannot run out too fast"
     ],
     why: "Machinery is inspected and tested before use, and operated only by or under the direct supervision of a competent person.",
     src: "GPH Part 2 – Deck machinery and emergency stops"
@@ -277,9 +277,9 @@ MQ.add("seamanship", [
   },
   {
     q: "A Danforth anchor is best described as…",
-    a: "Light, flat, large flukes and a stock: strong for its weight, but can skate in current",
+    a: "Light and flat with large flukes and a stock; strong for its weight, but can skate in current",
     w: [
-      "A heavy anchor with a hinged shank that holds equally well in every type of seabed",
+      "A heavy anchor with a hinged shank that holds equally well in any seabed",
       "A non-burying grapnel with several tines, meant for coral and rock",
       "A plough anchor with a single point that digs in even on its side"
     ],
@@ -290,9 +290,9 @@ MQ.add("seamanship", [
     q: "Which anchor suits coral or rocky bottoms?",
     a: "A reef anchor (grapnel), which hooks into the structure of the seabed",
     w: [
-      "A Danforth, whose large flat flukes dig into the rock and hold well",
-      "A plough anchor, whose point digs into any type of bottom including coral",
-      "A sea anchor, which is streamed from the bow to hold the vessel head to wind"
+      "A Danforth, whose large flat flukes dig into rock and hold well",
+      "A plough (CQR), whose point digs into any bottom including coral",
+      "A sea anchor, which is streamed from the bow to hold her head to wind"
     ],
     why: "It is light, can recover lost gear, but may need a trip line to free it.",
     src: "GPH Part 2 – Types of anchor"
@@ -310,22 +310,22 @@ MQ.add("seamanship", [
   },
   {
     q: "When anchoring, you should not simply throw the anchor over and let the rode run free because…",
-    a: "It risks fouling the rode and injury, and piles the rode on top of the anchor",
+    a: "It risks fouling the rode and injury, and piles rode on top of the anchor",
     w: [
-      "It makes the anchor float and so prevents it from reaching the seabed",
+      "It makes the anchor float, so it never reaches the seabed",
       "It uses up the bitter end of the rode before the anchor has set",
-      "It slows the vessel too much for the anchor to get a hold on the bottom"
+      "It slows the vessel too much for the anchor to take hold"
     ],
     why: "Lower under control until it rests on the seabed, then pay out under slight tension as the vessel makes sternway, feel for the tug when about half the scope is out, and continue to full scope.",
     src: "GPH Part 2 – The anchoring procedure"
   },
   {
     q: "How do you confirm the anchor is holding?",
-    a: "The vessel's position stays steady relative to fixed objects ashore",
+    a: "The vessel's position stays steady against fixed objects ashore",
     w: [
-      "The anchor chain goes slack and stays slack when the wind is increasing",
-      "The engine temperature stays steady while the vessel lies at anchor",
-      "The tide turns and the vessel swings to lie in the opposite direction"
+      "The anchor chain goes slack and stays slack as the wind rises",
+      "The engine temperature stays steady while she lies at anchor",
+      "The tide turns and the vessel swings to the opposite heading"
     ],
     why: "Use transits or bearings and the drift/anchor-watch alarm. Keep feet and hands clear of the running rode and anchor well.",
     src: "GPH Part 2 – The anchoring procedure"
@@ -347,7 +347,7 @@ MQ.add("seamanship", [
     w: [
       "The tide has turned and the vessel is swinging round to a new heading",
       "The compass has developed an error, so the bearing can be ignored",
-      "The shore light has moved because the lighthouse keeper changed the lamp"
+      "The shore light has moved because the keeper changed the lamp"
     ],
     why: "Monitor position against fixed marks, check mooring lines and surrounding vessels, and report any change in weather. Be ready to start the engine and re-anchor.",
     src: "GPH Part 1 – Lookout responsibilities when moored and at anchor"
@@ -356,7 +356,7 @@ MQ.add("seamanship", [
     q: "A bow (forward) spring line prevents the vessel from…",
     a: "Moving forward along the berth",
     w: [
-      "Moving aft along the berth towards the stern",
+      "Moving aft along the berth",
       "Moving away from the berth",
       "Swinging at anchor"
     ],
@@ -368,14 +368,14 @@ MQ.add("seamanship", [
     a: "The bow spring, to control the vessel against the wind",
     w: [
       "The stern breast line, to hold the stern against the berth",
-      "The anchor",
-      "The tow line"
+      "The anchor, dropped under foot to hold her off the wharf",
+      "The tow line, passed to the wharf to pull her alongside"
     ],
     why: "A spring led aft from the bow, once fast ashore, lets the helmsman hold the vessel alongside using the engine. Keep hands clear of the cleat and out of the bight as it comes under load.",
     src: "GPH Part 2 – Mooring scenario"
   },
   {
-    q: "Before leaving a berth you must secure for sea. Which is NOT one of these tasks?",
+    q: "Which of these is NOT a task when securing the vessel for sea?",
     a: "Leaving mooring lines trailing so they can be used quickly",
     w: [
       "Stowing mooring lines so they cannot foul the propeller",
@@ -389,9 +389,9 @@ MQ.add("seamanship", [
     q: "Why are the fore peak and aft peak compartments particularly important?",
     a: "Flooding at the ends of the vessel has a large effect on trim",
     w: [
-      "They hold the fuel tanks and so must be kept clear of any water",
-      "They contain the engines and the gearbox, which need fresh air",
-      "They are the only watertight compartments that are fitted in the hull"
+      "They hold the fuel tanks, which must be kept free of water",
+      "They contain the engines and gearbox, which need fresh air",
+      "They are the only watertight compartments fitted in the hull"
     ],
     why: "Hulls are divided by watertight bulkheads so one holed compartment doesn't sink the vessel. Coamings, sealable deck entries and watertight doors protect weathertight entries.",
     src: "GPH Part 2 – Watertight integrity"
@@ -401,41 +401,41 @@ MQ.add("seamanship", [
     a: "Distributed evenly and kept as low as possible",
     w: [
       "Concentrated high on the vessel",
-      "Placed on one side to counter the wind",
+      "Placed on one side to counter wind",
       "Concentrated forward"
     ],
     why: "Weight high or to one side raises the centre of gravity and reduces stability. Free surface and shipped water on deck also reduce it.",
     src: "GPH Part 2 – Stability and weight distribution"
   },
   {
-    q: "Before work aloft or over the side, which precaution must be in place?",
-    a: "A risk assessment, the skipper's authorisation, someone monitoring on deck, and communication",
+    q: "Which precautions must be in place before work aloft or over the side?",
+    a: "A risk assessment, the skipper's authorisation, someone watching from deck, and communication",
     w: [
-      "Only a hard hat, which must be worn by the person working aloft",
-      "A signed note from the engineer, confirming the machinery has been stopped, and a hard hat",
-      "No one else on deck at all, to avoid any distraction of the worker"
+      "Only a hard hat, which the person working aloft must wear",
+      "A signed note from the engineer, confirming that machinery is stopped",
+      "No one else on deck, so that the worker is not distracted"
     ],
     why: "Also harness and tether, secured tools (lanyards), non-slip footwear, a lifejacket and a recovery plan for over the side. Keep the area below clear.",
     src: "GPH Part 2 – Working aloft and over the side"
   },
   {
     q: "Three points of contact means…",
-    a: "Two hands and one foot, or two feet and one hand, on a stable surface when moving about",
+    a: "Two hands and one foot, or two feet and one hand, on a stable surface",
     w: [
-      "Three people at the helm when the vessel is manoeuvring in a crowded harbour or river",
-      "Three mooring lines on each cleat at the berth, for use in heavy weather",
-      "Three lifejackets for each person on board, in case one is lost overboard"
+      "Three people at the helm when manoeuvring in a crowded harbour",
+      "Three mooring lines on each cleat at the berth in heavy weather",
+      "Three lifejackets for each person on board, in case one is lost"
     ],
     why: "Particularly when boarding, departing, moving along side decks or underway. Non-slip footwear is mandatory; thongs and open shoes are not appropriate.",
     src: "GPH Part 1 – General safety practices on the vessel"
   },
   {
-    q: "Refuelling: which step is correct?",
-    a: "Stop engines, fly flag B, remove keys, master batteries off, seal scuppers, absorbents ready",
+    q: "Which step is correct when refuelling?",
+    a: "Stop engines, fly flag B, switch off batteries, seal scuppers, have absorbents ready",
     w: [
-      "Keep the engines running to maintain power for the pumps and the lights",
-      "Leave all crew on board in the cabin for their own safety during the whole of the transfer",
-      "Open the scuppers to drain any spills quickly into the water alongside"
+      "Keep the engines running to power the pumps and the lights",
+      "Leave all crew aboard in the cabin for their own safety",
+      "Open the scuppers so that any spills drain quickly away"
     ],
     why: "All personnel off the vessel; remove the DCP extinguisher onto the wharf; close windows and hatches; monitor tank levels. Fuel vapour is heavier than air and collects in bilges – never start engines or electrics until enclosed spaces are ventilated and vapour-free.",
     src: "GPH Part 2 – The refuelling procedure"
@@ -444,9 +444,9 @@ MQ.add("seamanship", [
     q: "After refuelling you smell fuel on the rear deck. The correct action is to…",
     a: "Don't start engines or electrics; ventilate, report at once and find the source",
     w: [
-      "Start the engine and check whether the smell goes away when it warms up",
-      "Wipe up what can be seen and then get under way, as the smell will clear",
-      "Ignore the smell, because it will blow away once the vessel is under way"
+      "Start the engine to see whether the smell clears as it warms",
+      "Wipe up what can be seen and get under way, as it will clear",
+      "Ignore the smell, because it will blow away once under way"
     ],
     why: "A single spark can ignite accumulated vapour. Starting the engine “just to see” is the worst response.",
     src: "GPH Part 2 – Refuelling scenario"
@@ -455,15 +455,15 @@ MQ.add("seamanship", [
     q: "Who is responsible for preventing the discharge of polluting substances under MARPOL?",
     a: "The master; equipment failure from poor maintenance is no excuse",
     w: [
-      "The fuel supplier, who must ensure the fuel is delivered without spillage",
-      "The harbour master, who inspects every vessel before she leaves the berth",
-      "The vessel's classification society, which surveys the pollution equipment"
+      "The fuel supplier, who must deliver the fuel without spillage",
+      "The harbour master, who inspects every vessel before she leaves",
+      "The classification society, which surveys the pollution equipment"
     ],
     why: "MARPOL is administered in Australia by AMSA. Seal scuppers, place containers under tank breathers and have absorbents ready.",
     src: "GPH Part 2 – Pollution prevention"
   },
   {
-    q: "Handling a line safely, you should never…",
+    q: "When handling lines you should never…",
     a: "Let a tensioned line trap your hand against a cleat, bitt or fairlead",
     w: [
       "Tend lines with a clear footing",
