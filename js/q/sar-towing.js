@@ -517,7 +517,7 @@ MQ.add("towing", [
       "Three short blasts followed by one prolonged",
       "Two prolonged blasts"
     ],
-    why: "COLREGS Rule 35(c). The last vessel in the tow (if manned) gives one prolonged then three short. Note that the NATRAC002 study guide prints these reversed – check against Rule 35 itself.",
+    why: "COLREGS Rule 35(c). The last vessel in the tow (if manned) gives one prolonged then three short.",
     src: "COLREGS Rule 35"
   },
   {
@@ -671,7 +671,7 @@ MQ.add("towing", [
       "2, as for most other items of lifting and rigging gear on board",
       "60, as the MBS figure is given in tonnes and not in kilonewtons"
     ],
-    why: "Note: the GPH guide uses a factor of safety of 5 for marine equipment generally; check your SMS for the factor it requires.",
+    why: "The GPH guide uses a factor of safety of at least 5 for most marine equipment; for fibre rope used in towing the towing guide uses at least 6. Check your SMS for the factor it requires.",
     src: "NATRAC002 Towing Guide §1.2 · GPH Part 1"
   },
   {
