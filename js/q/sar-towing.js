@@ -122,14 +122,14 @@ MQ.add("sar", [
     src: "Marine SAR Guide – Drift"
   },
   {
-    q: "Wind current speed is approximately what proportion of the wind speed in deep water?",
-    a: "3%",
+    q: "A steady wind blowing over the sea drags the surface water along with it, creating a “wind current”. In deep water, about how fast is this current compared with the wind speed?",
+    a: "About 3% of the wind speed",
     w: [
-      "30%",
-      "0.3%",
-      "50%"
+      "About 30% of the wind speed",
+      "About 50% of the wind speed",
+      "About 0.3% of the wind speed"
     ],
-    why: "It is calculated for 6-hour synoptic periods using wind data from the 48 hours before the splash time. For a short coastal response it can be small enough to omit – but confirm first.",
+    why: "Wind current is the surface current a sustained wind generates; it runs roughly in the wind's direction at about 3% of the wind speed (a 20-knot wind gives about 0.6 knots). It is one of three parts of total drift, with sea current (tide, ocean current) and leeway (the wind pushing directly on the target above the waterline). It is calculated for 6-hour periods using the wind over the 48 hours before the splash time. For a short coastal response it can be small enough to omit, but confirm that first.",
     src: "Marine SAR Guide – Wind current"
   },
   {
