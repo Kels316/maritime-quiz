@@ -142,7 +142,7 @@
       const sx = ox + 24 * Math.sin(hr), sy = oy - 24 * Math.cos(hr);
       s += '<line x1="' + sx + '" y1="' + sy + '" x2="' + ax + '" y2="' + ay + '" stroke="#fff" stroke-width="2" marker-end="url(#ar)"/>';
     }
-    const lx = Math.max(30, Math.min(290, ox)), ly = oy < cy ? oy - 30 : oy + 42;
+    const lx = Math.max(50, Math.min(270, ox)), ly = (oy < cy && oy - 30 > 40) ? oy - 30 : oy + 42;
     s += '<text x="' + lx + '" y="' + Math.max(16, Math.min(320, ly)) + '" fill="#ffd9a8" font-size="12" font-weight="700" text-anchor="middle">' + esc(label) + '</text>';
     return s + '</svg>';
   }
