@@ -24,7 +24,7 @@ MQ.add("sar", [
   },
   {
     q: "An incident is reported to an AVCGA flotilla and Police have not yet arrived. The senior duty officer should…",
-    a: "Take the SMC role in the interim, declare the phase, notify JRCC and Police, and hand over when they arrive",
+    a: "Take the SAR Mission Coordinator (SMC) role in the interim, declare the phase, notify JRCC and Police, and hand over when they arrive",
     w: [
       "Wait for Police to arrive before taking any action to launch vessels",
       "Send every available vessel to sea without telling anyone else",
@@ -144,19 +144,19 @@ MQ.add("sar", [
     src: "Marine SAR Guide – Leeway and divergence"
   },
   {
-    q: "Divergence in SAR means…",
-    a: "The target drifts at an angle to the downwind direction, so left and right datums are plotted",
+    q: "A drifting target does not move exactly downwind; it drifts at an angle to one side or the other. In SAR this angle is called…",
+    a: "Divergence, so left and right datums are plotted",
     w: [
-      "The search legs spread apart as the vessel moves away from the datum",
-      "The wind changes direction by more than 30° during the search",
-      "The datum marker sinks below the surface after a time in the water"
+      "Leeway, so a single datum is plotted",
+      "Set, so a datum is plotted down-tide",
+      "Drift error, so the search radius is halved"
     ],
-    why: "The datum is the midpoint between the left and right leeway end points, and the drift error circle surrounds it.",
+    why: "Divergence is the angle at which a target drifts to the left or right of the downwind direction (a person in the water may diverge up to about 30° either side). Because you cannot know which way it went, you plot two leeway vectors, giving a left datum and a right datum, and the datum is the midpoint between them.",
     src: "Marine SAR Guide – Divergence"
   },
   {
     q: "For an initial response, when must you start allowing for water movement (the “four-hour rule”)?",
-    a: "Only if more than four hours have passed since the LKP (earlier in high-drift areas)",
+    a: "Only if more than four hours have passed since the last known position (LKP), or earlier in high-drift areas",
     w: [
       "Immediately, in all cases, from the time of the first call to the base",
       "After twelve hours, once the first search has failed to find the target",
@@ -177,7 +177,7 @@ MQ.add("sar", [
     src: "Marine SAR Guide – The coastal search model"
   },
   {
-    q: "The safety factor applied to the initial search radius is…",
+    q: "The search radius is the total probable error multiplied by a safety factor that grows with each expansion of the search. What are the factors?",
     a: "1.1, rising to 1.6, 2.0, 2.3 and 2.5 with each expansion",
     w: [
       "2.5 for the initial search, falling to 1.1 with each expansion",
@@ -188,7 +188,7 @@ MQ.add("sar", [
     src: "Marine SAR Guide – Total probable error"
   },
   {
-    q: "Datum should be recomputed…",
+    q: "The datum is the most probable position of the target. It should be recomputed…",
     a: "Every 2–4 hours on a coastal search, and at once if wind changes by over 10 knots or 30°",
     w: [
       "Once at the start of the search, when the LKP has been confirmed",
@@ -210,7 +210,7 @@ MQ.add("sar", [
     src: "Marine SAR Guide – Sweep width"
   },
   {
-    q: "Sweep width for a vessel is calculated as…",
+    q: "Sweep width (W) measures how well a search detects the target. For a vessel it is calculated as…",
     a: "W = Wu × Fw × Ff (uncorrected width × weather factor × fatigue factor)",
     w: [
       "W = BSD ÷ 2, where BSD is the beam sighting distance on each side",
@@ -221,7 +221,7 @@ MQ.add("sar", [
     src: "Marine SAR Guide – Sweep width formulas"
   },
   {
-    q: "A coverage factor below what value is unsatisfactory except in extreme circumstances?",
+    q: "The coverage factor (C) is sweep width divided by track spacing. Below what value is it unsatisfactory except in extreme circumstances?",
     a: "0.5",
     w: [
       "0.1",
@@ -232,18 +232,18 @@ MQ.add("sar", [
     src: "Marine SAR Guide – Coverage factor"
   },
   {
-    q: "Which statement about POD is correct?",
-    a: "Five searches at C = 0.5 give almost as much cumulative POD as five at C = 1.0",
+    q: "Probability of detection (POD) is the chance of finding the target if it is in the area searched. Which statement about POD is correct?",
+    a: "Five searches at coverage factor 0.5 give almost as much cumulative POD as five at coverage factor 1.0",
     w: [
       "POD is directly proportional to the coverage factor in all conditions",
       "More searches never raise the POD once the area has been covered",
       "POD is independent of the weather, sea state and target type"
     ],
-    why: "Single search POD: 78% at C = 1.0; 47% at C = 0.5. Five searches: 99.9% versus 95.8%. In resource-limited situations a larger area at C = 0.5 can be the better choice – provided the target is in the area.",
+    why: "Cumulative POD rises with repeated searches but not in proportion to coverage. After five searches it is about 99.9% at coverage factor 1.0 and 95.8% at 0.5 (a single search: 78% and 47%). So in a resource-limited search, covering a larger area several times at lower coverage can be the better choice, provided the target is actually in the area. POD also depends on weather, sea state and target type, because these change the sweep width.",
     src: "Marine SAR Guide – Probability of detection"
   },
   {
-    q: "Standard coastal track spacing in good conditions (wind <15 kn, visibility >3 nm) is up to…",
+    q: "Track spacing is the distance between successive search legs. Standard coastal track spacing in good conditions (wind under 15 kn, visibility over 3 nm) is up to…",
     a: "3 nm (0.25 nm for a person in water)",
     w: [
       "0.25 nm for every target",
@@ -254,8 +254,8 @@ MQ.add("sar", [
     src: "Marine SAR Guide – Track spacing"
   },
   {
-    q: "The drift rate problem occurs when…",
-    a: "The target drifts through the area faster than the search can creep across it",
+    q: "In a search, the “drift rate problem” occurs when…",
+    a: "The target drifts through the area faster than the search can cover it",
     w: [
       "The search vessel drifts off the datum while her engine is stopped",
       "The datum buoy is lost and no tidal information can be measured",
@@ -298,7 +298,7 @@ MQ.add("sar", [
     src: "Marine SAR Guide – GPS and search patterns"
   },
   {
-    q: "When pausing a search you should return afterwards to…",
+    q: "When you pause a search you leave a floating datum marker, which drifts with the water. When you resume, you should return to…",
     a: "The floating datum marker you deployed, not the GPS waypoint",
     w: [
       "The GPS waypoint you saved when you left the pattern",
@@ -310,7 +310,7 @@ MQ.add("sar", [
   },
   {
     q: "A report of a possible sighting arrives from an untrained observer. What do you do?",
-    a: "Log it, assess it against drift and the search area, tell the SMC, and send an extra asset if plausible",
+    a: "Log it, assess it against drift and the search area, tell the SAR Mission Coordinator (SMC), and send an extra asset if plausible",
     w: [
       "Divert all of the assets to the sighting, as every report must be checked at once",
       "Ignore it, since reports from untrained observers are rarely reliable",
@@ -332,7 +332,7 @@ MQ.add("sar", [
   },
   {
     q: "A reporter calls and asks whether a search is under way. A crew member should…",
-    a: "Not confirm or deny it, and refer the enquiry to the SMC or Police",
+    a: "Not confirm or deny it, and refer the enquiry to the SAR Mission Coordinator or Police",
     w: [
       "Give the details so that the family are told what is being done",
       "Post a note on social media to ask the public to help in the search",
@@ -398,7 +398,7 @@ MQ.add("sar", [
   },
   {
     q: "If rescue of located survivors will be delayed more than 30 minutes, the best marking option is…",
-    a: "A strobe light or a self-locating datum marker buoy (SLDMB)",
+    a: "A strobe light or a self-locating datum marker buoy",
     w: [
       "Orange smoke only, which lasts for several hours and is easily seen",
       "Sea marker dye only, which stays on the surface in a rough sea",
@@ -434,7 +434,7 @@ MQ.add("sar", [
 MQ.add("towing", [
   {
     q: "The AVCGA liability waiver before a tow is delivered…",
-    a: "Verbally, word for word, with the DV master's acceptance recorded in the Ship's Log first",
+    a: "Verbally, word for word, with the distressed vessel master's acceptance recorded in the Ship's Log first",
     w: [
       "In writing the next day, once the DV master has signed the form ashore",
       "Only for large vessels, where the risk of damage to the tow is higher",
@@ -455,12 +455,12 @@ MQ.add("towing", [
     src: "NATRAC002 Towing Guide §1.1"
   },
   {
-    q: "A displacement vessel towed faster than its hull speed…",
-    a: "Climbs its own bow wave: drag soars, the towline may part and she may yaw or swamp",
+    q: "A displacement vessel (one that pushes through the water rather than planing) is towed faster than its hull speed. What happens?",
+    a: "She climbs her own bow wave: drag soars, the towline may part and she may yaw or swamp",
     w: [
-      "Planes over the water and runs easily, with less strain on the towline",
-      "Needs less force from the tug, as the wave helps to push it along",
-      "Puts less strain on the towline, as the bow lifts clear of the water"
+      "She planes over the water, with less strain on the towline",
+      "She needs less force from the tug, as the wave helps push her along",
+      "She puts less strain on the towline, as the bow lifts clear of the water"
     ],
     why: "Hull speed ≈ 1.34 × √LWL (feet). Planing hulls are different – the MRQ guide says stay below hull speed unless the tow has a planing hull.",
     src: "NATRAC002 Towing Guide §1.2"
@@ -477,7 +477,7 @@ MQ.add("towing", [
     src: "NATRAC002 Towing Guide §1.2"
   },
   {
-    q: "Which tow configuration is suited to confined waters or when the DV cannot steer?",
+    q: "Which tow configuration suits confined waters, or when the distressed vessel (DV) cannot steer?",
     a: "Rafted (alongside)",
     w: [
       "Long stern line tow",
@@ -488,7 +488,7 @@ MQ.add("towing", [
     src: "NATRAC002 Towing Guide §1.3"
   },
   {
-    q: "As a general guide the length of towline run out places the DV…",
+    q: "As a general guide, the length of towline run out places the distressed vessel (DV)…",
     a: "One to two wave lengths astern of the rescue vessel (two if rough or large)",
     w: [
       "As close as possible, just clear of the rescue vessel's wash and propellers",
@@ -609,7 +609,7 @@ MQ.add("towing", [
     src: "NATRAC002 Towing Guide · SOP-111"
   },
   {
-    q: "Instructions you give to the DV master once the waiver is accepted include…",
+    q: "Instructions you give to the master of the distressed vessel (the DV master) once the waiver is accepted include…",
     a: "Motor down (if outboard), helm centred, lifejackets on, crew seated, steer in the wake, excess crew across",
     w: [
       "Pull the kill cord and drift while the rescue vessel secures the line to the post",
@@ -664,7 +664,7 @@ MQ.add("towing", [
     src: "NATRAC002 Towing Guide · SOP-120"
   },
   {
-    q: "What safety factor does the towing guide apply to a fibre rope's MBS to find its safe working load?",
+    q: "What safety factor does the towing guide apply to a fibre rope's minimum breaking strength (MBS) to find its safe working load?",
     a: "At least 6, and a further 50% off for knotted or damaged line",
     w: [
       "1, because the MBS figure already includes a safety factor for the line",
