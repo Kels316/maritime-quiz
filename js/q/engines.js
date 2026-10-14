@@ -1,7 +1,7 @@
 /* Question data – engines. Fields: q, a (correct), w (3 wrong options), why, src, vis (optional). */
 MQ.add("engines", [
   {
-    q: "Under NSCV, extra-low voltage (ELV) is…",
+    q: "Under the National Standard for Commercial Vessels (NSCV), extra-low voltage (ELV) is…",
     a: "Not exceeding 50 V AC or 120 V ripple-free DC",
     w: [
       "Not exceeding 12 V DC or 24 V DC, as fitted to vessels",
@@ -365,7 +365,7 @@ MQ.add("engines", [
   },
   {
     q: "Where is a vessel's maintenance information found?",
-    a: "In the vessel's SMS (and in a Ship's Maintenance Manual where one exists)",
+    a: "In the vessel's safety management system (SMS), and in a Ship's Maintenance Manual where one exists",
     w: [
       "On the engine nameplate fitted to the side of the engine block",
       "In the crew's personal diaries, kept by each member on the vessel",

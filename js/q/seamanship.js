@@ -298,7 +298,7 @@ MQ.add("seamanship", [
     src: "GPH Part 2 – Types of anchor"
   },
   {
-    q: "The recommended anchor scope in good conditions and in heavy weather respectively is about…",
+    q: "Anchor scope is the length of rode paid out compared with the depth of water. What scope is recommended in good conditions and in heavy weather respectively?",
     a: "3:1, and 5:1 or more",
     w: [
       "1:1 and 2:1",

@@ -24,7 +24,7 @@ MQ.add("plan", [
   },
   {
     q: "To check depth on a leg you take the shallowest charted depth, add the height of tide, and then…",
-    a: "Subtract your draught to see if the clearance meets your SMS requirement",
+    a: "Subtract your draught to see if the clearance meets your safety management system (SMS) requirement",
     w: [
       "Add your draught to find the clearance your SMS requires",
       "Multiply by the tidal range to find the clearance expected",
@@ -35,7 +35,7 @@ MQ.add("plan", [
   },
   {
     q: "Maximum weather limits for a passage should be set…",
-    a: "In advance, in settled conditions, per the SMS, and written on the plan",
+    a: "In advance, in settled conditions, per the safety management system (SMS), and written on the plan",
     w: [
       "At sea, as conditions develop, by the skipper's feel for the day",
       "By the most senior passenger, who has the final say on the trip",
@@ -189,7 +189,7 @@ MQ.add("plan", [
   },
   {
     q: "Who sets out the safety equipment a domestic commercial vessel must carry?",
-    a: "The NSCV (Part C, Section 7A), applied through the certificate of operation and SMS",
+    a: "The National Standard for Commercial Vessels (Part C, Section 7A), applied through the certificate of operation and SMS",
     w: [
       "The flotilla's verbal instructions, given at the start of the season",
       "The vessel's manufacturer, in the owner's manual supplied with the hull",
@@ -199,7 +199,7 @@ MQ.add("plan", [
     src: "Passage Planning Guide – Safety equipment"
   },
   {
-    q: "An EPIRB must be…",
+    q: "An EPIRB (emergency position-indicating radio beacon) must be…",
     a: "406 MHz, registered with AMSA, with current registration and an in-date battery",
     w: [
       "121.5 MHz and unregistered, as the first beacons were made",

@@ -101,7 +101,7 @@ MQ.add("nav", [
   },
   {
     q: "Which statement about chart symbols is correct?",
-    a: "Heights and clearances are above MHWS; drying heights are underlined, above chart datum",
+    a: "Heights and clearances are above mean high water springs (MHWS); drying heights are underlined, above chart datum",
     w: [
       "All heights and depths are measured from chart datum",
       "Drying heights are measured from MHWS and are shown underlined",
@@ -199,7 +199,7 @@ MQ.add("nav", [
     src: "Passage Planning Guide – Chartwork conventions"
   },
   {
-    q: "When should a DR position be plotted?",
+    q: "When should a dead reckoning (DR) position be plotted?",
     a: "At least hourly, after every change of course or speed, and after every fix",
     w: [
       "Only when the GPS has failed and no electronic position is available",
@@ -211,7 +211,7 @@ MQ.add("nav", [
   },
   {
     q: "How do you find set and drift?",
-    a: "Compare a DR with a fix for the same time: set is the direction DR to fix, drift is distance ÷ time",
+    a: "Compare the dead reckoning (DR) position with a fix for the same time: set is the direction DR to fix, drift is distance ÷ time",
     w: [
       "Read them directly from the log, which measures water speed and direction",
       "Compare the compass with the GPS heading while a strong tide is running",
@@ -232,14 +232,14 @@ MQ.add("nav", [
     src: "Passage Planning Guide – Course and speed terminology"
   },
   {
-    q: "A 2-knot cross-stream acts on a vessel making 10 knots. About how far off track will it push you?",
-    a: "About 11° off the intended track",
+    q: "A tidal stream is pushing your vessel sideways across your track. If you steer a compass course and never check your position, what happens to the error?",
+    a: "It builds up the whole way, so you end up well off track",
     w: [
-      "About 2° off track",
-      "About 45° off track",
-      "It will not affect the track"
+      "It cancels itself out over a long passage",
+      "It stays the same size however far you go",
+      "It only matters in the last mile"
     ],
-    why: "tan⁻¹(2/10) ≈ 11°. Hold a compass course without monitoring position and the error accumulates the whole way.",
+    why: "A cross-stream sets you off your intended track continuously, so the error accumulates for as long as you keep steering the same compass course. As a rough guide, a 2-knot cross-stream on a vessel making 10 knots pushes you about 11° off track. Allow for set and drift in the course to steer, and check position regularly.",
     src: "Passage Planning Guide – Tidal streams"
   },
   {
@@ -441,7 +441,7 @@ MQ.add("nav", [
     src: "Passage Planning Guide – Clearing bearings"
   },
   {
-    q: "Your GPS receiver uses WGS84 but the chart is drawn to AGD66. Plotting the raw GPS position will place you about…",
+    q: "Your GPS receiver uses the WGS84 datum, but your chart is drawn to the older AGD66 datum. Plotting the raw GPS position will place you about…",
     a: "About 200 m from where you really are, in a consistent direction",
     w: [
       "About 2 nm from where you really are, in a random direction",
@@ -496,7 +496,7 @@ MQ.add("nav", [
     src: "Passage Planning Guide – Electronic charting systems"
   },
   {
-    q: "Why does an echo sounder's transducer offset matter?",
+    q: "Why does an echo sounder's transducer offset (the point its depth reading is measured from) matter?",
     a: "The reading may be from the transducer, keel or waterline; know which and set the alarm to suit",
     w: [
       "It matters only in fresh water, where sound travels differently",

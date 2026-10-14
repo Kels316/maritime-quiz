@@ -133,7 +133,7 @@ MQ.add("rules", [
     src: "COLREGS Rule 3 · MARI003"
   },
   {
-    q: "Rule 5 requires every vessel to keep a proper lookout…",
+    q: "Rule 5 (lookout) requires every vessel to keep a proper lookout…",
     a: "At all times, by sight, hearing and all other available means",
     w: [
       "By sight only, with radar as a backup at night",
@@ -155,7 +155,7 @@ MQ.add("rules", [
     src: "COLREGS Rule 6 · MARI003"
   },
   {
-    q: "Rule 6 says a safe speed is one at which you can…",
+    q: "Rule 6 (safe speed) says a safe speed is one at which you can…",
     a: "Take effective action to avoid collision and stop within a suitable distance",
     w: [
       "Keep the vessel on the plane so she responds quickly to the helm",
@@ -188,7 +188,7 @@ MQ.add("rules", [
     src: "COLREGS Rule 7 · MARI003"
   },
   {
-    q: "Rule 7 warns against making assumptions based on…",
+    q: "Rule 7 (risk of collision) warns against making assumptions based on…",
     a: "Scanty information, especially scanty radar information",
     w: [
       "Bearings taken with a hand-bearing compass held clear of ironwork",
@@ -199,7 +199,7 @@ MQ.add("rules", [
     src: "COLREGS Rule 7 · MARI003"
   },
   {
-    q: "Rule 8 says an alteration of course or speed to avoid collision should be…",
+    q: "Rule 8 (action to avoid collision) says an alteration of course or speed to avoid collision should be…",
     a: "Large enough to be readily apparent to the other vessel, not a series of small changes",
     w: [
       "Small and gradual, so as not to alarm the other vessel or its helmsman",
@@ -221,7 +221,7 @@ MQ.add("rules", [
     src: "COLREGS Rule 8 · MARI003"
   },
   {
-    q: "If necessary to avoid collision or to gain time to assess the situation, Rule 8 allows you to…",
+    q: "If necessary to avoid collision or to gain time to assess the situation, Rule 8 (action to avoid collision) allows you to…",
     a: "Slacken speed or take all way off by stopping or reversing your propulsion",
     w: [
       "Switch off your navigation lights to avoid confusing the other vessel",
@@ -287,7 +287,7 @@ MQ.add("rules", [
     src: "COLREGS Rule 10 · MARI003"
   },
   {
-    q: "Which vessels may use the inshore traffic zone of a TSS even when they could use the lane?",
+    q: "Which vessels may use the inshore traffic zone of a Traffic Separation Scheme (TSS) even when they could use the lane?",
     a: "Vessels under 20 m in length, sailing vessels and vessels engaged in fishing",
     w: [
       "Only vessels that are carrying passengers on a regular scheduled service",
@@ -419,7 +419,7 @@ MQ.add("rules", [
     src: "COLREGS Rule 17 · MARI003"
   },
   {
-    q: "Which of these must a power-driven vessel underway keep out of the way of (Rule 18)?",
+    q: "Which of these must a power-driven vessel underway keep out of the way of (Rule 18, responsibilities between vessels)?",
     a: "A vessel engaged in fishing with her gear out",
     w: [
       "A power-driven vessel crossing from her port side",

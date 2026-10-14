@@ -144,7 +144,7 @@ MQ.add("lights", [
     src: "COLREGS Rule 24 · MARI003"
   },
   {
-    q: "You are towing a distressed vessel and cannot practicably display the Rule 24 lights. What must you do?",
+    q: "You are towing a distressed vessel and cannot practicably show the towing lights required by Rule 24. What must you do?",
     a: "Take all possible measures to show the link between the vessels, e.g. light the towline",
     w: [
       "Switch off all lights so that other vessels are not confused by them",

@@ -234,7 +234,7 @@ MQ.add("marks", [
   },
   {
     q: "Decode: Fl(2+1)R.15s8m4M",
-    a: "Group flashing 2+1, red, 15 second period, 8 m above MHWS, nominal range 4 nm",
+    a: "Group flashing 2+1, red, 15 second period, 8 m above mean high water springs, nominal range 4 nm",
     w: [
       "Group flashing 2+1, red, 15 minute period, 8 m above chart datum, range 4 km",
       "Fixed red light, 15 s, 8 m, 4 nm",

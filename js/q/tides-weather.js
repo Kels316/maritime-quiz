@@ -257,7 +257,7 @@ MQ.add("weather", [
     src: "Passage Planning Guide – Basic meteorological terms"
   },
   {
-    q: "A fall of how much pressure in three hours is a serious warning?",
+    q: "A fall of how many hectopascals (hPa) in atmospheric pressure over three hours is a serious warning?",
     a: "3 hPa or more",
     w: [
       "0.3 hPa",
@@ -312,7 +312,7 @@ MQ.add("weather", [
     src: "Passage Planning Guide – Marine wind warnings"
   },
   {
-    q: "The BOM coastal waters forecast is typically issued…",
+    q: "The Bureau of Meteorology (BOM) coastal waters forecast is typically issued…",
     a: "Twice daily (about 0500 and 1530), with an outlook for the next two days",
     w: [
       "Once a week, on Friday, with an outlook for the weekend",

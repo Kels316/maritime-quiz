@@ -365,7 +365,7 @@ MQ.add("fire", [
   },
   {
     q: "Under what standard do small domestic commercial vessels (such as QF5 vessels) meet fire-safety requirements?",
-    a: "NSCV Part C Section 4 (Fire Safety)",
+    a: "The National Standard for Commercial Vessels (NSCV), Part C Section 4 (Fire Safety)",
     w: [
       "SOLAS Chapter II-2 directly",
       "AS 1851 alone",
@@ -455,7 +455,7 @@ MQ.add("whs", [
     src: "GPH Part 1 – Chain of command scenario"
   },
   {
-    q: "The correct order of the hierarchy of controls is…",
+    q: "What is the correct order of the hierarchy of controls, from most to least effective? (PPE = personal protective equipment)",
     a: "Elimination, substitution, isolation, engineering, administrative, PPE",
     w: [
       "PPE, administrative, engineering, isolation, substitution, elimination",
@@ -489,7 +489,7 @@ MQ.add("whs", [
   },
   {
     q: "When must lifejackets generally be worn aboard?",
-    a: "Working on deck underway, in heavy weather, at night, and in MOB or SAR work, and whenever in doubt",
+    a: "Working on deck underway, in heavy weather, at night, and in man-overboard or SAR work, and whenever in doubt",
     w: [
       "Only when the skipper is not watching the deck from the wheelhouse",
       "Only when the forecast wind is above 20 knots for the day",
@@ -522,7 +522,7 @@ MQ.add("whs", [
   },
   {
     q: "A GPH's role in an emergency is to…",
-    a: "Recognise it, report it at once to the skipper or OOW, and carry out assigned tasks",
+    a: "Recognise it, report it at once to the skipper or officer of the watch, and carry out assigned tasks",
     w: [
       "Manage the emergency independently until the skipper arrives on deck",
       "Wait until you are sure it is serious enough to report to the skipper",
