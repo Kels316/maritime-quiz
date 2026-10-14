@@ -232,14 +232,25 @@ MQ.add("engines", [
     src: "Propulsion Guide – Operating within defined limits"
   },
   {
-    q: "The diesel engine loses power and stops after a low-fuel warning. Air has entered the fuel system. What is the first step?",
-    a: "Make the situation safe first: gather containment, rags, absorbent pads and the right spanners",
+    q: "A diesel engine has stopped because air has entered the fuel system. In which order do you bleed it?",
+    a: "The lift pump (motor side), then the secondary filter, then the injector pump",
     w: [
-      "Keep cranking the engine until it fires and the air has cleared from the lines",
-      "Loosen all of the fuel lines at once to let the air out together",
-      "Add water to the primary filter to push the air through to the pump"
+      "The injector pump first, then the secondary filter, then the lift pump",
+      "The secondary filter first, then the injector pump, then the lift pump",
+      "The injectors first, then the primary filter, then the lift pump"
     ],
-    why: "Bleed from the motor side of the lift pump first, then the secondary filter, then the injector pump, hand-actuating the lift pump until bubble-free fuel emerges. If it stops again, check all connections are tight. Don't use shifting spanners.",
+    why: "Work along the fuel line from the tank towards the engine: crack the bleed valve on the motor side of the lift pump and work the lift pump by hand until bubble-free fuel comes out, then do the same at the secondary filter and then the injector pump. If the engine stops again, check all connections are tight and repeat. Before you start, have containment, rags and absorbent pads ready and use the correct spanners, not adjustable ones.",
+    src: "Propulsion Guide – Bleeding the diesel fuel system"
+  },
+  {
+    q: "You are about to bleed air from a diesel fuel system. Which preparation is correct?",
+    a: "Have containment, rags and absorbent pads ready, and use the correct spanners",
+    w: [
+      "Open the bleed screws first, then fetch rags if fuel runs out",
+      "Use adjustable spanners so one tool fits every fitting",
+      "Leave the engine running so the lift pump keeps pumping"
+    ],
+    why: "Fuel will spill when you open the bleed valves, so have containment, rags and absorbent pads in place before you start. Use the correct fixed spanners, not adjustable ones, which round off the fittings. The engine must be stopped and made safe before you bleed it.",
     src: "Propulsion Guide – Bleeding the diesel fuel system"
   },
   {
