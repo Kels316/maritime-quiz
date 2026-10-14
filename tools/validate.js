@@ -54,7 +54,7 @@ console.log('encounter answers without a rule tag:', mism);
 // independent geometry check: steady bearing + closing range for power-vs-power scenarios
 let geoBad = 0, geoN = 0;
 for (let i = 0; i < 800; i++) {
-  const q = MQ.genInstance(i % 2 ? 'encounter' : 'aspect', ['geo', i]);
+  const q = MQ.genInstance(['aspect','encounter','towenc'][i % 3], ['geo', i]);
   const m = /at (\d+) kn, in open water by day|heading up the page at (\d+) kn/.exec(q.q);
   const sp = /heading ([0-9]{3})° relative at (\d+) kn/.exec(q.q);
   const vo = /heading up the page at (\d+) kn/.exec(q.q);

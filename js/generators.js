@@ -59,16 +59,16 @@
     cross_stand: 'Crossing (Rule 15): the other vessel is on your port side, so you stand on (Rule 17) and hold course and speed',
     prio:        null
   };
-  function sample(rng, want) {
+  function sample(rng, want, fixedVo) {
     for (let i = 0; i < 80; i++) {
-      const vo = R(rng, 8, 14);
+      const vo = fixedVo || R(rng, 8, 14);
       let b, vx, root = 'hi';
       switch (want) {
         case 'cross_give':  b = R(rng, 25, 100); vx = R(rng, 6, 16); break;
         case 'cross_stand': b = R(rng, 260, 335); vx = R(rng, 6, 16); break;
         case 'head':        b = R(rng, -7, 7); vx = R(rng, 6, 14); break;
         case 'over_other':  b = R(rng, 140, 220); vx = vo + R(rng, 3, 8); break;
-        case 'over_me':     b = R(rng, -22, 22); vx = vo - R(rng, 3, 6); root = 'lo'; break;
+        case 'over_me':     b = R(rng, -22, 22); vx = Math.max(2, vo - R(rng, 3, 6)); root = 'lo'; break;
       }
       const h = solveHeading(b, vo, vx, root);
       if (h == null) continue;
@@ -170,11 +170,94 @@
       over_me:     'Only a white stern light is visible, so you are astern of it, in the 135° stern-light arc: you are the overtaking vessel and must keep clear.'
     };
     return {
-      q: 'At night you are heading up the page. Another power-driven vessel bears ' + b3(s.b) + ' relative (' + sideDesc(s.b) + '). The bearing is steady and the range is closing. You see the lights shown (' + note + '). What applies?',
+      q: 'At night you are a power-driven vessel heading up the page. Another power-driven vessel bears ' + b3(s.b) + ' relative (' + sideDesc(s.b) + '). The bearing is steady and the range is closing. You see the lights shown (' + note + '). What applies?',
       correct: o.correct, wrongs: o.wrongs,
       why: lightWhy[wk] + ' (Masthead light 225°, sidelights 112.5° each, stern light 135°.)',
       src: 'COLREGS Rules 13–15, 21–23 · MARI003',
       vis: { k: 'lights', items: items, alt: 'Lights of another vessel seen at night' }
+    };
+  });
+
+
+  /* 3. COLREGS situations while YOU are towing (you are always power-driven) */
+  function towLen(rng) { return R(rng, 0, 1) ? R(rng, 25, 90) * 2 + 20 : R(rng, 21, 40) * 10 + 20; }   // short tow ≤200 m or long tow >200 m
+  MQ.registerGen('towenc', 'towsit', 6, function (rng) {
+    const vo = R(rng, 6, 9), len = towLen(rng), mode = rng();
+    const tw = 'towing a barge astern (length of tow ' + len + ' m)';
+    const pick = function (want) {
+      for (let i = 0; i < 40; i++) { const s = sample(rng, want, vo); if (s && !(s.b > 150 && s.b < 210)) return s; }
+      return sample(rng, 'cross_give', vo);
+    };
+    if (mode < 0.45) {                                  // ordinary power-driven rules still apply
+      const want = P(['cross_give', 'cross_stand', 'cross_give', 'cross_stand', 'head', 'over_other', 'over_me'], rng);
+      const s = pick(want), wk = classify(s.b, s.h).kind, o = optionsFor(wk, rng);
+      return {
+        q: 'You are the blue vessel: power-driven, ' + tw + ', heading up the page at ' + s.vo + ' kn, in open water by day. You are not showing any restricted-in-ability-to-manoeuvre signal. The other power-driven vessel is ' + sideDesc(s.b) + ' (' + b3(s.b) + ' relative), heading ' + b3(s.h) + ' relative at ' + s.vx + ' kn. Its bearing is steady and the range is closing. What applies?',
+        correct: o.correct, wrongs: o.wrongs,
+        why: 'Towing does not by itself give you priority: a power-driven vessel towing is still a power-driven vessel, so the ordinary rules apply. ' + explain(wk, s) + ' Remember your tow: it turns slower and swings wider than you, so act early.',
+        src: 'COLREGS Rules 3, 13–18, 24 · MARI003',
+        vis: { k: 'enc', b: s.b, h: s.h, label: 'POWER-DRIVEN', tow: true, alt: 'Two vessels; you tow a barge astern' }
+      };
+    }
+    if (mode < 0.75) {                                  // you are towing and RAM
+      const s = pick('cross_give');
+      return {
+        q: 'You are the blue vessel: power-driven, ' + tw + ', heading up the page at ' + s.vo + ' kn. Your tow severely restricts you and the tow in your ability to deviate from your course, and you are showing a ball, diamond, ball in a vertical line. The other power-driven vessel is ' + sideDesc(s.b) + ' (' + b3(s.b) + ' relative), heading ' + b3(s.h) + ' relative at ' + s.vx + ' kn. The bearing is steady and the range is closing. What applies?',
+        correct: 'Rule 18: you are restricted in your ability to manoeuvre, so the other power-driven vessel must keep out of your way and you stand on',
+        wrongs: [STATEMENTS.cross_give, STATEMENTS.head, STATEMENTS.over_me],
+        why: 'Ball–diamond–ball is a vessel restricted in her ability to manoeuvre, and a tow that severely restricts the tug and tow in their ability to deviate qualifies (Rule 3(g)). A power-driven vessel must keep out of the way of one restricted in her ability to manoeuvre (Rule 18(a)), even though it is on your starboard bow. Without the signal, this same geometry would make you the give-way vessel. Only use the signal when the tow truly restricts you.',
+        src: 'COLREGS Rules 3(g), 18, 24(e) · MARI003',
+        vis: { k: 'enc', b: s.b, h: s.h, label: 'POWER-DRIVEN', tow: true, alt: 'Two vessels; you tow a barge astern' }
+      };
+    }
+    /* vessel with priority, while you tow */
+    const t = P([
+      { label: 'SAILING (no engine)', say: 'a sailing vessel under sail alone', sail: true, who: 'a sailing vessel', vx: [3, 6] },
+      { label: 'FISHING (nets out)', say: 'a vessel engaged in fishing (two black cones, apexes together)', who: 'a vessel engaged in fishing', vx: [2, 5] }
+    ], rng);
+    let b, h = 0;
+    for (let i = 0; i < 60; i++) {
+      const bb = norm((rng() < 0.6 ? -1 : 1) * R(rng, 25, 95)), vx = R(rng, t.vx[0], t.vx[1]);
+      const hh = solveHeading(bb, vo, vx, 'hi');
+      if (hh == null) continue;
+      const c = classify(bb, hh);
+      if (c.kind === 'over_other' || borderline(bb, c.a)) continue;
+      b = bb; h = Math.round(hh); break;
+    }
+    if (b == null) { b = 300; h = 70; }
+    return {
+      q: 'You are the blue vessel: power-driven, ' + tw + ', heading up the page at ' + vo + ' kn, in open water by day. Ahead of you is ' + t.say + ', ' + sideDesc(b) + ' (' + b3(b) + ' relative), heading ' + b3(h) + ' relative. The range is closing. Which statement is correct?',
+      correct: 'Rule 18: you are a power-driven vessel and must keep out of the way of ' + t.who,
+      wrongs: [STATEMENTS.cross_stand, STATEMENTS.head, STATEMENTS.over_other],
+      why: 'A power-driven vessel underway, including one towing, must keep out of the way of ' + t.who + ' (Rule 18(a)), whichever side it is on. Your tow makes this harder, so alter early and allow for the tow swinging wide.',
+      src: 'COLREGS Rule 18 · MARI003',
+      vis: { k: 'enc', b: b, h: h, label: t.label, sail: !!t.sail, tow: true, alt: 'Two vessels; you tow a barge astern' }
+    };
+  });
+
+  /* 4. Lights and shapes you must show while towing */
+  MQ.registerGen('towlights', 'towsit', 4, function (rng) {
+    const len = towLen(rng), long = len > 200;
+    const night = rng() < 0.6;
+    const intro = 'You are a power-driven vessel towing astern. The length of the tow, measured from your stern to the after end of the tow, is ' + len + ' m. ';
+    if (night) {
+      const f = function (n, tl) { return (n === 2 ? 'Two' : 'Three') + ' white masthead lights in a vertical line, sidelights, a sternlight' + (tl ? ' and a yellow towing light above the sternlight' : ' only (no towing light)'); };
+      return {
+        q: intro + 'Which lights must you show at night?',
+        correct: f(long ? 3 : 2, true),
+        wrongs: [f(long ? 2 : 3, true), f(long ? 3 : 2, false), f(long ? 2 : 3, false)],
+        why: 'A power-driven vessel towing shows two masthead lights in a vertical line, or three if the length of the tow exceeds 200 m, plus sidelights, a sternlight, and a yellow towing light in a vertical line above the sternlight (Rule 24(a)). This tow is ' + (long ? 'over' : 'not over') + ' 200 m, so ' + (long ? 'three' : 'two') + ' masthead lights.',
+        src: 'COLREGS Rule 24(a) · MARI003'
+      };
+    }
+    const d = function (t) { return t; };
+    return {
+      q: intro + 'Which day shape must you display?',
+      correct: long ? 'A black diamond where it can best be seen' : 'No towing day shape is required',
+      wrongs: long ? ['No towing day shape is required', 'Two black balls in a vertical line', 'A black cylinder where it can best be seen']
+                   : ['A black diamond where it can best be seen', 'Two black balls in a vertical line', 'A black cylinder where it can best be seen'],
+      why: 'By day a vessel towing shows a black diamond where it can best be seen only when the length of the tow exceeds 200 m (Rule 24(a)(vii)). ' + (long ? 'At ' : 'At ') + len + ' m the tow is ' + (long ? 'over' : 'not over') + ' 200 m, so ' + (long ? 'the diamond is required.' : 'no diamond is needed.'),
+      src: 'COLREGS Rule 24(a) · MARI003'
     };
   });
 

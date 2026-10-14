@@ -135,6 +135,11 @@
     s += '<g transform="translate(' + cx + ',' + cy + ') scale(1.35)" fill="#3da5ff" stroke="#fff" stroke-width="1">' + shipPath(false) + '</g>' +
       '<line x1="' + cx + '" y1="' + (cy - 26) + '" x2="' + cx + '" y2="' + (cy - 58) + '" stroke="#fff" stroke-width="2" marker-end="url(#ar)"/>' +
       '<text x="' + (cx + 14) + '" y="' + (cy + 22) + '" fill="#fff" font-size="12" font-weight="700">YOU</text>';
+    if (spec.tow) {
+      s += '<line x1="' + cx + '" y1="' + (cy + 17) + '" x2="' + cx + '" y2="' + (cy + 60) + '" stroke="#fff" stroke-width="1.5"/>' +
+        '<g transform="translate(' + cx + ',' + (cy + 78) + ') scale(1)" fill="#8fa3b5" stroke="#fff" stroke-width="1">' + shipPath(false) + '</g>' +
+        '<text x="' + (cx + 14) + '" y="' + (cy + 84) + '" fill="#cfe3f5" font-size="10">TOW</text>';
+    }
     /* other vessel */
     s += '<g transform="translate(' + ox + ',' + oy + ') rotate(' + hd + ') scale(1.35)" fill="#ff9f43" stroke="#fff" stroke-width="1">' + shipPath(spec.sail) + '</g>';
     if (moving) {
