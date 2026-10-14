@@ -1,14 +1,14 @@
 /* Question data – seamanship. Fields: q, a (correct), w (3 wrong options), why, src, vis (optional). */
 MQ.add("seamanship", [
   {
-    q: "The right-hand side of a vessel when facing forward is…",
-    a: "Starboard",
+    q: "A lookout reports another vessel “on the starboard quarter”. Where is it?",
+    a: "On the right-hand side, towards the stern",
     w: [
-      "Port",
-      "Aft",
-      "Beam"
+      "On the right-hand side, towards the bow",
+      "On the left-hand side, towards the stern",
+      "Directly astern"
     ],
-    why: "Port is left, starboard right, bow forward, stern aft. Midships is the middle; the beam is the widest part (and a direction at right angles to the centreline).",
+    why: "Starboard is the right side when facing forward, and the quarter is the part of the vessel between the beam and the stern. “Starboard quarter” is therefore the right rear sector. Port is left, bow is forward, stern is aft.",
     src: "GPH Part 1 – Nautical terminology"
   },
   {
@@ -34,14 +34,14 @@ MQ.add("seamanship", [
     src: "GPH Part 2 – Types of rope"
   },
   {
-    q: "A deck gunwale is pronounced…",
-    a: "“gunnel”",
+    q: "What is a vessel's freeboard?",
+    a: "The distance from the waterline to the deck edge",
     w: [
-      "“gun-wail”",
-      "“gun-well”",
-      "“gone-while”"
+      "The depth of the keel below the waterline",
+      "The distance between the bow and the stern",
+      "The space between the deck and the cabin roof"
     ],
-    why: "The gunwale (gunnel) is the upper edge of the vessel's side. A scupper drains water from the deck; the bilge is the lowest interior part of the hull.",
+    why: "Freeboard is the height of the deck edge above the water. Keel: the structural member along the bottom of the hull. Gunwale (“gunnel”): the upper edge of the vessel's side. Scupper: an opening that drains water from the deck.",
     src: "GPH Part 1 – Nautical terminology"
   },
   {
@@ -331,14 +331,14 @@ MQ.add("seamanship", [
     src: "GPH Part 2 – The anchoring procedure"
   },
   {
-    q: "Which is NOT a consideration in choosing an anchorage?",
-    a: "The paint colour of the nearest vessel",
+    q: "Before you anchor, what must you check about the space around the anchorage?",
+    a: "There is enough clear room to swing without hitting other vessels, the shore or hazards",
     w: [
-      "Holding ground of the seabed",
-      "Swing room for sway, heave, roll, pitch and yaw",
-      "Wind, sea state, depth and tidal range"
+      "There are no other vessels at all within one mile",
+      "The water is exactly the same depth in every direction",
+      "There is a charted beacon on every side of the anchorage"
     ],
-    why: "Also consider other vessels (moorings swing differently), radio reception, and shelter.",
+    why: "An anchored vessel swings with changes in wind and tide, so you need clear swing room (allowing for sway, heave, roll, pitch and yaw). Also consider holding ground, depth and tidal range, wind and sea state, how nearby vessels are lying (moorings swing differently to anchored vessels), and radio reception.",
     src: "GPH Part 2 – Considerations when anchoring"
   },
   {
@@ -375,14 +375,14 @@ MQ.add("seamanship", [
     src: "GPH Part 2 – Mooring scenario"
   },
   {
-    q: "Which of these is NOT a task when securing the vessel for sea?",
-    a: "Leaving mooring lines trailing so they can be used quickly",
+    q: "Why must mooring lines be stowed securely once they are let go?",
+    a: "So they cannot wash about the deck or foul the propeller",
     w: [
-      "Stowing mooring lines so they cannot foul the propeller",
-      "Checking hatches and openings are weathertight",
-      "Stowing tools and equipment securely"
+      "So they stay dry for the next berthing",
+      "So they do not add weight forward",
+      "So they can be counted at the end of the trip"
     ],
-    why: "Also secure cargo and equipment, stow the gangway, and check freeing ports and scuppers are clear. Water trapped on deck adds weight high in the vessel and reduces stability.",
+    why: "Securing for sea means everything is made fast so it cannot move in a seaway. Loose lines are a trip hazard and, if they go over the side, can foul the propeller. Also check cargo and equipment, hatches and openings are weathertight, tools are stowed, and the gangway is secured.",
     src: "GPH Part 2 – Securing the vessel for sea"
   },
   {
@@ -463,15 +463,15 @@ MQ.add("seamanship", [
     src: "GPH Part 2 – Pollution prevention"
   },
   {
-    q: "When handling lines you should never…",
-    a: "Let a tensioned line trap your hand against a cleat, bitt or fairlead",
+    q: "A line has developed a riding turn on a powered winch drum. What must you do before trying to clear it?",
+    a: "Stop the machinery",
     w: [
-      "Tend lines with a clear footing",
-      "Report equipment problems",
-      "Follow the supervisor's timing for making fast and letting go of the lines"
+      "Increase the load to tighten the turn",
+      "Feed more turns onto the drum",
+      "Pull the line off by hand while it is moving"
     ],
-    why: "Keep the deck clear of loose ropes, avoid bights and snap-back zones, and coordinate with the helm so a let-go line doesn't foul the propeller.",
-    src: "GPH Part 2 – Handling mooring lines safely"
+    why: "A riding turn is a turn trapped over another turn under load, which jams the line. Never try to clear one, or a fouled line, on a powered drum while it is running or under load. Stop the machinery first (know where the emergency stop is), then take the load off, for example with a rolling hitch and a second line.",
+    src: "GPH Part 2 – Deck machinery and emergency stops"
   }
 ]);
 

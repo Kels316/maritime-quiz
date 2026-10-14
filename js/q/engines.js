@@ -166,15 +166,15 @@ MQ.add("engines", [
     src: "Propulsion Guide – Two-stroke and four-stroke principles"
   },
   {
-    q: "The connecting rod…",
-    a: "Connects the piston to the crankshaft, changing linear motion into rotary motion",
+    q: "An inboard diesel cranks very slowly, or not at all. Which is a likely cause?",
+    a: "A weak battery, or a poor connection at the battery or starter",
     w: [
-      "Opens the valves at the correct moment in each cycle of the engine",
-      "Delivers atomised fuel into the cylinder, at high pressure and on time",
-      "Cools the pistons by carrying lubricating oil to their crowns"
+      "Air in the fuel lines",
+      "A blocked air filter",
+      "A blown head gasket"
     ],
-    why: "Camshaft lobes open the valves via rockers; timing gear keeps the camshaft in step with the crankshaft; injectors deliver atomised fuel.",
-    src: "Propulsion Guide – Anatomy of a marine diesel"
+    why: "Slow or no cranking points to the starting circuit: a battery in poor condition, a poor or corroded connection at the battery or starter, a faulty starter, or battery leads that are too small or damaged. Air in the fuel, a blocked air filter or low compression let the engine crank normally but stop it firing.",
+    src: "Propulsion Guide – Fault finding"
   },
   {
     q: "A packed stuffing box on a propeller shaft should…",
@@ -243,15 +243,15 @@ MQ.add("engines", [
     src: "Propulsion Guide – Bleeding the diesel fuel system"
   },
   {
-    q: "You are about to bleed air from a diesel fuel system. Which preparation is correct?",
-    a: "Have containment, rags and absorbent pads ready, and use the correct spanners",
+    q: "A diesel engine cranks normally but will not fire. Which is a likely cause?",
+    a: "No fuel, blocked fuel filters, or air in the fuel lines",
     w: [
-      "Open the bleed screws first, then fetch rags if fuel runs out",
-      "Use adjustable spanners so one tool fits every fitting",
-      "Leave the engine running so the lift pump keeps pumping"
+      "A flat starter battery",
+      "A poor connection at the starter motor",
+      "Battery leads that are too small"
     ],
-    why: "Fuel will spill when you open the bleed valves, so have containment, rags and absorbent pads in place before you start. Use the correct fixed spanners, not adjustable ones, which round off the fittings. The engine must be stopped and made safe before you bleed it.",
-    src: "Propulsion Guide – Bleeding the diesel fuel system"
+    why: "If the engine cranks well, the starting circuit is fine. Look at fuel and air: an empty tank or closed pick-up valve, blocked lines or filters, air in the fuel (bleed the system), a blocked air filter, a kill switch not set correctly, or faulty glow plugs. Poor cranking, by contrast, points to the battery, connections or starter.",
+    src: "Propulsion Guide – Fault finding"
   },
   {
     q: "The engine fails to start. Which is the wrong thing to do?",
@@ -474,26 +474,26 @@ MQ.add("engines", [
     src: "GPH Part 1 – General safety practices on the vessel"
   },
   {
-    q: "A maintenance task is not finished until…",
-    a: "The area is cleaned, waste is dealt with, tools are stowed, and the work and defects are recorded",
+    q: "Which of these are regulated wastes that must never go into general rubbish or the bilge?",
+    a: "Used oil, oil filters, spent batteries, oily rags and old fuel",
     w: [
-      "The last bolt is tightened and the engine has been started and run",
-      "The skipper is off duty and the vessel has been put away for the night",
-      "The tools are put away in the locker and the crew have gone ashore"
+      "Clean rags, empty cardboard boxes and rope offcuts",
+      "Fresh water, soap suds and washed-down salt",
+      "Paper towels, food scraps and plastic packaging"
     ],
-    why: "Tools must be stowed securely before the vessel goes to sea.",
-    src: "GPH Part 3 – Cleaning up and stowing after maintenance"
+    why: "Used oil and filters are collected for recycling, spent lead-acid batteries go back to a battery recycler, and oily rags are kept in a sealed, fire-rated container until they can be disposed of ashore. Nothing in this group may enter the bilge or the water. If unsure how to handle a waste, ask first.",
+    src: "Propulsion Guide – Clean-up and waste disposal"
   },
   {
-    q: "When a coolant level has dropped and you see a dried coolant trail on the engine block, you should…",
-    a: "Report it – don't just top up – and record what you found",
+    q: "A diesel engine is overheating. Which is a likely cause?",
+    a: "A blocked raw-water strainer or intake, or a damaged raw-water pump",
     w: [
-      "Top it up and say nothing, as the level will be right for the trip",
-      "Run the engine to see if it keeps losing coolant while it is hot",
-      "Wipe the trail off with a rag and carry on, as it has caused no failure"
+      "A flat starter battery",
+      "An overcharging alternator",
+      "A blocked fuel filter"
     ],
-    why: "A falling level plus a trail suggests a leak. Tell the skipper what you found, where and when.",
-    src: "GPH Part 3 – Routine checks scenario"
+    why: "Overheating usually means the heat is not being carried away: cooling water galleries or the heat exchanger blocked, a blocked hull fitting or strainer, a damaged raw-water or coolant pump (the rubber impeller fails if run dry), air in the seawater line, a faulty thermostat or a blown head gasket. An overloaded engine also overheats. Stop and investigate rather than carrying on.",
+    src: "Propulsion Guide – Fault finding"
   }
 ]);
 

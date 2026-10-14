@@ -166,15 +166,15 @@ MQ.add("fire", [
     src: "MARF028 Fire Guide §2.1"
   },
   {
-    q: "What is the maximum working weight of a “portable” extinguisher?",
-    a: "23 kg",
+    q: "A small vessel can only carry a few extinguishers and must cover electrical equipment as well. Which combination is the best compromise?",
+    a: "Dry powder (BE or ABE) and CO₂",
     w: [
-      "5 kg",
-      "50 kg",
-      "12 kg"
+      "Water and foam",
+      "Fire buckets only",
+      "Wet chemical and water"
     ],
-    why: "Designed to be carried and operated by hand (MO15 Sch 2). Marine portables are built and tested to IMO Res. A.951(23).",
-    src: "MARF028 Fire Guide §2.1"
+    why: "Where only a few extinguishers are carried and they must cover a range of hazards including electrical ones, a combination of dry powder (BE/ABE) and CO₂ is the best compromise. Extinguishers for spaces with electrical or electronic equipment must use a non-conductive agent. A portable extinguisher is one that can be carried and used by hand, up to 23 kg total weight.",
+    src: "MARF028 Fire Guide §2.1 (NSCV C4)"
   },
   {
     q: "Six-monthly inspection of a stored-pressure extinguisher may be done by…",
