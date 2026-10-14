@@ -155,14 +155,14 @@ MQ.add("sar", [
     src: "Marine SAR Guide – Divergence"
   },
   {
-    q: "For an initial response, when must you start allowing for water movement (the “four-hour rule”)?",
-    a: "Only if more than four hours have passed since the last known position (LKP), or earlier in high-drift areas",
+    q: "For an initial coastal SAR response, how long after the last known position can you generally ignore the movement of the water (drift)?",
+    a: "About four hours",
     w: [
-      "Immediately, in all cases, from the time of the first call to the base",
-      "After twelve hours, once the first search has failed to find the target",
-      "Never, as water movement only matters for a person in the water"
+      "About one hour",
+      "About twelve hours",
+      "About twenty-four hours"
     ],
-    why: "Within 4 hours the target is assumed close to the LKP. After that, drift must be calculated first and the search radius applied to the drifted datum.",
+    why: "For the initial response, water movement does not need to be factored in unless more than four hours have passed since the last known position (LKP) – the target is assumed to be still close to it. In high-drift areas, apply an arbitrary allowance from the start. After four hours, drift must be calculated first and the search radius applied to the drifted datum, not the original LKP.",
     src: "Marine SAR Guide – Three-stage search response · Coastal search model"
   },
   {
