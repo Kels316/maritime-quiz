@@ -177,14 +177,14 @@ MQ.add("plan", [
     src: "Passage Planning Guide – Navigation equipment"
   },
   {
-    q: "You discover the steering compass has a 3°W error on your outbound heading. What does “allowances made in planning” mean?",
-    a: "Adjust the courses to steer on the passage plan for that error",
+    q: "During your pre-departure check you find the steering compass has a 3°W error on your outbound heading. What should you do when planning the passage?",
+    a: "Correct the compass courses to steer on the passage plan for that error",
     w: [
-      "Note it in the log only, as the plan uses true courses",
-      "Ignore it, as it is less than the 5° that must be corrected",
-      "Fit a new compass before every trip, as the error will change"
+      "Record the error in the log but leave the planned courses as they are",
+      "Ignore it, because an error under 5° does not need correcting",
+      "Plan on true courses only and not steer by the compass at all"
     ],
-    why: "An error that has been discovered and then not applied is worse than one never looked for – it creates false confidence.",
+    why: "Finding an error is only half the job: the courses to steer written on the plan must be adjusted for it, otherwise you are steering the wrong heading. An error that has been found and then not applied is worse than one never looked for, because it creates false confidence. Also report a large or changing error so the compass can be swung.",
     src: "Passage Planning Guide – Navigation equipment"
   },
   {
