@@ -462,7 +462,7 @@ MQ.add("weather", [
       "Dangerous only at night, when sea state cannot be judged by eye",
       "Irrelevant to small vessels, as the forecast is written for ships"
     ],
-    why: "A forecast is written for all vessels. Your SMS and flotilla SOP limits are the decision – how the vessel feels on the day is not.",
+    why: "A forecast is written for all vessels. Your SMS and unit SOP limits are the decision – how the vessel feels on the day is not.",
     src: "Passage Planning Guide – Recognising the approach of bad weather"
   }
 ]);

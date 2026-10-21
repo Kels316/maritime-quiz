@@ -191,7 +191,7 @@ MQ.add("plan", [
     q: "Who sets out the safety equipment a domestic commercial vessel must carry?",
     a: "The National Standard for Commercial Vessels (Part C, Section 7A), applied through the certificate of operation and SMS",
     w: [
-      "The flotilla's verbal instructions, given at the start of the season",
+      "The unit's verbal instructions, given at the start of the season",
       "The vessel's manufacturer, in the owner's manual supplied with the hull",
       "The Bureau of Meteorology, in its annual marine safety bulletin"
     ],
@@ -305,7 +305,7 @@ MQ.add("plan", [
       "Only the date, and the name of the person making the report",
       "The name of the last user and the time at which they switched it off"
     ],
-    why: "Observations that affect charts – a mark missing, unlit, off station, or an uncharted danger – go to the Australian Hydrographic Office and the state or port authority, normally via your flotilla.",
+    why: "Observations that affect charts – a mark missing, unlit, off station, or an uncharted danger – go to the Australian Hydrographic Office and the state or port authority, normally via your unit.",
     src: "Passage Planning Guide – Reporting defects and observations"
   },
   {

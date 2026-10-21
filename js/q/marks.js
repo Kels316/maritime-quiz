@@ -326,7 +326,7 @@ MQ.add("marks", [
       "Assume the chart is right and the mark is wrong, and carry on",
       "Speed up to clear the area before the light or visibility fails"
     ],
-    why: "Reports go (normally via the flotilla) to the Australian Hydrographic Office and the state or port authority; this is how Notices to Mariners come to exist.",
+    why: "Reports go (normally via the unit) to the Australian Hydrographic Office and the state or port authority; this is how Notices to Mariners come to exist.",
     src: "Passage Planning Guide – Identifying and complying with navigational marks"
   },
   {

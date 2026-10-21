@@ -23,7 +23,7 @@ MQ.add("sar", [
     src: "Marine SAR Guide – SAR coordination structure"
   },
   {
-    q: "An incident is reported to an MRQ flotilla and Police have not yet arrived. The senior duty officer should…",
+    q: "An incident is reported to an MRQ unit and Police have not yet arrived. The senior duty officer should…",
     a: "Take the SAR Mission Coordinator (SMC) role in the interim, declare the phase, notify JRCC and Police, and hand over when they arrive",
     w: [
       "Wait for Police to arrive before taking any action to launch vessels",
@@ -338,7 +338,7 @@ MQ.add("sar", [
       "Post a note on social media to ask the public to help in the search",
       "Say the target is probably lost, so the reporter will not wait"
     ],
-    why: "Do not reveal identities, search areas, assets or likely outcome. Within MRQ the Flotilla Captain or duty officer refers all media enquiries upward.",
+    why: "Do not reveal identities, search areas, assets or likely outcome. Within MRQ the unit’s senior officer or duty officer refers all media enquiries upward.",
     src: "Marine SAR Guide – Media and public information"
   },
   {
