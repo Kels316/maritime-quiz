@@ -109,8 +109,11 @@
   }
   function buoySVG(spec) {
     const b = buoySpec(spec.t);
-    const night = spec.light !== false ? buoyLight(spec.t) : null;
-    const W = night ? 300 : 160;
+    if (spec.view === 'night') {
+      return '<svg viewBox="0 0 130 220" role="img" aria-label="' + esc(spec.alt || 'A navigation light at night') + '">' + nightPanel(buoyLight(spec.t), 0, 'nb' + (++uid)) + '</svg>';
+    }
+    const night = null;
+    const W = 160;
     const id = 'bu' + (++uid);
     const cx = 80, water = 168;
     let bodyPath, top, bot;

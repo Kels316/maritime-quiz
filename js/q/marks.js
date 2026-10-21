@@ -142,12 +142,12 @@ MQ.add("marks", [
     vis: {"k":"buoy","t":"special","alt":"Yellow buoy with X topmark"}
   },
   {
-    q: "A buoy with blue and yellow vertical stripes and a yellow cross topmark marks…",
-    a: "A new, uncharted wreck – do not pass close",
+    q: "What does this mark show?",
+    a: "An emergency wreck marking buoy: a new, uncharted danger, so keep well clear",
     w: [
-      "A swimming area in which boats must not enter",
-      "A seaplane landing area that boats must keep clear of",
-      "A fish-aggregating device that boats may tow through"
+      "A special mark: an area or feature described on the chart",
+      "A safe-water mark: navigable water all round, so pass either side",
+      "An isolated danger mark: a small hazard with navigable water all round it"
     ],
     why: "The emergency wreck marking buoy has alternating blue and yellow vertical stripes, a yellow cross and an alternating blue/yellow light. If you see one that is not on your chart, slow down, keep clear and report it.",
     src: "Passage Planning Guide – Emergency wreck marking",
@@ -339,6 +339,125 @@ MQ.add("marks", [
     ],
     why: "It is one of the four easily misread conventions: sounding position, drying heights, charted heights above MHWS, and bearings from seaward in true.",
     src: "Passage Planning Guide – Chart symbols"
+  },
+  {
+    q: "You see this light at night. Which mark is showing it?",
+    a: "A port-hand lateral mark: leave it to port",
+    w: [
+      "A starboard-hand lateral mark: leave it to starboard",
+      "A special mark: an area or feature described on the chart",
+      "An isolated danger mark: keep clear of the hazard"
+    ],
+    why: "Red flashing: a port-hand lateral mark. By day it is a red can with a red can topmark. A lateral mark’s light matches its colour, in any rhythm.",
+    src: "Passage Planning Guide – Buoyage · MSQ Navigation marks",
+    vis: {"k":"buoy","t":"port","view":"night","alt":"A navigation light at night"}
+  },
+  {
+    q: "You see this light at night. Which mark is showing it?",
+    a: "A starboard-hand lateral mark: leave it to starboard",
+    w: [
+      "A port-hand lateral mark: leave it to port",
+      "A special mark: an area or feature described on the chart",
+      "A safe-water mark: pass on either side"
+    ],
+    why: "Green flashing: a starboard-hand lateral mark. By day it is a green cone with a point-up cone topmark.",
+    src: "Passage Planning Guide – Buoyage · MSQ Navigation marks",
+    vis: {"k":"buoy","t":"stbd","view":"night","alt":"A navigation light at night"}
+  },
+  {
+    q: "You see this light at night. Which mark is showing it?",
+    a: "A north cardinal mark: safe water lies to the north of it",
+    w: [
+      "An east cardinal mark: safe water lies to the east of it",
+      "A south cardinal mark: safe water lies to the south of it",
+      "An isolated danger mark: keep clear of the hazard"
+    ],
+    why: "Cardinal marks show a white light. Continuous quick flashing is north. By day it is black over yellow with both cones pointing up.",
+    src: "Passage Planning Guide – Buoyage · MSQ Navigation marks",
+    vis: {"k":"buoy","t":"N","view":"night","alt":"A navigation light at night"}
+  },
+  {
+    q: "You see this light at night. Which mark is showing it?",
+    a: "An east cardinal mark: safe water lies to the east of it",
+    w: [
+      "A north cardinal mark: safe water lies to the north of it",
+      "A south cardinal mark: safe water lies to the south of it",
+      "An isolated danger mark: keep clear of the hazard"
+    ],
+    why: "Quick flashing in groups of three is east – “3 o’clock” on the clock face. By day it is black, yellow, black with cones base to base.",
+    src: "Passage Planning Guide – Buoyage · MSQ Navigation marks",
+    vis: {"k":"buoy","t":"E","view":"night","alt":"A navigation light at night"}
+  },
+  {
+    q: "You see this light at night. Which mark is showing it?",
+    a: "A south cardinal mark: safe water lies to the south of it",
+    w: [
+      "An east cardinal mark: safe water lies to the east of it",
+      "A west cardinal mark: safe water lies to the west of it",
+      "A safe-water mark: pass on either side"
+    ],
+    why: "Six quick flashes then one long flash is south – “6 o’clock”. The long flash stops it being confused with west. By day it is yellow over black with both cones pointing down.",
+    src: "Passage Planning Guide – Buoyage · MSQ Navigation marks",
+    vis: {"k":"buoy","t":"S","view":"night","alt":"A navigation light at night"}
+  },
+  {
+    q: "You see this light at night. Which mark is showing it?",
+    a: "A west cardinal mark: safe water lies to the west of it",
+    w: [
+      "An east cardinal mark: safe water lies to the east of it",
+      "A south cardinal mark: safe water lies to the south of it",
+      "An isolated danger mark: keep clear of the hazard"
+    ],
+    why: "Quick flashing in groups of nine is west – “9 o’clock”. By day it is yellow, black, yellow with cones point to point (a wine glass).",
+    src: "Passage Planning Guide – Buoyage · MSQ Navigation marks",
+    vis: {"k":"buoy","t":"W","view":"night","alt":"A navigation light at night"}
+  },
+  {
+    q: "You see this light at night. Which mark is showing it?",
+    a: "An isolated danger mark: navigable water all round it, but keep clear",
+    w: [
+      "A safe-water mark: pass on either side",
+      "A north cardinal mark: safe water lies to the north of it",
+      "A special mark: an area or feature described on the chart"
+    ],
+    why: "A white group of two flashes is an isolated danger mark. By day it is black with red band(s) and two black spheres as the topmark.",
+    src: "Passage Planning Guide – Buoyage · MSQ Navigation marks",
+    vis: {"k":"buoy","t":"isolated","view":"night","alt":"A navigation light at night"}
+  },
+  {
+    q: "You see this light at night. Which mark is showing it?",
+    a: "A safe-water mark: navigable water all round it, so pass either side",
+    w: [
+      "An isolated danger mark: navigable water all round it, but keep clear",
+      "A south cardinal mark: safe water lies to the south of it",
+      "A special mark: an area or feature described on the chart"
+    ],
+    why: "A white light with one long flash every 10 seconds (or isophase, occulting or Morse A) is a safe-water mark. By day it is red and white stripes with a red sphere.",
+    src: "Passage Planning Guide – Buoyage · MSQ Navigation marks",
+    vis: {"k":"buoy","t":"safe","view":"night","alt":"A navigation light at night"}
+  },
+  {
+    q: "You see this light at night. Which mark is showing it?",
+    a: "A special mark: an area or feature described on the chart",
+    w: [
+      "A port-hand lateral mark: leave it to port",
+      "A starboard-hand lateral mark: leave it to starboard",
+      "An emergency wreck marking buoy: a new danger"
+    ],
+    why: "A yellow light is a special mark. By day it is yellow, often with a yellow X topmark.",
+    src: "Passage Planning Guide – Buoyage · MSQ Navigation marks",
+    vis: {"k":"buoy","t":"special","view":"night","alt":"A navigation light at night"}
+  },
+  {
+    q: "You see this light at night. Which mark is showing it?",
+    a: "An emergency wreck marking buoy: a new, uncharted danger",
+    w: [
+      "A special mark: an area or feature described on the chart",
+      "A safe-water mark: pass on either side",
+      "An isolated danger mark: navigable water all round it"
+    ],
+    why: "Alternating blue and yellow, with a short dark gap between, is an emergency wreck marking buoy. By day it is blue and yellow stripes with a yellow cross. Keep clear and report it.",
+    src: "Passage Planning Guide – Buoyage · MSQ Navigation marks",
+    vis: {"k":"buoy","t":"wreck","view":"night","alt":"A navigation light at night"}
   }
 ]);
-
