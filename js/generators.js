@@ -496,8 +496,6 @@
   const BUOY = {
     port:      { fam: 'lat', m: 'A port-hand lateral mark: leave it to port', l: 'Red, flashing' },
     stbd:      { fam: 'lat', m: 'A starboard-hand lateral mark: leave it to starboard', l: 'Green, flashing' },
-    pref_stbd: { fam: 'lat', m: 'Preferred channel to starboard: leave this mark to port', l: 'Red, group flashing 2+1' },
-    pref_port: { fam: 'lat', m: 'Preferred channel to port: leave this mark to starboard', l: 'Green, group flashing 2+1' },
     N:         { fam: 'card', m: 'A north cardinal mark: safe water lies to the north of it', l: 'White, continuous quick flashing' },
     E:         { fam: 'card', m: 'An east cardinal mark: safe water lies to the east of it', l: 'White, quick flashing in groups of 3' },
     S:         { fam: 'card', m: 'A south cardinal mark: safe water lies to the south of it', l: 'White, quick flashing in groups of 6, then one long flash' },
@@ -515,7 +513,7 @@
     const wr = near.concat(far).slice(0, 3).map(function (k) { return BUOY[k][field]; });
     return { t: t, me: me, correct: me[field], wrongs: wr };
   }
-  const BUOY_NAME = { port: 'red can', stbd: 'green cone', pref_stbd: 'red can with a green band', pref_port: 'green cone with a red band', N: 'north cardinal', E: 'east cardinal', S: 'south cardinal', W: 'west cardinal', isolated: 'isolated danger', safe: 'safe water', special: 'special', wreck: 'emergency wreck' };
+  const BUOY_NAME = { port: 'red can', stbd: 'green cone', N: 'north cardinal', E: 'east cardinal', S: 'south cardinal', W: 'west cardinal', isolated: 'isolated danger', safe: 'safe water', special: 'special', wreck: 'emergency wreck' };
   MQ.registerGen('buoyid', 'marks', 5, function (rng) {
     const b = buoyPick(rng, 'id', 'm');
     return {

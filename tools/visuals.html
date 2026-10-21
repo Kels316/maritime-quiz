@@ -4,7 +4,7 @@
 <script src="../js/engine.js"></script><script src="../js/visuals.js"></script><script src="../js/generators.js"></script>
 <script>
 const V=MQV.render, out=document.getElementById('g');
-['port','stbd','N','S','E','W','isolated','safe','special','wreck','pref_stbd','pref_port'].forEach(t=>out.innerHTML+='<div>'+t+V({k:'buoy',t})+'</div>');
+['port','stbd','N','S','E','W','isolated','safe','special','wreck'].forEach(t=>out.innerHTML+='<div>'+t+V({k:'buoy',t})+'</div>');
 [['red','red'],['red','white','red'],['red','red','red'],['green','white'],['red','white'],['white','red'],['white','red','red']].forEach(s=>out.innerHTML+='<div>'+V({k:'lights',stack:s})+'</div>');
 [['ball','ball'],['ball','diamond','ball'],['cylinder'],['cone_down','cone_up'],['cone_down'],['ball','ball','ball'],['diamond']].forEach(s=>out.innerHTML+='<div>'+V({k:'shapes',stack:s})+'</div>');
 for(let i=0;i<6;i++){const q=MQ.genInstance('aspect',['g',i]);out.innerHTML+='<div>'+V(q.vis)+'</div>';}

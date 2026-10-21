@@ -61,9 +61,7 @@
       isolated:  { body: 'pillar', bands: [BLACK, RED, BLACK], top: ['ball', 'ball'] },
       safe:      { body: 'sphere', stripes: [RED, WHT], top: ['ball_red'] },
       special:   { body: 'pillar', bands: [YEL], top: ['x_yellow'] },
-      wreck:     { body: 'pillar', stripes: [BLU, YEL], top: ['plus_yellow'] },
-      pref_stbd: { body: 'can',    bands: [RED, GRN, RED], top: ['can_red'] },
-      pref_port: { body: 'cone',   bands: [GRN, RED, GRN], top: ['cone_up_green'] }
+      wreck:     { body: 'pillar', stripes: [BLU, YEL], top: ['plus_yellow'] }
     };
     return map[t];
   }
@@ -82,9 +80,7 @@
       isolated:  [[Wh, .5], [null, 1], [Wh, .5], [null, 3]],
       safe:      [[Wh, 2], [null, 8]],
       special:   [[Ye, .5], [null, 4.5]],
-      wreck:     [[Bl, 1], [null, .5], [Ye, 1], [null, .5]],
-      pref_stbd: [[Rd, .5], [null, 1], [Rd, .5], [null, 3], [Rd, .5], [null, 4.5]],
-      pref_port: [[Gn, .5], [null, 1], [Gn, .5], [null, 3], [Gn, .5], [null, 4.5]]
+      wreck:     [[Bl, 1], [null, .5], [Ye, 1], [null, .5]]
     };
     return m[t];
   }

@@ -147,35 +147,11 @@ MQ.add("marks", [
     w: [
       "A swimming area in which boats must not enter",
       "A seaplane landing area that boats must keep clear of",
-      "A preferred channel to be left to one side"
+      "A fish-aggregating device that boats may tow through"
     ],
     why: "The emergency wreck marking buoy has alternating blue and yellow vertical stripes, a yellow cross and an alternating blue/yellow light. If you see one that is not on your chart, slow down, keep clear and report it.",
     src: "Passage Planning Guide – Emergency wreck marking",
     vis: {"k":"buoy","t":"wreck","alt":"Blue and yellow striped buoy"}
-  },
-  {
-    q: "What does this mark show?",
-    a: "Preferred channel to starboard: leave this mark to port",
-    w: [
-      "Preferred channel to port: leave this mark to starboard",
-      "An isolated danger mark",
-      "A cardinal mark"
-    ],
-    why: "Red with a single broad green band and a can topmark (a modified port-hand mark), usually with a red Fl(2+1) light. It marks a junction where the channel divides.",
-    src: "Passage Planning Guide – Lateral marks",
-    vis: {"k":"buoy","t":"pref_stbd","alt":"Red buoy with green band"}
-  },
-  {
-    q: "What does this mark show?",
-    a: "Preferred channel to port: leave this mark to starboard",
-    w: [
-      "Preferred channel to starboard: leave this mark to port",
-      "A safe-water mark",
-      "An emergency wreck marking buoy"
-    ],
-    why: "Green with a single broad red band and a cone topmark (a modified starboard-hand mark), usually with a green Fl(2+1) light.",
-    src: "Passage Planning Guide – Lateral marks",
-    vis: {"k":"buoy","t":"pref_port","alt":"Green buoy with red band"}
   },
   {
     q: "The “conventional direction of buoyage” is…",
@@ -240,7 +216,7 @@ MQ.add("marks", [
       "Fixed red light, 15 s, 8 m, 4 nm",
       "Two red flashes then one green every 15 s, range 8 nm"
     ],
-    why: "Rhythm, colour, period (s), elevation above mean high water springs (m), nominal range (M, nautical miles). A red Fl(2+1) marks a preferred channel to starboard.",
+    why: "Rhythm, colour, period (s), elevation above mean high water springs (m), nominal range (M, nautical miles).",
     src: "Passage Planning Guide – Reading a full light description"
   },
   {
@@ -269,7 +245,7 @@ MQ.add("marks", [
     q: "What is a safe-water mark's light characteristic?",
     a: "White: isophase, occulting, one long flash every 10 s, or Morse “A”",
     w: [
-      "Red group flashing (2), as for a preferred-channel mark",
+      "Red group flashing (2), as for a port-hand mark",
       "Yellow flashing at any rate, as for a special mark",
       "Green quick flashing, as for starboard-hand marks at an entrance"
     ],
