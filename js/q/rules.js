@@ -15,7 +15,7 @@ MQ.add("rules", [
     q: "Rule 2 (Responsibility) says that a vessel may depart from the Rules when…",
     a: "It is necessary to avoid immediate danger",
     w: [
-      "The vessel is on a Coast Guard tasking",
+      "The vessel is on an MRQ tasking",
       "The other vessel is much larger",
       "It is night and the lights cannot be seen clearly"
     ],
@@ -496,7 +496,7 @@ MQ.add("rules", [
     src: "COLREGS Rule 19 · MARI003"
   },
   {
-    q: "A Coast Guard rescue vessel is proceeding at speed to a tasking. Which statement is correct?",
+    q: "A Marine Rescue Queensland (MRQ) rescue vessel is proceeding at speed to a tasking. Which statement is correct?",
     a: "Urgency gives no right of way; keep a good lookout and a safe speed",
     w: [
       "She has priority over all other vessels while she is responding to a tasking",

@@ -23,7 +23,7 @@ MQ.add("sar", [
     src: "Marine SAR Guide – SAR coordination structure"
   },
   {
-    q: "An incident is reported to an AVCGA flotilla and Police have not yet arrived. The senior duty officer should…",
+    q: "An incident is reported to an MRQ flotilla and Police have not yet arrived. The senior duty officer should…",
     a: "Take the SAR Mission Coordinator (SMC) role in the interim, declare the phase, notify JRCC and Police, and hand over when they arrive",
     w: [
       "Wait for Police to arrive before taking any action to launch vessels",
@@ -338,7 +338,7 @@ MQ.add("sar", [
       "Post a note on social media to ask the public to help in the search",
       "Say the target is probably lost, so the reporter will not wait"
     ],
-    why: "Do not reveal identities, search areas, assets or likely outcome. Within AVCGA the Flotilla Captain or duty officer refers all media enquiries upward.",
+    why: "Do not reveal identities, search areas, assets or likely outcome. Within MRQ the Flotilla Captain or duty officer refers all media enquiries upward.",
     src: "Marine SAR Guide – Media and public information"
   },
   {
@@ -368,7 +368,7 @@ MQ.add("sar", [
     a: "VHF Channel 70 (digital only); follow-up voice traffic is on Channel 16",
     w: [
       "Channel 16 by voice, followed by a digital alert on Channel 70",
-      "Channel 22A, which is the Coast Guard working channel in Australia",
+      "Channel 22A, which is the Marine Rescue Queensland working channel",
       "Channel 80, which is reserved for marina and port operations"
     ],
     why: "MF: 2187.5 kHz DSC with voice on 2182 kHz. HF DSC is monitored by AMSA in the 4–16 MHz bands. Ch16 = 156.8 MHz.",
@@ -433,7 +433,7 @@ MQ.add("sar", [
 
 MQ.add("towing", [
   {
-    q: "The AVCGA liability waiver before a tow is delivered…",
+    q: "The MRQ liability waiver before a tow is delivered…",
     a: "Verbally, word for word, with the distressed vessel master's acceptance recorded in the Ship's Log first",
     w: [
       "In writing the next day, once the DV master has signed the form ashore",
@@ -521,7 +521,7 @@ MQ.add("towing", [
     src: "COLREGS Rule 35"
   },
   {
-    q: "Which pump is the usual choice for portable dewatering on Coast Guard jobs?",
+    q: "Which pump is the usual choice for portable dewatering on MRQ jobs?",
     a: "A portable vacuum/diaphragm pump, which is self-priming and tolerates debris",
     w: [
       "A centrifugal pump, which is self-priming and easy to carry aboard",
@@ -642,7 +642,7 @@ MQ.add("towing", [
     src: "NATRAC002 Towing Guide §1.6"
   },
   {
-    q: "In daylight within 1 nm of the bar, a MRQ/Coast Guard towing vessel displays…",
+    q: "In daylight within 1 nm of the bar, an MRQ towing vessel displays…",
     a: "The “restricted manoeuvrability” day shape (ball–diamond–ball) on the halyard",
     w: [
       "A cylinder hoisted on the halyard to show the draught of the tow",

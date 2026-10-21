@@ -533,7 +533,7 @@ MQ.add("nav", [
     a: "It is for Digital Selective Calling only, and is never used for voice",
     w: [
       "It is the international voice distress channel, monitored by all vessels",
-      "It is the working channel that Coast Guard bases use for radio checks",
+      "It is the working channel that MRQ bases use for radio checks",
       "It is used by coast stations to broadcast weather and navigational warnings"
     ],
     why: "Channel 16 (156.8 MHz) is the international voice distress, safety and calling channel. After a DSC alert on Ch 70 the voice traffic follows on Ch 16. On 27 MHz, channel 88 is the distress and calling channel and 91 is used for supplementary safety traffic.",

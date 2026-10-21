@@ -356,7 +356,7 @@ MQ.add("weather", [
     src: "Passage Planning Guide – Navigable and non-navigable semicircles"
   },
   {
-    q: "For a 12 m Coast Guard vessel, the correct action when a tropical cyclone threatens the area is…",
+    q: "For a 12 m Marine Rescue Queensland vessel, the correct action when a tropical cyclone threatens the area is…",
     a: "Don't sail, or return and secure the vessel days earlier",
     w: [
       "Head out to sea to ride it out in deep water",

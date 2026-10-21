@@ -63,7 +63,7 @@ MQ.add("seamanship", [
       "Manila",
       "Steel wire"
     ],
-    why: "Polypropylene floats, which is useful for rescue but poor for abrasion. Natural fibre rope is weak, absorbs water and rots. Wire rope is not used on Coast Guard vessels.",
+    why: "Polypropylene floats, which is useful for rescue but poor for abrasion. Natural fibre rope is weak, absorbs water and rots. Wire rope is not used on MRQ vessels.",
     src: "GPH Part 2 – Types of rope"
   },
   {
