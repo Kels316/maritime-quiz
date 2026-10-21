@@ -49,11 +49,36 @@
   }
   function go(v) { view = v; render(); window.scrollTo(0, 0); }
 
-  /* ---------- screens ---------- */
-  function header(title, backTo) {
-    return '<div class="top"><div class="brand"><div class="logo" aria-hidden="true">⚓</div><div><b>' + esc(title || 'Maritime Quiz') + '</b><small>GPH · Coxswain 1 · Coxswain 2</small></div></div>' +
-      (backTo ? '<button class="iconbtn" data-act="' + backTo + '">← Back</button>' : '') + '</div>';
+  /* ---------- haptics (best effort: Android vibrates; iOS 17.4+ responds to a hidden switch toggle) ---------- */
+  function haptic(kind) {
+    if (!store.get('haptics', true)) return;
+    const taps = kind === 'wrong' ? 2 : 1;
+    try {
+      if (navigator.vibrate) { navigator.vibrate(kind === 'wrong' ? [20, 70, 20] : 12); return; }
+      for (let i = 0; i < taps; i++) setTimeout(function () {
+        const l = document.createElement('label'); l.setAttribute('aria-hidden', 'true'); l.style.cssText = 'position:fixed;left:-99px;top:-99px;opacity:0;pointer-events:none';
+        const c = document.createElement('input'); c.type = 'checkbox'; c.setAttribute('switch', ''); l.appendChild(c); document.body.appendChild(l); l.click(); setTimeout(function () { l.remove(); }, 80);
+      }, i * 110);
+    } catch (e) { /* no haptics available */ }
   }
+
+  /* ---------- screens ---------- */
+  const TABS = [
+    { id: 'home', label: 'Today', icon: '<rect x="3.5" y="5" width="17" height="15" rx="3.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/>' },
+    { id: 'practice', label: 'Practice', icon: '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/><path d="M12 12h.01"/>' },
+    { id: 'stats', label: 'Progress', icon: '<path d="M5 20v-8M12 20V5M19 20v-5"/>' }
+  ];
+  function tabOf() { return view === 'practice' || (view === 'quiz' || view === 'results') && quiz && quiz.mode === 'practice' ? 'practice' : view === 'stats' ? 'stats' : 'home'; }
+  function tabbar() {
+    const cur = tabOf();
+    return '<div class="tabbar"><nav aria-label="Main">' + TABS.map(function (t) {
+      return '<button class="tab' + (t.id === cur ? ' on' : '') + '" data-tab="' + t.id + '"' + (t.id === cur ? ' aria-current="page"' : '') + '><svg viewBox="0 0 24 24" aria-hidden="true">' + t.icon + '</svg>' + t.label + '</button>';
+    }).join('') + '</nav></div>';
+  }
+  function navbar(title, left, right, opts) {
+    return '<div class="navbar' + (opts && opts.always ? ' scrolled' : '') + '" id="nav"><div class="navrow"><div>' + (left || '') + '</div><div class="navtitle">' + esc(title) + '</div><div>' + (right || '') + '</div></div>' + (opts && opts.extra || '') + '</div>';
+  }
+  function large(title, sub) { return '<h1 class="largetitle">' + esc(title) + '</h1>'; }
   function niceDate(s) {
     const p = s.split('-').map(Number); const d = new Date(p[0], p[1] - 1, p[2]);
     return d.toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'long' });
@@ -69,21 +94,18 @@
     const ios = /iphone|ipad|ipod/i.test(navigator.userAgent) && !window.navigator.standalone;
     const standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
     const all = Object.keys(days()).filter(function (k) { return days()[k].done; }).length;
-    return header() +
-      '<div class="card hero fade"><div class="muted small">' + esc(niceDate(dt)) + '</div>' +
-      '<div class="big">Today\'s quiz</div><p class="muted">' + esc(status) + '</p>' +
-      '<button class="btn block" data-act="daily">' + esc(label) + '</button>' +
-      (rec && rec.done ? '<button class="btn sec block" data-act="retake">↻ Retake today\'s quiz</button>' : '') + '</div>' +
+    return navbar('Today') + large('Today') +
+      '<div class="card hero fade"><div class="eyebrow">' + esc(niceDate(dt)) + '</div>' +
+      '<div class="big">Maritime Quiz</div><p class="muted">' + esc(status) + '</p>' +
+      '<button class="btn block" data-act="daily" style="margin-top:10px">' + esc(label) + '</button>' +
+      (rec && rec.done ? '<button class="btn sec block" data-act="retake">Retake today\'s quiz</button>' : '') + '</div>' +
       '<div class="card"><div class="stats3">' +
       '<div class="stat"><b>' + st.current + '</b><span>day streak</span></div>' +
       '<div class="stat"><b>' + st.best + '</b><span>best streak</span></div>' +
       '<div class="stat"><b>' + all + '</b><span>quizzes done</span></div></div></div>' +
-      '<div class="btns">' +
-      '<button class="btn sec" data-act="review"' + (mc ? '' : ' disabled') + '>🔁 Review missed questions' + (mc ? ' (' + mc + ')' : '') + '</button>' +
-      '<button class="btn sec" data-act="practice">🎯 Practice by topic</button>' +
-      '<button class="btn sec" data-act="stats">📊 Progress &amp; settings</button></div>' +
-      (ios && !standalone ? '<div class="tip" style="margin-top:14px">Install on iPhone: tap <b>Share</b> → <b>Add to Home Screen</b>. It then opens full-screen and works offline.</div>' : '') +
-      '<p class="muted small" style="text-align:center;margin-top:18px">' + MQ.counts().total + ' written questions + generated scenarios · v' + VERSION + '</p>';
+      '<div class="list"><button class="li" data-act="review"' + (mc ? '' : ' disabled') + '><span class="ico" style="background:#ff9f0a">↻</span><span class="grow">Review missed questions</span>' + (mc ? '<span class="muted">' + mc + '</span>' : '') + '<span class="chev">›</span></button></div>' +
+      (ios && !standalone ? '<div class="tip">Install on iPhone: tap <b>Share</b> → <b>Add to Home Screen</b>. It then opens full-screen and works offline.</div>' : '') +
+      '<p class="muted small" style="text-align:center;margin-top:18px">' + MQ.counts().total + ' written questions + generated scenarios · v' + VERSION + '</p>' + tabbar();
   }
 
   function startQuiz(mode) {
@@ -104,25 +126,27 @@
     const q = quiz.qs[quiz.idx], n = quiz.qs.length;
     const chosen = quiz.answers[quiz.idx], revealed = chosen !== undefined && chosen !== null;
     const t = T[q.topic]; const fresh = quiz.fresh; quiz.fresh = false;
-    let h = '<div class="qhead"><span class="chip" style="background:' + t.color + '">' + esc(t.label) + '</span>' +
-      '<span class="muted small">' + (quiz.idx + 1) + ' / ' + n + ' &nbsp;<button class="iconbtn" data-act="quit" aria-label="Leave quiz">✕</button></span></div>' +
-      '<div class="bar"><i style="width:' + Math.round((quiz.idx + (revealed ? 1 : 0)) / n * 100) + '%"></i></div>' +
-      '<div class="card' + (fresh ? ' fade' : '') + '" id="qcard">' +
+    const shake = quiz.shake; quiz.shake = false;
+    const bar = '<div class="bar"><i style="width:' + Math.round((quiz.idx + (revealed ? 1 : 0)) / n * 100) + '%"></i></div>';
+    let h = navbar((quiz.idx + 1) + ' of ' + n, '<button class="navbtn" data-act="quit">Close</button>', '', { always: true, extra: bar }) +
+      '<div class="qwrap"><div class="qhead"><span class="chip" style="background:' + t.color + '">' + esc(t.label) + '</span></div>' +
+      '<div class="card' + (fresh ? ' slide' : '') + '" id="qcard">' +
       (q.vis ? '<div class="vis">' + window.MQV.render(q.vis) + '</div>' : '') +
       '<div class="qtext">' + esc(q.q) + '</div><div class="opts" role="group" aria-label="Answer options">';
     q.options.forEach(function (o, i) {
       let cls = 'opt';
-      if (revealed) { if (i === q.answer) cls += ' right'; else if (i === chosen) cls += ' wrong'; else cls += ' dim'; }
+      if (revealed) { if (i === q.answer) cls += ' right'; else if (i === chosen) cls += ' wrong' + (shake ? ' shake' : ''); else cls += ' dim'; }
       h += '<button class="' + cls + '" data-opt="' + i + '"' + (revealed ? ' disabled' : '') + '><span class="k">' + 'ABCD'[i] + '</span><span>' + esc(o) + '</span></button>';
     });
-    h += '</div>';
+    h += '</div></div></div>';
     if (revealed) {
       const ok = chosen === q.answer;
-      h += '<div class="feedback ' + (ok ? 'ok' : 'no') + '"><div class="verdict">' + (ok ? '✓ Correct' : '✗ Not quite') + '</div><div>' + esc(q.why) + '</div>' +
+      h += '<div class="sheet ' + (ok ? 'ok' : 'no') + (quiz.sheetMin ? ' min' : '') + '" role="region" aria-label="Answer explanation"><div class="grabber" data-act="sheet"></div>' +
+        '<div class="body selectable"><div class="verdict">' + (ok ? '✓ Correct' : '✗ Not quite') + '</div><div class="why">' + esc(q.why) + '</div>' +
         (q.src ? '<div class="src">Source: ' + esc(q.src) + '</div>' : '') + '</div>' +
-        '<button class="btn block" style="margin-top:14px" data-act="next">' + (quiz.idx === n - 1 ? 'Finish' : 'Next question →') + '</button>';
+        '<button class="btn block" data-act="next">' + (quiz.idx === n - 1 ? 'Finish' : 'Next question') + '</button></div>';
     }
-    return h + '</div>';
+    return h;
   }
 
   function answer(i) {
@@ -130,12 +154,22 @@
     if (quiz.answers[quiz.idx] !== undefined && quiz.answers[quiz.idx] !== null) return;
     quiz.answers[quiz.idx] = i;
     record(q, i === q.answer);
+    haptic(i === q.answer ? 'right' : 'wrong'); quiz.shake = i !== q.answer;
     if (quiz.mode === 'daily') store.set('progress', { date: quiz.date, ids: quiz.qs.map(function (x) { return x.id; }), answers: quiz.answers });
     render();
-    const f = document.querySelector('.feedback'); if (f) f.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    revealOptions();
+  }
+  /* keep the marked options visible above the explanation sheet */
+  function revealOptions() {
+    const sheet = document.querySelector('.sheet'), r = document.querySelector('.opt.right'), w = document.querySelector('.opt.wrong');
+    if (!sheet || !r) return;
+    const room = window.innerHeight - sheet.offsetHeight - 10, top = w ? Math.min(w.getBoundingClientRect().top, r.getBoundingClientRect().top) : r.getBoundingClientRect().top;
+    const bottom = w ? Math.max(w.getBoundingClientRect().bottom, r.getBoundingClientRect().bottom) : r.getBoundingClientRect().bottom;
+    const by = Math.min(bottom - room, top - 70);
+    if (by > 0) window.scrollBy({ top: by, behavior: 'smooth' });
   }
   function next() {
-    if (quiz.idx < quiz.qs.length - 1) { quiz.idx++; quiz.fresh = true; render(); window.scrollTo(0, 0); return; }
+    if (quiz.idx < quiz.qs.length - 1) { quiz.idx++; quiz.fresh = true; quiz.sheetMin = false; render(); window.scrollTo(0, 0); return; }
     finish();
   }
   function finish() {
@@ -151,35 +185,37 @@
     const n = quiz.qs.length;
     const marks = quiz.qs.map(function (q, i) { return quiz.answers[i] === undefined || quiz.answers[i] === null ? 'n' : quiz.answers[i] === q.answer ? 'g' : 'r'; });
     const score = marks.filter(function (m) { return m === 'g'; }).length;
-    const msg = score === n ? 'Perfect – all ship-shape.' : score >= n * 0.8 ? 'Solid. Keep it fresh.' : score >= n * 0.6 ? 'Good effort – review the misses below.' : 'Worth another look – tap the misses to revisit them.';
-    let h = header(quiz.title) + '<div class="card fade"><div class="score"><div class="num">' + score + '<span class="muted" style="font-size:1.6rem"> / ' + n + '</span></div><p>' + msg + '</p></div>' +
+    const msg = score === n ? 'Perfect – all ship-shape.' : score >= n * 0.8 ? 'Solid. Keep it fresh.' : score >= n * 0.6 ? 'Good effort – review the misses below.' : 'Worth another look – the misses are below.';
+    const C = 2 * Math.PI * 64;
+    let h = navbar('Results', '', '<button class="navbtn" data-act="home">Done</button>') + large(quiz.title) +
+      '<div class="card fade"><div class="score"><div class="ring"><svg viewBox="0 0 150 150"><circle class="trk" cx="75" cy="75" r="64" fill="none" stroke-width="12"/><circle class="val" cx="75" cy="75" r="64" fill="none" stroke-width="12" stroke-dasharray="' + C.toFixed(1) + '" stroke-dashoffset="' + C.toFixed(1) + '" data-target="' + (C * (1 - score / n)).toFixed(1) + '"/></svg><div class="num"><span>' + score + '<small>/' + n + '</small></span></div></div><p>' + msg + '</p></div>' +
       '<div class="dots">' + marks.map(function (m, i) { return '<div class="dot ' + m + '">' + (i + 1) + '</div>'; }).join('') + '</div></div>';
     const wrong = quiz.qs.map(function (q, i) { return { q: q, i: i }; }).filter(function (x) { return marks[x.i] === 'r'; });
     if (wrong.length) {
-      h += '<div class="card"><h3>Review your misses</h3>';
-      wrong.forEach(function (x) {
-        h += '<div style="margin:12px 0;padding-top:12px;border-top:1px solid var(--line)"><div class="small muted">' + esc(T[x.q.topic].label) + '</div><div><b>' + esc(x.q.q) + '</b></div>' +
+      h += '<div class="eyebrow" style="margin:6px 16px 8px">Review your misses</div><div class="card selectable">';
+      wrong.forEach(function (x, k) {
+        h += '<div style="' + (k ? 'margin-top:14px;padding-top:14px;border-top:.5px solid var(--line)' : '') + '"><div class="small muted">' + esc(T[x.q.topic].label) + '</div><div><b>' + esc(x.q.q) + '</b></div>' +
           '<div class="small" style="margin-top:6px;color:var(--bad)">Your answer: ' + esc(x.q.options[quiz.answers[x.i]]) + '</div>' +
           '<div class="small" style="color:var(--good)">Correct: ' + esc(x.q.options[x.q.answer]) + '</div><div class="small muted" style="margin-top:4px">' + esc(x.q.why) + '</div></div>';
       });
       h += '</div>';
     }
-    h += '<div class="btns">' + (quiz.mode === 'daily' || quiz.mode === 'retake' ? '<button class="btn sec" data-act="retake">↻ Retake today\'s quiz</button>' : '') + '<button class="btn" data-act="practice">Keep practising</button><button class="btn ghost" data-act="home">Home</button></div>';
-    return h;
+    h += '<div class="btns">' + (quiz.mode === 'daily' || quiz.mode === 'retake' ? '<button class="btn sec" data-act="retake">Retake today\'s quiz</button>' : '') + '<button class="btn" data-act="practice">Keep practising</button></div>';
+    return h + tabbar();
   }
 
   let pSel = null, pCount = 10;
   function practiceView() {
     if (!pSel) pSel = Object.keys(T).filter(function (k) { return MQ.BANK[k].length; });
-    let h = header('Practice', 'home') + '<div class="card"><h3>Topics</h3><p class="muted small">Questions you have missed before come up more often.</p><div class="chips" style="margin-top:8px">';
+    let h = navbar('Practice') + large('Practice') + '<div class="card"><h3>Topics</h3><p class="muted small">Questions you have missed before come up more often.</p><div class="chips" style="margin-top:10px">';
     Object.keys(T).forEach(function (k) {
       h += '<button class="tchip' + (pSel.indexOf(k) >= 0 ? ' on' : '') + '" data-topic="' + k + '">' + esc(T[k].short) + '</button>';
     });
-    h += '</div><div class="row" style="margin-top:10px"><button class="iconbtn" data-act="selall">All</button><button class="iconbtn" data-act="selnone">None</button></div></div>' +
-      '<div class="card"><h3>How many?</h3><div class="seg" style="margin-top:8px">' +
+    h += '</div><div class="row" style="margin-top:12px"><button class="iconbtn" data-act="selall">All</button><button class="iconbtn" data-act="selnone">None</button></div></div>' +
+      '<div class="card"><h3>How many?</h3><div class="seg">' +
       [5, 10, 20].map(function (c) { return '<button class="' + (pCount === c ? 'on' : '') + '" data-count="' + c + '">' + c + '</button>'; }).join('') + '</div></div>' +
       '<button class="btn block" data-act="startpractice"' + (pSel.length ? '' : ' disabled') + '>Start practice</button>';
-    return h;
+    return h + tabbar();
   }
   function startPractice() {
     const qs = MQ.practiceSet(pSel, pCount, store.get('qstats', {}));
@@ -197,7 +233,7 @@
   function statsView() {
     const ts = store.get('tstats', {}), d = days(), st = streak();
     let tot = 0, ok = 0; Object.keys(ts).forEach(function (k) { tot += ts[k].n; ok += ts[k].ok; });
-    let h = header('Progress', 'home') + '<div class="card"><div class="stats3">' +
+    let h = navbar('Progress') + large('Progress') + '<div class="card"><div class="stats3">' +
       '<div class="stat"><b>' + tot + '</b><span>answered</span></div><div class="stat"><b>' + (tot ? Math.round(ok / tot * 100) : 0) + '%</b><span>correct</span></div><div class="stat"><b>' + st.current + '</b><span>streak</span></div></div></div>';
     /* calendar – last 28 days */
     const t0 = today(); let cal = '';
@@ -215,11 +251,12 @@
       const p = Math.round(ts[k].ok / ts[k].n * 100);
       h += '<div class="topicrow"><span>' + esc(T[k].label) + ' <span class="muted small">(' + ts[k].n + ')</span></span><span class="pct">' + p + '%</span><div class="meter"><i style="width:' + p + '%;background:' + T[k].color + '"></i></div></div>';
     });
-    h += '</div><div class="card"><h3>Move progress between devices</h3><p class="muted small">Your streak and stats are stored on each device. Today\'s 10 questions are identical on every device. To carry progress across, copy the code below and paste it into the box on the other device.</p>' +
-      '<textarea id="xfer" aria-label="Progress code"></textarea><div class="row" style="margin-top:8px"><button class="btn sec" data-act="export">Fill with my code</button><button class="btn sec" data-act="import">Import pasted code</button></div></div>' +
-      '<div class="card"><h3>About</h3><p class="muted small">Questions are drawn from the GPH (MARG012, MARN016, MARB053, MARF028), Coxswain 1/2 (MARH013, MARB027/MARC038, MARC037, MARI003) and SAR/towing learner guides, plus the MRQ Vessel Crew Guide. It is a memory refresher – not a substitute for the guides, your SMS or current regulations.</p>' +
-      '<button class="btn ghost" data-act="reset">Reset all progress</button></div>';
-    return h;
+    h += '</div><div class="eyebrow" style="margin:6px 16px 8px">Settings</div><div class="list"><label class="li"><span class="grow">Haptic feedback</span><span class="switch"><input type="checkbox" data-act="haptics"' + (store.get('haptics', true) ? ' checked' : '') + '><i></i></span></label></div>' +
+      '<div class="card"><h3>Move progress between devices</h3><p class="muted small">Your streak and stats are stored on each device. Today\'s 10 questions are identical on every device. To carry progress across, copy the code below and paste it into the box on the other device.</p>' +
+      '<textarea id="xfer" aria-label="Progress code"></textarea><div class="row" style="margin-top:10px"><button class="btn sec" data-act="export">Fill with my code</button><button class="btn sec" data-act="import">Import pasted code</button></div></div>' +
+      '<div class="card"><h3>About</h3><p class="muted small">Questions are drawn from the GPH (MARG012, MARN016, MARB053, MARF028), Coxswain 1/2 (MARH013, MARB027/MARC038, MARC037, MARI003) and SAR/towing learner guides, plus the MRQ Vessel Crew Guide. It is a memory refresher – not a substitute for the guides, your SMS or current regulations.</p></div>' +
+      '<div class="list"><button class="li dangerous" data-act="reset"><span class="grow">Reset all progress</span></button></div>';
+    return h + tabbar();
   }
 
   function render() {
@@ -229,12 +266,24 @@
     else if (view === 'results') h = resultsView();
     else if (view === 'practice') h = practiceView();
     else if (view === 'stats') h = statsView();
+    $app.className = view === 'quiz' ? 'notabs' : '';
     $app.innerHTML = h;
+    const sheet = document.querySelector('.sheet');
+    $app.style.paddingBottom = sheet ? (sheet.offsetHeight + 20) + 'px' : '';
+    const val = document.querySelector('.ring .val');
+    if (val) requestAnimationFrame(function () { requestAnimationFrame(function () { val.style.strokeDashoffset = val.dataset.target; }); });
+    onScroll();
   }
+  function onScroll() {
+    const nav = document.getElementById('nav'); if (!nav || view === 'quiz') return;
+    nav.classList.toggle('scrolled', window.scrollY > 34);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
 
   /* ---------- events ---------- */
   document.addEventListener('click', function (e) {
-    const el = e.target.closest('[data-act],[data-opt],[data-topic],[data-count]'); if (!el) return;
+    const el = e.target.closest('[data-act],[data-opt],[data-topic],[data-count],[data-tab]'); if (!el) return;
+    if (el.dataset.tab) { if (el.dataset.tab !== tabOf() || view === 'results') { haptic('right'); go(el.dataset.tab); } else window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
     if (el.dataset.opt !== undefined) return answer(Number(el.dataset.opt));
     if (el.dataset.topic) { const k = el.dataset.topic, i = pSel.indexOf(k); if (i >= 0) pSel.splice(i, 1); else pSel.push(k); return render(); }
     if (el.dataset.count) { pCount = Number(el.dataset.count); return render(); }
@@ -246,6 +295,8 @@
       case 'home': return go('home');
       case 'review': return startReview();
       case 'next': return next();
+      case 'sheet': quiz.sheetMin = !quiz.sheetMin; return render();
+      case 'haptics': store.set('haptics', el.checked); if (el.checked) haptic('right'); return;
       case 'quit': if (confirm('Leave this quiz? Daily progress is saved.')) go('home'); return;
       case 'selall': pSel = Object.keys(T).filter(function (k) { return MQ.BANK[k].length; }); return render();
       case 'selnone': pSel = []; return render();
@@ -274,6 +325,17 @@
         return;
     }
   });
+  /* edge swipe = back; swipe the sheet handle to collapse or expand the explanation */
+  let tx = null, ty = null, tTarget = null;
+  document.addEventListener('touchstart', function (e) { const t = e.touches[0]; tx = t.clientX; ty = t.clientY; tTarget = e.target; }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (tx === null) return; const t = e.changedTouches[0], dx = t.clientX - tx, dy = t.clientY - ty; const x0 = tx; tx = null;
+    if (tTarget && tTarget.closest && tTarget.closest('.sheet') && Math.abs(dy) > 36 && Math.abs(dy) > Math.abs(dx)) { quiz.sheetMin = dy > 0; return render(); }
+    if (x0 < 24 && dx > 90 && Math.abs(dy) < 60) {
+      if (view === 'quiz') { if (confirm('Leave this quiz? Daily progress is saved.')) go('home'); }
+      else if (view === 'results') go('home');
+    }
+  }, { passive: true });
   document.addEventListener('keydown', function (e) {
     if (view !== 'quiz' || e.target.tagName === 'TEXTAREA') return;
     const q = quiz.qs[quiz.idx], revealed = quiz.answers[quiz.idx] !== undefined && quiz.answers[quiz.idx] !== null;

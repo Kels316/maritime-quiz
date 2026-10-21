@@ -5,6 +5,7 @@ A 10-question daily refresher for **GPH**, **Coxswain 1** and **Coxswain 2** kno
 - **Same ten questions on every device** each calendar day (picked deterministically from the date – no account or server needed).
 - **Covers the whole syllabus** by rotating through 14 topics: COLREGS situations and rules, lights/shapes/signals, buoyage, navigation, passage planning, tides, weather, seamanship, fire, WHS/emergencies, engines/electrics, SAR/radio/beacons and towing.
 - **Generated scenarios** – COLREGS encounter diagrams (give-way/stand-on/head-on/overtaking, vessels with priority, lights seen at night), compass conversions, tide/depth/twelfths, fuel, SAR arithmetic, light-characteristic decoding – so the numbers change every time.
+- **iPhone-style interface** – tab bar, large titles, translucent bars, answer sheet, haptics, dark and light mode.
 - **Spaced repetition lite** – missed questions go to a *Review* list and come up more often in *Practice*.
 - Progress (streak, per-topic accuracy, calendar) is stored on the device; there is a copy/paste export to move it between devices.
 
