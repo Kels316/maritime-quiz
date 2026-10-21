@@ -264,14 +264,14 @@ MQ.add("marks", [
     src: "Passage Planning Guide – Buoyage"
   },
   {
-    q: "You are on a leading line. The front (lower) mark appears to the RIGHT of the rear mark. You are…",
-    a: "To starboard of the line: alter to starboard",
+    q: "You are approaching along a leading line. The front (lower) mark appears to the RIGHT of the rear mark. What is your position and what should you do?",
+    a: "You are to port of the line: alter to starboard",
     w: [
-      "To port of the line: alter to port",
-      "On the line: hold your course",
-      "To starboard of the line: alter to port"
+      "You are to starboard of the line: alter to starboard",
+      "You are to port of the line: alter to port",
+      "You are on the line: hold your course"
     ],
-    why: "Alter in the direction the front mark has moved. The front mark is nearer and moves faster for a given displacement, so the correction is usually small.",
+    why: "Steer towards the side the front mark has moved. If you are left of the line, the nearer front mark appears to shift right against the rear mark, so you are to port of the line and must alter to starboard until the marks line up. Use small corrections: the nearer mark moves quickly for a small error.",
     src: "Passage Planning Guide – Leading lights and marks"
   },
   {
