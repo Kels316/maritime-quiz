@@ -67,8 +67,54 @@
     };
     return map[t];
   }
+  /* night light: sequence of [colour|null, seconds] over one cycle */
+  function fl(c, on, offs) { const o = []; offs.forEach(function (x, i) { o.push([c, on]); o.push([null, x]); }); return o; }
+  function quick(c, n, tail) { const o = []; for (let i = 0; i < n; i++) o.push([c, .3], [null, .5]); if (tail) o.push([null, tail]); return o; }
+  function buoyLight(t) {
+    const Wh = '#fff8c8', Rd = '#ff3b30', Gn = '#25e06b', Ye = '#ffd60a', Bl = '#3a8dff';
+    const m = {
+      port:      [[Rd, .5], [null, 3.5]],
+      stbd:      [[Gn, .5], [null, 3.5]],
+      N:         quick(Wh, 5),
+      E:         quick(Wh, 3, 7.6),
+      S:         quick(Wh, 6).concat([[null, .2], [Wh, 2], [null, 8]]),
+      W:         quick(Wh, 9, 7.8),
+      isolated:  [[Wh, .5], [null, 1], [Wh, .5], [null, 3]],
+      safe:      [[Wh, 2], [null, 8]],
+      special:   [[Ye, .5], [null, 4.5]],
+      wreck:     [[Bl, 1], [null, .5], [Ye, 1], [null, .5]],
+      pref_stbd: [[Rd, .5], [null, 1], [Rd, .5], [null, 3], [Rd, .5], [null, 4.5]],
+      pref_port: [[Gn, .5], [null, 1], [Gn, .5], [null, 3], [Gn, .5], [null, 4.5]]
+    };
+    return m[t];
+  }
+  function nightPanel(seq, x0, id) {
+    const total = seq.reduce(function (a, g) { return a + g[1]; }, 0);
+    const OFF = '#2a3340', W = 112, sx = x0 + 10, sy = 150;
+    let kt = [], vals = [], t = 0;
+    seq.forEach(function (g) { kt.push((t / total).toFixed(4)); vals.push(g[0] || OFF); t += g[1]; });
+    const dur = total + 's', kts = kt.join(';'), vs = vals.join(';');
+    let s = '<rect x="' + x0 + '" y="0" width="130" height="220" rx="10" fill="#050b18"/>' +
+      '<text x="' + (x0 + 65) + '" y="22" fill="#7fb6e6" font-size="11" text-anchor="middle">AT NIGHT</text>' +
+      '<defs><filter id="' + id + 'g" x="-150%" y="-150%" width="400%" height="400%"><feGaussianBlur stdDeviation="7"/></filter></defs>' +
+      '<circle cx="' + (x0 + 65) + '" cy="78" r="26" fill="' + OFF + '" filter="url(#' + id + 'g)" opacity=".9"><animate attributeName="fill" calcMode="discrete" dur="' + dur + '" repeatCount="indefinite" keyTimes="' + kts + '" values="' + vs + '"/></circle>' +
+      '<circle cx="' + (x0 + 65) + '" cy="78" r="12" fill="' + OFF + '" stroke="#555" stroke-width="1"><animate attributeName="fill" calcMode="discrete" dur="' + dur + '" repeatCount="indefinite" keyTimes="' + kts + '" values="' + vs + '"/></circle>' +
+      '<text x="' + (x0 + 65) + '" y="138" fill="#9fb4c8" font-size="10" text-anchor="middle">one cycle = ' + (Math.round(total * 10) / 10) + ' s</text>';
+    t = 0;
+    seq.forEach(function (g) {
+      const w = Math.max(2, g[1] / total * W);
+      s += '<rect x="' + (sx + t / total * W).toFixed(1) + '" y="' + sy + '" width="' + w.toFixed(1) + '" height="22" fill="' + (g[0] || OFF) + '"/>';
+      t += g[1];
+    });
+    s += '<rect x="' + sx + '" y="' + sy + '" width="' + W + '" height="22" fill="none" stroke="#5b6b7c"/>' +
+      '<line x1="' + sx + '" y1="' + (sy - 5) + '" x2="' + sx + '" y2="' + (sy + 27) + '" stroke="#fff" stroke-width="1.5"><animate attributeName="x1" dur="' + dur + '" repeatCount="indefinite" values="' + sx + ';' + (sx + W) + '"/><animate attributeName="x2" dur="' + dur + '" repeatCount="indefinite" values="' + sx + ';' + (sx + W) + '"/></line>' +
+      '<text x="' + (x0 + 65) + '" y="196" fill="#7a8ea3" font-size="9" text-anchor="middle">light (coloured) / dark (grey)</text>';
+    return s;
+  }
   function buoySVG(spec) {
     const b = buoySpec(spec.t);
+    const night = spec.light !== false ? buoyLight(spec.t) : null;
+    const W = night ? 300 : 160;
     const id = 'bu' + (++uid);
     const cx = 80, water = 168;
     let bodyPath, top, bot;
@@ -76,7 +122,7 @@
     else if (b.body === 'cone'){ top = 96;  bot = water; bodyPath = '<polygon points="80,' + top + ' 112,' + bot + ' 48,' + bot + '"/>'; }
     else if (b.body === 'sphere'){ top = 100; bot = water; bodyPath = '<circle cx="80" cy="' + (top + 34) + '" r="34"/>'; bot = top + 68; }
     else                       { top = 82;  bot = water; bodyPath = '<path d="M68 ' + top + ' H92 L98 ' + (bot - 14) + ' L110 ' + bot + ' H50 L62 ' + (bot - 14) + 'Z"/>'; }
-    let s = '<svg viewBox="0 0 160 220" role="img" aria-label="' + esc(spec.alt || 'Buoy') + '">' +
+    let s = '<svg viewBox="0 0 ' + W + ' 220" role="img" aria-label="' + esc(spec.alt || 'Buoy') + '">' +
       '<defs><clipPath id="' + id + '">' + bodyPath + '</clipPath><linearGradient id="' + id + 'k" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe9ff"/><stop offset="1" stop-color="#f1f8ff"/></linearGradient></defs>' +
       '<rect width="160" height="220" rx="10" fill="url(#' + id + 'k)"/>';
     /* body with bands/stripes */
@@ -106,6 +152,7 @@
     });
     s += '<path d="M0 ' + water + ' Q 20 ' + (water - 6) + ' 40 ' + water + ' T 80 ' + water + ' T 120 ' + water + ' T 160 ' + water + ' V220 H0Z" fill="#3b84b8"/>' +
       '<path d="M0 ' + (water + 16) + ' Q 20 ' + (water + 10) + ' 40 ' + (water + 16) + ' T 80 ' + (water + 16) + ' T 120 ' + (water + 16) + ' T 160 ' + (water + 16) + ' V220 H0Z" fill="#2c6d99"/>';
+    if (night) s += nightPanel(night, 165, id);
     return s + '</svg>';
   }
 

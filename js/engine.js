@@ -5,7 +5,6 @@
   /* ---------- topics ---------- */
   const TOPICS = {
     encounter:  { label: 'COLREGS situation',            short: 'Situation', color: '#4aa3ff' },
-    towsit:     { label: 'COLREGS situation – towing',   short: 'Tow situation', color: '#7dbbff' },
     rules:      { label: 'COLREGS rules',                short: 'Rules',     color: '#5b8def' },
     lights:     { label: 'Lights, shapes & signals',     short: 'Lights',    color: '#f5c542' },
     marks:      { label: 'Buoyage & light characters',   short: 'Marks',     color: '#ef6a5b' },
@@ -24,7 +23,7 @@
   /* one entry per daily slot; a slot with several topics rotates through them day by day */
   const SLOTS = [
     ['encounter'],
-    ['towsit'],
+    ['encounter'],
     ['rules'],
     ['lights'],
     ['marks'],

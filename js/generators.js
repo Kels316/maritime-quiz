@@ -181,7 +181,7 @@
 
   /* 3. COLREGS situations while YOU are towing (you are always power-driven) */
   function towLen(rng) { return R(rng, 0, 1) ? R(rng, 25, 90) * 2 + 20 : R(rng, 21, 40) * 10 + 20; }   // short tow ≤200 m or long tow >200 m
-  MQ.registerGen('towenc', 'towsit', 6, function (rng) {
+  MQ.registerGen('towenc', 'encounter', 4, function (rng) {
     const vo = R(rng, 6, 9), len = towLen(rng), mode = rng();
     const tw = 'towing a barge astern (length of tow ' + len + ' m)';
     const pick = function (want) {
@@ -236,7 +236,7 @@
   });
 
   /* 4. Lights and shapes you must show while towing */
-  MQ.registerGen('towlights', 'towsit', 4, function (rng) {
+  MQ.registerGen('towlights', 'encounter', 2, function (rng) {
     const len = towLen(rng), long = len > 200;
     const night = rng() < 0.6;
     const intro = 'You are a power-driven vessel towing astern. The length of the tow, measured from your stern to the after end of the tow, is ' + len + ' m. ';
@@ -489,6 +489,52 @@
       return { q: q0 + 'What colour is the light?', correct: col[1], wrongs: ['red', 'green', 'yellow', 'white'].filter(function (c) { return c !== col[1]; }).slice(0, 3), why: 'The colour letter follows the rhythm. If no colour is shown the light is white (e.g. Fl 5s is white).', src: 'Passage Planning Guide – Light characteristics' };
     }
     return { q: q0 + 'Which rhythm does it show?', correct: rh[1], wrongs: uniq(rh[1], ['flashing (single flashes, dark longer than light)', 'occulting (light longer than dark)', 'isophase (equal light and dark)', 'group flashing, 3 flashes per group', 'quick flashing, 3-flash groups', 'group occulting, 2 eclipses per group'], 3), why: rh[0] + ' = ' + rh[1] + '.', src: 'Passage Planning Guide – Light characteristics' };
+  });
+
+
+  /* IALA buoyage: shape, topmark and night light shown together */
+  const BUOY = {
+    port:      { fam: 'lat', m: 'A port-hand lateral mark: leave it to port', l: 'Red, flashing' },
+    stbd:      { fam: 'lat', m: 'A starboard-hand lateral mark: leave it to starboard', l: 'Green, flashing' },
+    pref_stbd: { fam: 'lat', m: 'Preferred channel to starboard: leave this mark to port', l: 'Red, group flashing 2+1' },
+    pref_port: { fam: 'lat', m: 'Preferred channel to port: leave this mark to starboard', l: 'Green, group flashing 2+1' },
+    N:         { fam: 'card', m: 'A north cardinal mark: safe water lies to the north of it', l: 'White, continuous quick flashing' },
+    E:         { fam: 'card', m: 'An east cardinal mark: safe water lies to the east of it', l: 'White, quick flashing in groups of 3' },
+    S:         { fam: 'card', m: 'A south cardinal mark: safe water lies to the south of it', l: 'White, quick flashing in groups of 6, then one long flash' },
+    W:         { fam: 'card', m: 'A west cardinal mark: safe water lies to the west of it', l: 'White, quick flashing in groups of 9' },
+    isolated:  { fam: 'oth', m: 'An isolated danger mark: navigable water all round it, but keep clear', l: 'White, group flashing 2' },
+    safe:      { fam: 'oth', m: 'A safe-water mark: navigable water all round it, pass either side', l: 'White, one long flash' },
+    special:   { fam: 'oth', m: 'A special mark: shows an area or feature described on the chart', l: 'Yellow, flashing' },
+    wreck:     { fam: 'oth', m: 'An emergency wreck-marking buoy: a new danger, keep well clear', l: 'Alternating blue and yellow' }
+  };
+  function buoyPick(rng, key, field, extra) {
+    const t = P(Object.keys(BUOY), rng), me = BUOY[t];
+    const others = Object.keys(BUOY).filter(function (k) { return k !== t && BUOY[k][field] !== me[field]; });
+    const near = U.shuffle(others.filter(function (k) { return BUOY[k].fam === me.fam; }), rng);
+    const far = U.shuffle(others.filter(function (k) { return BUOY[k].fam !== me.fam; }), rng);
+    const wr = near.concat(far).slice(0, 3).map(function (k) { return BUOY[k][field]; });
+    return { t: t, me: me, correct: me[field], wrongs: wr };
+  }
+  const BUOY_NAME = { port: 'red can', stbd: 'green cone', pref_stbd: 'red can with a green band', pref_port: 'green cone with a red band', N: 'north cardinal', E: 'east cardinal', S: 'south cardinal', W: 'west cardinal', isolated: 'isolated danger', safe: 'safe water', special: 'special', wreck: 'emergency wreck' };
+  MQ.registerGen('buoyid', 'marks', 5, function (rng) {
+    const b = buoyPick(rng, 'id', 'm');
+    return {
+      q: 'The buoy is shown by day (left) and at night (right). What does it mark?',
+      correct: b.correct, wrongs: b.wrongs,
+      why: 'The shape, colours and topmark identify the mark by day, and the light confirms it at night: ' + b.me.l.toLowerCase() + '. ' + b.me.m + '.',
+      src: 'Passage Planning Guide – The IALA System · MSQ Navigation marks',
+      vis: { k: 'buoy', t: b.t, alt: 'A buoy by day and its night light' }
+    };
+  });
+  MQ.registerGen('buoylight', 'marks', 4, function (rng) {
+    const b = buoyPick(rng, 'lt', 'l');
+    return {
+      q: 'You see this buoy by day. At night, which light would it show?',
+      correct: b.correct, wrongs: b.wrongs,
+      why: 'This is the ' + BUOY_NAME[b.t] + ' mark: ' + b.correct.toLowerCase() + '. Cardinal marks are always white (quick flashing, in groups that follow the clock face: 3 east, 6 plus a long flash south, 9 west, continuous north); lateral marks match their colour; yellow is special; blue and yellow is a new wreck.',
+      src: 'Passage Planning Guide – Light characteristics · MSQ Navigation marks',
+      vis: { k: 'buoy', t: b.t, light: false, alt: 'A buoy seen by day' }
+    };
   });
 
   /* =====================================================================
