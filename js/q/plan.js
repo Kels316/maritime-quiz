@@ -188,14 +188,14 @@ MQ.add("plan", [
     src: "Passage Planning Guide – Navigation equipment"
   },
   {
-    q: "Who sets out the safety equipment a domestic commercial vessel must carry?",
-    a: "The National Standard for Commercial Vessels (Part C, Section 7A), applied through the certificate of operation and SMS",
+    q: "Which document sets out the safety equipment a domestic commercial vessel must carry?",
+    a: "The National Standard for Commercial Vessels, Part C Section 7A (Safety equipment)",
     w: [
-      "The unit's verbal instructions, given at the start of the season",
-      "The vessel's manufacturer, in the owner's manual supplied with the hull",
-      "The Bureau of Meteorology, in its annual marine safety bulletin"
+      "Marine Order 505, which covers certificates of competency",
+      "The COLREGS, in the Rules covering lights and sound signals",
+      "The vessel manufacturer's owner's manual supplied with the hull"
     ],
-    why: "Marine Order 504 covers certificates of operation and operational requirements; Marine Order 505 covers certificates of competency and limits. The SMS is the operative document in practice.",
+    why: "NSCV Part C7A lists the safety equipment by vessel class and operational area. It is applied to your vessel through the certificate of operation (Marine Order 504) and recorded in the SMS, which is the document you work from day to day. Marine Order 505 deals with certificates of competency, not equipment.",
     src: "Passage Planning Guide – Safety equipment"
   },
   {

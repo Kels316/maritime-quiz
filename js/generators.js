@@ -149,7 +149,13 @@
   /* 2. Lights seen at night */
   MQ.registerGen('aspect', 'encounter', 4, function (rng) {
     const want = P(['cross_give', 'cross_stand', 'head', 'over_other', 'over_me', 'cross_give', 'cross_stand'], rng);
-    const s = sample(rng, want) || sample(rng, 'cross_give');
+    let s = null;
+    for (let i = 0; i < 60; i++) {                       // head-on must show both sidelights (aspect within 4°)
+      s = sample(rng, want);
+      if (s && (want !== 'head' || Math.min(s.a, 360 - s.a) <= 4)) break;
+      s = null;
+    }
+    if (!s) s = sample(rng, 'cross_give');
     const wk = classify(s.b, s.h).kind;
     const a = s.a, ap = a > 180 ? a - 360 : a;           // signed aspect, + = you are on its starboard side
     const big = rng() < 0.3;
