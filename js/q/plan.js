@@ -195,7 +195,7 @@ MQ.add("plan", [
       "The COLREGS, in the Rules covering lights and sound signals",
       "The vessel manufacturer's owner's manual supplied with the hull"
     ],
-    why: "NSCV Part C7A lists the safety equipment by vessel class and operational area. It is applied to your vessel through the certificate of operation (Marine Order 504) and recorded in the SMS, which is the document you work from day to day. Marine Order 505 deals with certificates of competency, not equipment.",
+    why: "NSCV Part C7A sets the design, type, quantity, stowage and maintenance of safety equipment for Class 1, 2 and 3 domestic commercial vessels, by vessel size and operational area. Your vessel's certificate of operation (Marine Order 504) and SMS apply it to your vessel. Marine Order 505 deals with certificates of competency, not equipment.",
     src: "Passage Planning Guide – Safety equipment"
   },
   {

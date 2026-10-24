@@ -1,6 +1,6 @@
 /* Maritime Quiz service worker: app shell is cached for offline use;
    network-first so a new version is picked up whenever you are online. */
-const CACHE = 'maritime-quiz-v22';
+const CACHE = 'maritime-quiz-v23';
 const SHELL = [
   './', 'index.html', 'css/style.css', 'manifest.webmanifest',
   'js/engine.js', 'js/visuals.js', 'js/generators.js', 'js/app.js',
